@@ -1345,32 +1345,58 @@ textarea.form-control {
   position: fixed;
   top: 0;
   bottom: 0;
+  height: 100vh;
+  height: 100dvh;
   width: 82%;
   max-width: 340px;
   background-color: var(--pure-white);
   z-index: 2000;
-  padding: 2rem 1.5rem;
+  padding: max(1.75rem, env(safe-area-inset-top)) 1.5rem max(1.75rem, env(safe-area-inset-bottom));
   box-shadow: var(--shadow-lg);
   transition: transform var(--transition-normal), visibility var(--transition-normal);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 2rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   visibility: hidden;
+  pointer-events: none;
 }
 
 html[dir="rtl"] .mobile-drawer {
   right: 0;
+  left: auto;
   transform: translateX(100%);
 }
 
 html[dir="ltr"] .mobile-drawer {
   left: 0;
+  right: auto;
   transform: translateX(-100%);
 }
 
+html[dir="rtl"] .mobile-drawer.open,
+html[dir="ltr"] .mobile-drawer.open,
 .mobile-drawer.open {
   transform: translateX(0);
   visibility: visible;
+  pointer-events: auto;
+}
+
+.drawer-close-btn {
+  color: var(--midnight-dark);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background-color var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+  background-color: var(--light-bg);
 }
 
 .drawer-overlay {

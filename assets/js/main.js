@@ -104,34 +104,47 @@ class AnovaApp {
   }
 
   setupMobileDrawer() {
-    const hamburger = document.querySelector('.hamburger-btn');
+    const hamburgers = document.querySelectorAll('.hamburger-btn');
     const drawer = document.querySelector('.mobile-drawer');
     const overlay = document.querySelector('.drawer-overlay');
     const closeBtn = document.querySelector('.drawer-close-btn');
 
     if (!drawer || !overlay) return;
 
+    drawer.setAttribute('aria-hidden', 'true');
+    hamburgers.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+
     const openDrawer = () => {
       drawer.classList.add('open');
       overlay.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      hamburgers.forEach(btn => btn.setAttribute('aria-expanded', 'true'));
       document.body.style.overflow = 'hidden';
     };
 
     const closeDrawer = () => {
       drawer.classList.remove('open');
       overlay.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      hamburgers.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
       document.body.style.overflow = '';
     };
 
-    document.querySelectorAll('.hamburger-btn').forEach(btn => {
+    hamburgers.forEach(btn => {
       btn.addEventListener('click', openDrawer);
     });
     if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
     if (overlay) overlay.addEventListener('click', closeDrawer);
 
-    // Close on navigation link click inside drawer
-    drawer.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeDrawer);
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        closeDrawer();
+      }
+    });
+
+    // Close on navigation link or quote modal trigger click inside drawer
+    drawer.querySelectorAll('a, .open-quote-modal').forEach(item => {
+      item.addEventListener('click', closeDrawer);
     });
   }
 
