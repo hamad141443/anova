@@ -716,7 +716,7 @@ class AnovaApp {
         return `
           <div class="partner-card-corp partner-marquee-card">
             <div class="partner-logo-box">
-              <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(primaryName)}" class="partner-logo-img" decoding="async">
+              <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(primaryName)}" class="partner-logo-img" loading="lazy" decoding="async">
             </div>
             <div class="partner-name-ar">${this.escapeHtml(primaryName)}</div>
             <div class="partner-name-en">${this.escapeHtml(secondaryName)}</div>
@@ -739,7 +739,7 @@ class AnovaApp {
       return `
         <div class="partner-pedestal-card">
           <div class="partner-pedestal-logo-wrap">
-            <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(primaryName)}">
+            <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(primaryName)}" loading="lazy" decoding="async">
           </div>
           <div class="partner-pedestal-name-ar">${this.escapeHtml(primaryName)}</div>
           <div class="partner-pedestal-name-en">${this.escapeHtml(secondaryName)}</div>
@@ -843,7 +843,7 @@ class AnovaApp {
               </button>
             </div>
             <div class="sector-media-container">
-              <img src="${this.escapeHtml(imgUrl)}" alt="${this.escapeHtml(title)}">
+              <img src="${this.escapeHtml(imgUrl)}" alt="${this.escapeHtml(title)}" loading="lazy" decoding="async">
             </div>
           `;
           homeMatrix.appendChild(article);

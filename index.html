@@ -110,9 +110,10 @@
     <div class="hero-bg-wrapper">
       <!-- Fallback & Reduced-Motion Static Image (Seamless Cover) -->
       <img 
-        src="public/hero-venue.jpg?v=3" 
+        src="public/hero-venue.jpg" 
         alt="ANOVA World-Class Luxury Gala & Grand Corporate Venue" 
         class="hero-bg-fallback"
+        fetchpriority="high"
         decoding="async"
       >
       <!-- Cinematic Looping Background Video -->
@@ -124,7 +125,7 @@
         playsinline 
         webkit-playsinline
         preload="metadata"
-        poster="public/hero-venue.jpg?v=3"
+        poster="public/hero-venue.jpg"
         disablepictureinpicture
         aria-hidden="true"
       >
@@ -224,7 +225,7 @@
         <!-- Architectural Showcase Window (No Floating Cards) -->
         <div class="about-corp-showcase">
           <div class="about-corp-media-box">
-            <img src="public/about-excellence.jpg" alt="ANOVA Hospitality Excellence & Executive Staging" class="about-corp-img">
+            <img src="public/about-excellence.jpg" alt="ANOVA Hospitality Excellence & Executive Staging" class="about-corp-img" loading="lazy" decoding="async">
             <div class="about-corp-caption-strip">
               <span class="about-corp-caption-tag" data-i18n="about_showcase_tag">معايير الضيافة والتموين الرفيع</span>
               <p class="about-corp-caption-desc" data-i18n="about_showcase_desc">تجهيزات فاخرة وتنسيق متكامل يعكس هيبة الفعاليات والمؤتمرات الوطنية</p>
@@ -341,7 +342,7 @@
         <!-- Sector 1: Conferences & Events (Monumental Horizontal Split 60/40) -->
         <article class="sector-cinematic-feature" id="sec-events">
           <div class="sector-media-container">
-            <img src="public/sec-events.jpg" alt="تنظيم المعارض والمؤتمرات">
+            <img src="public/sec-events.jpg" alt="تنظيم المعارض والمؤتمرات" loading="lazy" decoding="async">
           </div>
           <div class="sector-content-body">
             <div>
@@ -386,14 +387,14 @@
             </button>
           </div>
           <div class="sector-media-container">
-            <img src="public/sec-catering.jpg" alt="خدمات الإعاشة والتموين الراقي">
+            <img src="public/sec-catering.jpg" alt="خدمات الإعاشة والتموين الراقي" loading="lazy" decoding="async">
           </div>
         </article>
 
         <!-- Sector 3: Coffee Break & Corporate Serving (Boutique Dark Horizontal Feature) -->
         <article class="sector-boutique-dark sector-boutique-wide" id="sec-coffee">
           <div class="sector-media-container">
-            <img src="public/sec-coffee.jpg" alt="استراحات القهوة وضيافة الشركات">
+            <img src="public/sec-coffee.jpg" alt="استراحات القهوة وضيافة الشركات" loading="lazy" decoding="async">
           </div>
           <div class="sector-content-body">
             <div>
@@ -418,7 +419,7 @@
 
         <!-- Sector 4: Food Supply & Buffets (Panoramic Command Banner) -->
         <article class="sector-panoramic-banner" id="sec-supply">
-          <img src="public/sec-supply.jpg" alt="التوريد الغذائي والبوفيهات المفتوحة" class="sector-panoramic-bg">
+          <img src="public/sec-supply.jpg" alt="التوريد الغذائي والبوفيهات المفتوحة" class="sector-panoramic-bg" loading="lazy" decoding="async">
           <div class="sector-panoramic-overlay"></div>
           <div class="sector-panoramic-content">
             <div>
@@ -473,7 +474,7 @@
           <!-- RCRC -->
           <div class="partner-card-corp partner-marquee-card">
             <div class="partner-logo-box">
-              <img src="public/partners/Logos-27-2048x2048.png" alt="الهيئة الملكية لمدينة الرياض" class="partner-logo-img" decoding="async">
+              <img src="public/partners/Logos-27-2048x2048.png" alt="الهيئة الملكية لمدينة الرياض" class="partner-logo-img" loading="lazy" decoding="async">
             </div>
             <div class="partner-name-ar" data-i18n="p_rcrc_ar">الهيئة الملكية لمدينة الرياض</div>
             <div class="partner-name-en" data-i18n="p_rcrc_en">Royal Commission for Riyadh City</div>
@@ -482,7 +483,7 @@
           <!-- National Water Company -->
           <div class="partner-card-corp partner-marquee-card">
             <div class="partner-logo-box">
-              <img src="public/partners/Logos-19-2048x2048.png" alt="شركة المياه الوطنية" class="partner-logo-img" decoding="async">
+              <img src="public/partners/Logos-19-2048x2048.png" alt="شركة المياه الوطنية" class="partner-logo-img" loading="lazy" decoding="async">
             </div>
             <div class="partner-name-ar" data-i18n="p_nwc_ar">شركة المياه الوطنية</div>
             <div class="partner-name-en" data-i18n="p_nwc_en">National Water Company</div>
@@ -491,7 +492,7 @@
           <!-- Tatweer Education Holding -->
           <div class="partner-card-corp partner-marquee-card">
             <div class="partner-logo-box">
-              <img src="public/partners/Logos-14-2048x2048.png" alt="شركة تطوير التعليم القابضة" class="partner-logo-img" decoding="async">
+              <img src="public/partners/Logos-14-2048x2048.png" alt="شركة تطوير التعليم القابضة" class="partner-logo-img" loading="lazy" decoding="async">
             </div>
             <div class="partner-name-ar" data-i18n="p_tatweer_ar">شركة تطوير التعليم القابضة</div>
             <div class="partner-name-en" data-i18n="p_tatweer_en">Tatweer Education Holding</div>
@@ -500,7 +501,7 @@
           <!-- Saudi Banks -->
           <div class="partner-card-corp partner-marquee-card">
             <div class="partner-logo-box">
-              <img src="public/partners/Logos-33-2048x2048.png" alt="البنوك السعودية" class="partner-logo-img" decoding="async">
+              <img src="public/partners/Logos-33-2048x2048.png" alt="البنوك السعودية" class="partner-logo-img" loading="lazy" decoding="async">
             </div>
             <div class="partner-name-ar" data-i18n="p_banks_ar">البنوك السعودية</div>
             <div class="partner-name-en" data-i18n="p_banks_en">Saudi Banks Committee</div>
@@ -509,7 +510,7 @@
           <!-- Princess Nourah University -->
           <div class="partner-card-corp partner-marquee-card">
             <div class="partner-logo-box">
-              <img src="public/partners/Logos-31-2048x2048.png" alt="جامعة الأميرة نورة بنت عبدالرحمن" class="partner-logo-img" decoding="async">
+              <img src="public/partners/Logos-31-2048x2048.png" alt="جامعة الأميرة نورة بنت عبدالرحمن" class="partner-logo-img" loading="lazy" decoding="async">
             </div>
             <div class="partner-name-ar" data-i18n="p_pnu_ar">جامعة الأميرة نورة بنت عبدالرحمن</div>
             <div class="partner-name-en" data-i18n="p_pnu_en">Princess Nourah University</div>
@@ -518,7 +519,7 @@
           <!-- Prince Sultan University -->
           <div class="partner-card-corp partner-marquee-card">
             <div class="partner-logo-box">
-              <img src="public/partners/Logos-35-2048x2048.png" alt="جامعة الأمير سلطان" class="partner-logo-img" decoding="async">
+              <img src="public/partners/Logos-35-2048x2048.png" alt="جامعة الأمير سلطان" class="partner-logo-img" loading="lazy" decoding="async">
             </div>
             <div class="partner-name-ar" data-i18n="p_psu_ar">جامعة الأمير سلطان</div>
             <div class="partner-name-en" data-i18n="p_psu_en">Prince Sultan University</div>
@@ -527,7 +528,7 @@
           <!-- University of Tabuk -->
           <div class="partner-card-corp partner-marquee-card">
             <div class="partner-logo-box">
-              <img src="public/partners/Logos-22-2048x2048.png" alt="جامعة تبوك" class="partner-logo-img" decoding="async">
+              <img src="public/partners/Logos-22-2048x2048.png" alt="جامعة تبوك" class="partner-logo-img" loading="lazy" decoding="async">
             </div>
             <div class="partner-name-ar" data-i18n="p_tabuk_ar">جامعة تبوك</div>
             <div class="partner-name-en" data-i18n="p_tabuk_en">University of Tabuk</div>
@@ -536,7 +537,7 @@
           <!-- Al Yamamah University -->
           <div class="partner-card-corp partner-marquee-card">
             <div class="partner-logo-box">
-              <img src="public/partners/Logos-26-2048x2048.png" alt="جامعة اليمامة" class="partner-logo-img" decoding="async">
+              <img src="public/partners/Logos-26-2048x2048.png" alt="جامعة اليمامة" class="partner-logo-img" loading="lazy" decoding="async">
             </div>
             <div class="partner-name-ar" data-i18n="p_yamamah_ar">جامعة اليمامة</div>
             <div class="partner-name-en" data-i18n="p_yamamah_en">Al Yamamah University</div>
