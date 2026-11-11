@@ -74,51 +74,94 @@
         <button type="button" id="closeSidebarBtn" class="admin-sidebar-close" aria-label="Close Sidebar">✕</button>
       </div>
 
-      <div class="admin-nav-section-label" data-admin-i18n="nav_section_main">الإدارة والعمليات</div>
-      <ul class="admin-nav-list">
-        <li>
-          <button type="button" class="admin-nav-btn is-active" data-tab="overview">
-            <span class="admin-nav-btn-inner">
-              <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-              <span data-admin-i18n="tab_overview">نظرة عامة والتحليلات</span>
-            </span>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="admin-nav-btn" data-tab="quotes">
-            <span class="admin-nav-btn-inner">
-              <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-              <span data-admin-i18n="tab_quotes">طلبات عروض الأسعار</span>
-            </span>
-            <span id="navBadgeQuotes" class="admin-nav-count">0</span>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="admin-nav-btn" data-tab="jobs">
-            <span class="admin-nav-btn-inner">
-              <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <span data-admin-i18n="tab_jobs">طلبات التوظيف</span>
-            </span>
-            <span id="navBadgeJobs" class="admin-nav-count">0</span>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="admin-nav-btn" data-tab="activity">
-            <span class="admin-nav-btn-inner">
-              <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              <span data-admin-i18n="tab_activity">سجل النشاط</span>
-            </span>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="admin-nav-btn" data-tab="settings">
-            <span class="admin-nav-btn-inner">
-              <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-              <span data-admin-i18n="tab_settings">الإعدادات والأمان</span>
-            </span>
-          </button>
-        </li>
-      </ul>
+      <div class="admin-nav-scroll">
+        <div class="admin-nav-section-label" data-admin-i18n="nav_section_main">الإدارة والعمليات</div>
+        <ul class="admin-nav-list">
+          <li>
+            <button type="button" class="admin-nav-btn is-active" data-tab="overview">
+              <span class="admin-nav-btn-inner">
+                <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                <span data-admin-i18n="tab_overview">نظرة عامة والتحليلات</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="admin-nav-btn" data-tab="quotes">
+              <span class="admin-nav-btn-inner">
+                <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span data-admin-i18n="tab_quotes">طلبات عروض الأسعار</span>
+              </span>
+              <span id="navBadgeQuotes" class="admin-nav-count">0</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="admin-nav-btn" data-tab="jobs">
+              <span class="admin-nav-btn-inner">
+                <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span data-admin-i18n="tab_jobs">طلبات التوظيف</span>
+              </span>
+              <span id="navBadgeJobs" class="admin-nav-count">0</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="admin-nav-section-label" data-admin-i18n="nav_section_cms">إدارة محتوى الموقع</div>
+        <ul class="admin-nav-list">
+          <li>
+            <button type="button" class="admin-nav-btn" data-tab="cms-jobs">
+              <span class="admin-nav-btn-inner">
+                <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span data-admin-i18n="tab_cms-jobs">الوظائف المتاحة</span>
+              </span>
+              <span id="navBadgeCmsJobs" class="admin-nav-count">0</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="admin-nav-btn" data-tab="cms-sectors">
+              <span class="admin-nav-btn-inner">
+                <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                <span data-admin-i18n="tab_cms-sectors">قطاعات الأعمال</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="admin-nav-btn" data-tab="cms-partners">
+              <span class="admin-nav-btn-inner">
+                <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span data-admin-i18n="tab_cms-partners">شركاء النجاح</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="admin-nav-btn" data-tab="cms-content">
+              <span class="admin-nav-btn-inner">
+                <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                <span data-admin-i18n="tab_cms-content">نصوص الموقع والتواصل</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="admin-nav-section-label" data-admin-i18n="nav_section_system">النظام</div>
+        <ul class="admin-nav-list">
+          <li>
+            <button type="button" class="admin-nav-btn" data-tab="activity">
+              <span class="admin-nav-btn-inner">
+                <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                <span data-admin-i18n="tab_activity">سجل النشاط</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="admin-nav-btn" data-tab="settings">
+              <span class="admin-nav-btn-inner">
+                <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                <span data-admin-i18n="tab_settings">الإعدادات والأمان</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
 
       <div class="admin-sidebar-footer">
         <div class="admin-user-pill">
@@ -397,6 +440,178 @@
             </div>
           </div>
         </section>
+
+        <!-- TAB 6 (CMS): Available Job Openings -->
+        <section id="tab-cms-jobs" class="admin-tab-panel is-hidden">
+          <div class="admin-toolbar">
+            <div class="toolbar-filters">
+              <div class="toolbar-search">
+                <input type="search" id="cmsJobSearchInput" class="admin-input-sm" data-admin-ph="ph_search_cms_jobs" placeholder="بحث باسم الوظيفة أو القسم أو المدينة...">
+              </div>
+            </div>
+            <div class="toolbar-actions">
+              <button type="button" id="openNewCmsJobBtn" class="admin-btn-sm admin-btn-sm--gold" data-admin-i18n="btn_add_cms_job">+ إضافة وظيفة جديدة</button>
+            </div>
+          </div>
+
+          <div class="table-card">
+            <div class="table-scroll">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th data-admin-i18n="col_sort">الترتيب</th>
+                    <th data-admin-i18n="col_job_title">المسمى الوظيفي (عربي / إنجليزي)</th>
+                    <th data-admin-i18n="col_dept">الإدارة والمدينة</th>
+                    <th data-admin-i18n="col_emp_type">نوع الدوام</th>
+                    <th data-admin-i18n="col_visibility">الحالة في الموقع</th>
+                    <th data-admin-i18n="col_actions">الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody id="cmsJobsTableBody"></tbody>
+              </table>
+            </div>
+            <div id="cmsJobsEmptyState" class="empty-state-box is-hidden">
+              <div class="empty-state-title" data-admin-i18n="empty_cms_jobs">لا توجد وظائف مضافة بعد</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 7 (CMS): Business Sectors -->
+        <section id="tab-cms-sectors" class="admin-tab-panel is-hidden">
+          <div class="admin-toolbar">
+            <div style="font-size: 0.9rem; font-weight: 600; color: var(--primary-navy);" data-admin-i18n="cms_sectors_hint">تحكم كامل بقطاعات الأعمال: تعديل الأسماء والوصف والمميزات والصور، أو إضافة قطاعات جديدة.</div>
+            <div class="toolbar-actions">
+              <button type="button" id="openNewCmsSectorBtn" class="admin-btn-sm admin-btn-sm--gold" data-admin-i18n="btn_add_cms_sector">+ إضافة قطاع جديد</button>
+            </div>
+          </div>
+          <div id="cmsSectorsGrid" class="cms-cards-grid"></div>
+        </section>
+
+        <!-- TAB 8 (CMS): Partners & Logos -->
+        <section id="tab-cms-partners" class="admin-tab-panel is-hidden">
+          <div class="admin-toolbar">
+            <div class="toolbar-filters">
+              <div class="toolbar-select">
+                <select id="cmsPartnerCategoryFilter" class="admin-input-sm">
+                  <option value="all" data-admin-i18n="filter_all_categories">جميع الفئات</option>
+                  <option value="government" data-admin-i18n="cat_government">الجهات الحكومية والوطنية</option>
+                  <option value="education" data-admin-i18n="cat_education">الجامعات والتعليم العالي</option>
+                  <option value="corporate" data-admin-i18n="cat_corporate">الشركات والقطاع الخاص</option>
+                </select>
+              </div>
+            </div>
+            <div class="toolbar-actions">
+              <button type="button" id="openNewCmsPartnerBtn" class="admin-btn-sm admin-btn-sm--gold" data-admin-i18n="btn_add_cms_partner">+ إضافة شريك نجاح</button>
+            </div>
+          </div>
+          <div id="cmsPartnersGrid" class="cms-cards-grid"></div>
+        </section>
+
+        <!-- TAB 9 (CMS): Full Site Text, Contact & Media Editor -->
+        <section id="tab-cms-content" class="admin-tab-panel is-hidden">
+          <div class="cms-content-stack">
+            <!-- Contact Details Editor -->
+            <div class="panel-card">
+              <div class="panel-card-header">
+                <h2 class="panel-card-title" data-admin-i18n="cms_contact_title">بيانات التواصل والواتساب الرسمية (جميع الصفحات)</h2>
+              </div>
+              <form id="cmsContactForm">
+                <div class="form-two-col">
+                  <div class="form-group">
+                    <label class="form-label" data-admin-i18n="lbl_phone_display">رقم الجوال الموحد (للعرض)</label>
+                    <input type="text" id="cmsPhoneDisplay" class="form-control dir-ltr" required placeholder="+966 55 563 7637">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" data-admin-i18n="lbl_phone_secondary">رقم إضافي (اختياري)</label>
+                    <input type="text" id="cmsPhoneSecondary" class="form-control dir-ltr" placeholder="+966 55 356 5050">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" data-admin-i18n="lbl_whatsapp_num">رقم الواتساب (أرقام دولية بدون +)</label>
+                    <input type="text" id="cmsWhatsappNum" class="form-control dir-ltr" required placeholder="966555637637">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" data-admin-i18n="lbl_official_email">البريد الإلكتروني الرسمي للموقع</label>
+                    <input type="email" id="cmsOfficialEmail" class="form-control dir-ltr" required placeholder="info@anovaksa.com">
+                  </div>
+                </div>
+                <button type="submit" id="saveCmsContactBtn" class="btn btn-gold" data-admin-i18n="btn_save_contact">حفظ ونشر بيانات التواصل</button>
+              </form>
+            </div>
+
+            <!-- Media Assets Editor -->
+            <div class="panel-card">
+              <div class="panel-card-header">
+                <h2 class="panel-card-title" data-admin-i18n="cms_media_title">الشعار والفيديو والصور الرئيسية للموقع</h2>
+              </div>
+              <form id="cmsMediaForm">
+                <div class="form-two-col">
+                  <div class="form-group">
+                    <label class="form-label" data-admin-i18n="lbl_logo_url">شعار الشركة الرئيسي</label>
+                    <div class="cms-upload-row">
+                      <input type="text" id="cmsLogoUrl" class="form-control dir-ltr" required>
+                      <label class="admin-btn-sm admin-btn-sm--navy cms-file-btn">
+                        <span data-admin-i18n="btn_upload_file">رفع ملف</span>
+                        <input type="file" accept="image/*" data-upload-target="cmsLogoUrl" data-upload-folder="brand">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" data-admin-i18n="lbl_hero_video_url">فيديو الواجهة الرئيسية (Hero Video)</label>
+                    <div class="cms-upload-row">
+                      <input type="text" id="cmsHeroVideoUrl" class="form-control dir-ltr" required>
+                      <label class="admin-btn-sm admin-btn-sm--navy cms-file-btn">
+                        <span data-admin-i18n="btn_upload_file">رفع فيديو</span>
+                        <input type="file" accept="video/mp4,video/webm" data-upload-target="cmsHeroVideoUrl" data-upload-folder="hero">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" data-admin-i18n="lbl_hero_poster_url">الصورة البديلة / الخلفية للواجهة الرئيسية</label>
+                    <div class="cms-upload-row">
+                      <input type="text" id="cmsHeroPosterUrl" class="form-control dir-ltr" required>
+                      <label class="admin-btn-sm admin-btn-sm--navy cms-file-btn">
+                        <span data-admin-i18n="btn_upload_file">رفع صورة</span>
+                        <input type="file" accept="image/*" data-upload-target="cmsHeroPosterUrl" data-upload-folder="hero">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" data-admin-i18n="lbl_about_img_url">صورة قسم «عن أنوفا»</label>
+                    <div class="cms-upload-row">
+                      <input type="text" id="cmsAboutImageUrl" class="form-control dir-ltr" required>
+                      <label class="admin-btn-sm admin-btn-sm--navy cms-file-btn">
+                        <span data-admin-i18n="btn_upload_file">رفع صورة</span>
+                        <input type="file" accept="image/*" data-upload-target="cmsAboutImageUrl" data-upload-folder="about">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" id="saveCmsMediaBtn" class="btn btn-gold" data-admin-i18n="btn_save_media">حفظ ونشر الوسائط</button>
+              </form>
+            </div>
+
+            <!-- Full Site Text Editor -->
+            <div class="panel-card">
+              <div class="panel-card-header" style="flex-wrap: wrap;">
+                <h2 class="panel-card-title" data-admin-i18n="cms_texts_title">المحرر الشامل لنصوص وعناوين كافة صفحات الموقع</h2>
+                <button type="button" id="saveAllTextsBtn" class="admin-btn-sm admin-btn-sm--gold" data-admin-i18n="btn_publish_texts">نشر وحفظ كافة النصوص المعدّلة</button>
+              </div>
+
+              <div class="admin-toolbar" style="box-shadow:none;padding:0.75rem 0;border:none;margin-bottom:0.5rem;">
+                <div class="toolbar-filters">
+                  <div class="toolbar-search">
+                    <input type="search" id="cmsTextSearchInput" class="admin-input-sm" data-admin-ph="ph_search_texts" placeholder="ابحث عن أي عنوان أو جملة في الموقع لتعديلها...">
+                  </div>
+                  <div class="toolbar-select">
+                    <select id="cmsTextGroupFilter" class="admin-input-sm"></select>
+                  </div>
+                </div>
+              </div>
+
+              <div id="cmsTextsContainer" class="cms-text-editor-list"></div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   </div>
@@ -524,6 +739,204 @@
             <textarea name="details" rows="3" class="form-control"></textarea>
           </div>
           <button type="submit" id="saveManualQuoteBtn" class="btn btn-gold" style="width: 100%;" data-admin-i18n="btn_create_quote">حفظ وإضافة الطلب</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- CMS Modal: Add / Edit Job Opening -->
+  <div id="cmsJobModal" class="admin-modal-overlay" aria-hidden="true">
+    <div class="admin-modal-card admin-modal-card--lg" role="dialog" aria-modal="true" aria-labelledby="cmsJobModalTitle">
+      <div class="admin-modal-header">
+        <h3 id="cmsJobModalTitle" class="admin-modal-title">--</h3>
+        <button type="button" class="admin-modal-close" data-close-modal="cmsJobModal" aria-label="Close">✕</button>
+      </div>
+      <div class="admin-modal-body">
+        <form id="cmsJobForm">
+          <input type="hidden" id="cmsJobId" value="">
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_job_title_ar">المسمى الوظيفي (بالعربية)</label>
+              <input type="text" id="cmsJobTitleAr" class="form-control" required placeholder="مثال: مشرف عمليات ضيافة">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_job_title_en">المسمى الوظيفي (بالإنجليزية)</label>
+              <input type="text" id="cmsJobTitleEn" class="form-control dir-ltr" placeholder="e.g., Hospitality Operations Supervisor">
+            </div>
+          </div>
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_job_dept_ar">الإدارة والمدينة (بالعربية)</label>
+              <input type="text" id="cmsJobDeptAr" class="form-control" required placeholder="مثال: إدارة العمليات | جدة">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_job_dept_en">الإدارة والمدينة (بالإنجليزية)</label>
+              <input type="text" id="cmsJobDeptEn" class="form-control dir-ltr" placeholder="e.g., Operations Dept. | Jeddah">
+            </div>
+          </div>
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_emp_type_ar">نوع الدوام (بالعربية)</label>
+              <input type="text" id="cmsJobTypeAr" class="form-control" required value="دوام كامل">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_emp_type_en">نوع الدوام (بالإنجليزية)</label>
+              <input type="text" id="cmsJobTypeEn" class="form-control dir-ltr" value="Full Time">
+            </div>
+          </div>
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_slug_key">المعرّف في نظام التوظيف (Slug)</label>
+              <input type="text" id="cmsJobSlug" class="form-control dir-ltr" placeholder="Auto-generated if empty">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="col_sort">الترتيب</label>
+              <input type="number" id="cmsJobSort" class="form-control dir-ltr" value="1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-admin-i18n="lbl_job_desc_ar">وصف المهام الوظيفية (بالعربية)</label>
+            <textarea id="cmsJobDescAr" rows="3" class="form-control" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-admin-i18n="lbl_job_desc_en">وصف المهام الوظيفية (بالإنجليزية)</label>
+            <textarea id="cmsJobDescEn" rows="3" class="form-control dir-ltr"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="admin-checkbox-row">
+              <input type="checkbox" id="cmsJobActive" checked>
+              <span data-admin-i18n="lbl_is_active">منشورة وظاهرة في صفحة التوظيف</span>
+            </label>
+          </div>
+          <button type="submit" id="saveCmsJobBtn" class="btn btn-gold" style="width: 100%;" data-admin-i18n="btn_save_changes">حفظ التعديلات</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- CMS Modal: Add / Edit Business Sector -->
+  <div id="cmsSectorModal" class="admin-modal-overlay" aria-hidden="true">
+    <div class="admin-modal-card admin-modal-card--lg" role="dialog" aria-modal="true" aria-labelledby="cmsSectorModalTitle">
+      <div class="admin-modal-header">
+        <h3 id="cmsSectorModalTitle" class="admin-modal-title">--</h3>
+        <button type="button" class="admin-modal-close" data-close-modal="cmsSectorModal" aria-label="Close">✕</button>
+      </div>
+      <div class="admin-modal-body">
+        <form id="cmsSectorForm">
+          <input type="hidden" id="cmsSectorId" value="">
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_sec_title_ar">اسم القطاع (بالعربية)</label>
+              <input type="text" id="cmsSectorTitleAr" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_sec_title_en">اسم القطاع (بالإنجليزية)</label>
+              <input type="text" id="cmsSectorTitleEn" class="form-control dir-ltr" required>
+            </div>
+          </div>
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_sec_key">معرّف القطاع في النماذج (Sector Key)</label>
+              <input type="text" id="cmsSectorKey" class="form-control dir-ltr" required placeholder="e.g., VIP Logistics">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="col_sort">الترتيب</label>
+              <input type="number" id="cmsSectorSort" class="form-control dir-ltr" value="1">
+            </div>
+          </div>
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_sec_desc_ar">الوصف التفصيلي (بالعربية)</label>
+              <textarea id="cmsSectorDescAr" rows="3" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_sec_desc_en">الوصف التفصيلي (بالإنجليزية)</label>
+              <textarea id="cmsSectorDescEn" rows="3" class="form-control dir-ltr"></textarea>
+            </div>
+          </div>
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_sec_feats_ar">المميزات بالعربية (سطر لكل ميزة)</label>
+              <textarea id="cmsSectorFeatsAr" rows="3" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_sec_feats_en">المميزات بالإنجليزية (سطر لكل ميزة)</label>
+              <textarea id="cmsSectorFeatsEn" rows="3" class="form-control dir-ltr"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-admin-i18n="lbl_sec_image">صورة القطاع (رابط مباشر أو رفع من جهازك)</label>
+            <div class="cms-upload-row">
+              <input type="text" id="cmsSectorImageUrl" class="form-control dir-ltr" required value="public/sec-events.jpg">
+              <label class="admin-btn-sm admin-btn-sm--navy cms-file-btn">
+                <span data-admin-i18n="btn_upload_file">رفع صورة</span>
+                <input type="file" accept="image/*" data-upload-target="cmsSectorImageUrl" data-upload-folder="sectors">
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="admin-checkbox-row">
+              <input type="checkbox" id="cmsSectorActive" checked>
+              <span data-admin-i18n="lbl_sec_active">مفعّل وظاهر في الموقع ونموذج التسعير</span>
+            </label>
+          </div>
+          <button type="submit" id="saveCmsSectorBtn" class="btn btn-gold" style="width: 100%;" data-admin-i18n="btn_save_changes">حفظ التعديلات</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- CMS Modal: Add / Edit Partner -->
+  <div id="cmsPartnerModal" class="admin-modal-overlay" aria-hidden="true">
+    <div class="admin-modal-card admin-modal-card--md" role="dialog" aria-modal="true" aria-labelledby="cmsPartnerModalTitle">
+      <div class="admin-modal-header">
+        <h3 id="cmsPartnerModalTitle" class="admin-modal-title">--</h3>
+        <button type="button" class="admin-modal-close" data-close-modal="cmsPartnerModal" aria-label="Close">✕</button>
+      </div>
+      <div class="admin-modal-body">
+        <form id="cmsPartnerForm">
+          <input type="hidden" id="cmsPartnerId" value="">
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_partner_ar">اسم الجهة الشريكة (بالعربية)</label>
+              <input type="text" id="cmsPartnerNameAr" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_partner_en">اسم الجهة (بالإنجليزية)</label>
+              <input type="text" id="cmsPartnerNameEn" class="form-control dir-ltr">
+            </div>
+          </div>
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="lbl_partner_cat">التصنيف</label>
+              <select id="cmsPartnerCategory" class="form-control">
+                <option value="government" data-admin-i18n="cat_government">الجهات الحكومية والوطنية</option>
+                <option value="education" data-admin-i18n="cat_education">الجامعات والتعليم العالي</option>
+                <option value="corporate" data-admin-i18n="cat_corporate">الشركات والقطاع الخاص</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="col_sort">الترتيب</label>
+              <input type="number" id="cmsPartnerSort" class="form-control dir-ltr" value="1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-admin-i18n="lbl_partner_logo">شعار الشريك (رابط أو رفع من جهازك)</label>
+            <div class="cms-upload-row">
+              <input type="text" id="cmsPartnerLogoUrl" class="form-control dir-ltr" required placeholder="public/partners/...">
+              <label class="admin-btn-sm admin-btn-sm--navy cms-file-btn">
+                <span data-admin-i18n="btn_upload_file">رفع شعار</span>
+                <input type="file" accept="image/*" data-upload-target="cmsPartnerLogoUrl" data-upload-folder="partners">
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="admin-checkbox-row">
+              <input type="checkbox" id="cmsPartnerActive" checked>
+              <span data-admin-i18n="lbl_partner_active">ظاهر في شريط وصفحة شركاء النجاح</span>
+            </label>
+          </div>
+          <button type="submit" id="saveCmsPartnerBtn" class="btn btn-gold" style="width: 100%;" data-admin-i18n="btn_save_changes">حفظ التعديلات</button>
         </form>
       </div>
     </div>

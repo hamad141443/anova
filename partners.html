@@ -115,10 +115,10 @@
       <div style="margin-bottom: 5rem;">
         <div class="partners-chamber-header">
           <span class="partners-chamber-badge">Chamber 01</span>
-          <h2 class="partners-chamber-title">الهيئات والمؤسسات الحكومية وشبه الحكومية</h2>
+          <h2 class="partners-chamber-title" data-i18n="partners_gov_title">الهيئات والمؤسسات الحكومية وشبه الحكومية</h2>
         </div>
         
-        <div class="partners-pedestal-grid">
+        <div id="cmsPartnersGovGrid" class="partners-pedestal-grid">
           
           <!-- RCRC -->
           <div class="partner-pedestal-card">
@@ -163,10 +163,10 @@
       <div>
         <div class="partners-chamber-header">
           <span class="partners-chamber-badge" style="color: var(--primary-navy); background: rgba(26,58,93,0.08); border-color: rgba(26,58,93,0.2);">Chamber 02</span>
-          <h2 class="partners-chamber-title">قطاع التعليم العالي والجامعات الكبرى</h2>
+          <h2 class="partners-chamber-title" data-i18n="partners_edu_title">قطاع التعليم العالي والجامعات الكبرى</h2>
         </div>
 
-        <div class="partners-pedestal-grid">
+        <div id="cmsPartnersEduGrid" class="partners-pedestal-grid">
           
           <!-- Princess Nourah University -->
           <div class="partner-pedestal-card">
@@ -205,6 +205,15 @@
           </div>
 
         </div>
+      </div>
+
+      <!-- Tier 3: Corporate & Private Sector Partners (Shown when corporate partners exist) -->
+      <div id="cmsPartnersCorpSection" style="margin-top: 5rem; display: none;">
+        <div class="partners-chamber-header">
+          <span class="partners-chamber-badge" style="color: var(--primary-navy); background: rgba(26,58,93,0.08); border-color: rgba(26,58,93,0.2);">Chamber 03</span>
+          <h2 class="partners-chamber-title" data-i18n="partners_corp_title">الشركات والكيانات الوطنية والخاصة</h2>
+        </div>
+        <div id="cmsPartnersCorpGrid" class="partners-pedestal-grid"></div>
       </div>
 
     </div>

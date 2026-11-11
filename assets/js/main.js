@@ -3,367 +3,21 @@
  * Master Client-Side Controller & Bilingual Engine (Arabic / English)
  */
 
-const ANOVA_TRANSLATIONS = {
-  ar: {
-    // Top Bar
-    top_locations: "المملكة العربية السعودية | الرياض • جدة • الخبر",
-    top_contact_direct: "الاتصال المباشر:",
-    lang_toggle_text: "English",
-
-    // Navigation
-    nav_home: "الرئيسية",
-    nav_about: "عن أنوفا",
-    nav_services: "قطاعات الأعمال",
-    nav_partners: "شركاء النجاح",
-    nav_careers: "التوظيف",
-    nav_contact: "تواصل معنا",
-    cta_quote: "اطلب عرض سعر",
-
-    // Cinematic Hero Section
-    hero_kicker: "أنوفا المتحدة للفعاليات والمؤتمرات والضيافة",
-    hero_headline: "نصنع تجارب تبقى في الذاكرة",
-    hero_headline_line1: "نصنع تجارب",
-    hero_headline_line2: "تبقى في الذاكرة",
-    hero_subtext: "حلول متكاملة لتنظيم المؤتمرات والمعارض، والتموين المؤسسي الراقي، وإدارة مرافق الإعاشة بأعلى معايير الجودة والاحترافية.",
-    hero_scroll: "اكتشف المزيد",
-    hero_badge: "تأسست عام 2017 في الرياض | تغطية وطنية ممتدة",
-    hero_title_1: "إرساء معايير الضيافة والتموين",
-    hero_title_2: "للمؤتمرات والفعاليات والمؤسسات الكبرى",
-    hero_desc: "شركة أنوفا المتحدة للضيافة والإعاشة: صرح سعودي رائد يكرس ركائز الخدمة، الجودة، والرقابة لتقديم أرقى تجارب الطهي وإدارة المؤتمرات وخدمات استراحات القهوة والتوريد الغذائي بأعلى المعايير الاحترافية.",
-    hero_cta_primary: "طلب استشارة وتسعير",
-    hero_cta_secondary: "اكتشف خدماتنا",
-    stat_founded_num: "2017",
-    stat_founded_lbl: "سنة التأسيس بالعاصمة الرياض",
-    stat_branches_num: "3+",
-    stat_branches_lbl: "فروع ومراكز تشغيل رئيسية",
-    stat_quality_num: "100%",
-    stat_quality_lbl: "التزام بمعايير الجودة والسلامة",
-    hero_img_tag: "جاهزية تشغيلية متكاملة",
-    hero_img_caption: "خدمات الضيافة الرسمية لكبرى المؤتمرات ومناسبات القطاعين الحكومي والخاص",
-    hero_floating_title: "كفاءة لوجستية معتمدة",
-    hero_floating_desc: "سلاسل إمداد مبردة وإدارة متخصصة لفعاليات ومقرات كبرى الجامعات والهيئات الوطنية.",
-
-    // About Section
-    about_tag: "عن أنوفا المتحدة",
-    about_cities: "الرياض • جدة • الخبر",
-    about_showcase_tag: "معايير الضيافة والتموين الرفيع",
-    about_showcase_desc: "تجهيزات فاخرة وتنسيق متكامل يعكس هيبة الفعاليات والمؤتمرات الوطنية",
-    about_title: "ريادة مبنية على الاحترافية وصناعة التجارب الاستثنائية",
-    about_p1: "منذ تأسيس شركة أنوفا المتحدة في الرياض عام 2017، التزمنا بإعادة صياغة مفاهيم الضيافة المؤسسية والتموين الغذائي في المملكة العربية السعودية. نجحنا في بناء ثقة وطنية راسخة بفضل الالتزام الصارم بالجداول الزمنية، وتوظيف أرقى فنون الطهي، ومراعاة أدق بروتوكولات التشريفات الرسمية.",
-    about_p2: "نمتلك حضوراً تشغيلياً واسعاً عبر فروعنا في الرياض، جدة، والخبر، مع خطط توسع مستمرة تشمل مكة المكرمة والخرج. نعمل كشريك استراتيجي للجهات الحكومية والجامعات العريقة والشركات الرائدة والفنادق المصنفة، لتقديم خدمات تليق بتطلعات رؤية المملكة الطموحة.",
-    about_learn_more: "تعرف على تاريخنا وقيمنا",
-
-    // The Three Pillars
-    pillars_tag: "منهجية العمل والتميز",
-    pillars_title: "ثلاث ركائز جوهرية توجه كافة عملياتنا التشغيلية",
-    pillars_subtitle: "نموذج تشغيلي صارم يضمن تكامل الخدمة وسلامة الأداء من مرحلة التخطيط المسبق وحتى التنفيذ الميداني النهائي.",
-    pillar_1_stage: "المرحلة الأولى • كفاءة التشريفات",
-    pillar_1_title: "الخدمة (Service)",
-    pillar_1_desc: "طواقم ضيافة وتشريفات مدربة على أعلى مستويات اللباقة وأصول البروتوكول، تضمن تلبية رغبات الضيوف وكبار الشخصيات بمنتهى الدقة والاهتمام.",
-    pillar_2_stage: "المرحلة الثانية • فنون الطهي",
-    pillar_2_title: "الجودة (Quality)",
-    pillar_2_desc: "انتقاء دقيق للمكونات الغذائية الطازجة وتطبيق معايير الطهي العالمية المعتمدة، تحت إشراف نخبة من الطهاة لتقديم مذاق رفيع وعرض بصري أنيق.",
-    pillar_3_stage: "المرحلة الثالثة • سلامة الغذاء",
-    pillar_3_title: "الرقابة والإشراف (Control)",
-    pillar_3_desc: "منظومة رقابة صارمة على سلاسل الإمداد والتخزين المبرد والنقل، تضمن الامتثال الكامل لاشتراطات سلامة الغذاء ونظافة بيئة العمل دون تهاون.",
-
-    // Balanced 4 Business Sectors
-    services_tag: "قطاعات الأعمال المعتمدة",
-    services_title: "أربعة قطاعات متكاملة تحظى بعناية واهتمام متكافئ",
-    services_subtitle: "تتميز أنوفا بشمولية خدماتها؛ حيث يحظى كل قطاع بتجهيزات مستقلة وطواقم متخصصة تضمن الكفاءة التامة.",
-    
-    // Sector 1
-    sec1_title: "تنظيم المعارض والمؤتمرات",
-    sec1_en: "Conferences & Events Management",
-    sec1_desc: "التخطيط المتكامل للفعاليات والندوات والمؤتمرات الرسمية، وتجهيز القاعات، وإدارة طواقم الاستقبال والتشريفات لكبار الشخصيات (VIP).",
-    sec1_sub1: "إدارة قاعات المؤتمرات والندوات",
-    sec1_sub2: "بروتوكولات الضيافة الرسمية لكبار الشخصيات",
-    sec1_sub3: "تجهيز مناطق الاستقبال والخدمة المساندة",
-
-    // Sector 2
-    sec2_title: "خدمات الإعاشة والتموين الراقي",
-    sec2_en: "Catering & Fine Dining Services",
-    sec2_desc: "إعداد وتصميم أرقى قوائم الطعام الشرقية والعالمية للمآدب والمناسبات الرسمية والخاصة، مع تقديم يعكس كرم الضيافة وأناقة الطرح.",
-    sec2_sub1: "قوائم طهي معدّة ومخصصة لكل فعالية",
-    sec2_sub2: "تجهيز ولائم المناسبات الكبرى والاحتفالات",
-    sec2_sub3: "طهاة متخصصون في فنون الطهي المعاصر",
-
-    // Sector 3
-    sec3_title: "استراحات القهوة وضيافة الشركات",
-    sec3_en: "Coffee Break & Corporate Serving",
-    sec3_desc: "محطات قهوة مختصة متكاملة وباريستا محترفون، مع تشكيلة من المخبوزات والمقبلات الطازجة لاجتماعات مجالس الإدارة والملتقيات الدورية.",
-    sec3_sub1: "محطات باريستا احترافية متنقلة وثابتة",
-    sec3_sub2: "تشكيلات كانابيه ومخبوزات وسناكس فاخرة",
-    sec3_sub3: "عقود ضيافة دورية لمقرات الأعمال والهيئات",
-
-    // Sector 4 (Food Supply & Buffets)
-    sec5_title: "التوريد الغذائي والبوفيهات المفتوحة",
-    sec5_en: "Food Supply & Large-Scale Buffets",
-    sec5_desc: "تأمين سلاسل التوريد الغذائي وإعداد البوفيهات الكبرى بأرقى المعايير الجمالية مع الحفاظ على درجات الحرارة والجودة في أصعب الظروف اللوجستية.",
-    sec5_sub1: "أسطول نقل مبرد مجهز وفق مواصفات هيئة الغذاء والدواء",
-    sec5_sub2: "بوفيهات مفتوحة فاخرة قابلة للتخصيص حسب عدد الضيوف",
-    sec5_sub3: "سلاسل إمداد موثوقة وعالية الاستجابة للمناسبات العاجلة",
-
-    // Partners & Clients
-    partners_tag: "شركاء النجاح والمسيرة",
-    partners_title: "ثقة راسخة من كبرى الهيئات والجامعات الوطنية",
-    partners_desc: "نفخر بسجل شراكاتنا الممتد مع نخبة الجهات الحكومية، الصروح الأكاديمية، والكيانات المالية في المملكة:",
-    partners_gov_title: "الجهات الحكومية والهيئات الوطنية",
-    partners_edu_title: "الصروح الأكاديمية والجامعات العريقة",
-    p_rcrc_ar: "الهيئة الملكية لمدينة الرياض",
-    p_rcrc_en: "Royal Commission for Riyadh City",
-    p_nwc_ar: "شركة المياه الوطنية",
-    p_nwc_en: "National Water Company",
-    p_tatweer_ar: "شركة تطوير التعليم القابضة",
-    p_tatweer_en: "Tatweer Education Holding",
-    p_banks_ar: "البنوك السعودية",
-    p_banks_en: "Saudi Banks Committee",
-    p_pnu_ar: "جامعة الأميرة نورة بنت عبدالرحمن",
-    p_pnu_en: "Princess Nourah Bint Abdulrahman University",
-    p_psu_ar: "جامعة الأمير سلطان",
-    p_psu_en: "Prince Sultan University",
-    p_tabuk_ar: "جامعة تبوك",
-    p_tabuk_en: "University of Tabuk",
-    p_yamamah_ar: "جامعة اليمامة",
-    p_yamamah_en: "Al Yamamah University",
-
-    // Careers Section
-    careers_tag: "انضم إلى فريق أنوفا",
-    careers_title: "فرص وظيفية للمتخصصين في الضيافة وإدارة المشاريع",
-    careers_desc: "نبحث باستمرار عن الكفاءات الوطنية والخبرات المتخصصة التي تشاركنا شغف التميز والارتقاء بقطاع الضيافة والإعاشة في المملكة.",
-    job1_title: "مدير مشروع (Project Manager)",
-    job1_dept: "إدارة المؤتمرات والفعاليات | الرياض",
-    job1_desc: "الإشراف الكامل على تخطيط وتنفيذ العقود الميدانية وإدارة فرق العمل والتنسيق المباشر مع العملاء.",
-    job3_title: "رئيس طهاة (Head Chef)",
-    job3_dept: "قسم الإنتاج الغذائي والتموين | الرياض",
-    job3_desc: "ابتكار وتطوير قوائم الطعام وإدارة خطوط الطهي وإعداد البوفيهات الكبرى بأعلى معايير الإتقان.",
-    job4_title: "مسؤول نقل وتوزيع مبرد (Distribution Specialist)",
-    job4_dept: "الخدمات اللوجستية وسلاسل الإمداد | الرياض",
-    job4_desc: "إدارة مسارات الشاحنات المبردة والتأكد من وصول التوريدات الغذائية في الوقت المحدد وبدرجات الحرارة المطلوبة.",
-    careers_apply_btn: "التقديم على هذه الوظيفة",
-
-    // Contact & Quotation Form
-    contact_tag: "طلب تسعير وشراكة",
-    contact_title: "ابدأ التنسيق لحدثك القادم مع فريق خبراء أنوفا",
-    contact_desc: "سواء كنت تخطط لمؤتمر رفيع المستوى، أو لوليمة رسمية، أو تحتاج إلى ضيافة دورية وتوريد غذائي لمقر عملك، يسعدنا تواصلك وتقديم عرض سعر مفصل.",
-    contact_phone_lbl: "الاتصال الهاتفي والمباشر",
-    contact_email_lbl: "المراسلات الرسمية",
-    contact_branches_lbl: "الفروع ومراكز التغطية",
-    contact_branches_val: "الرياض (المقر الرئيسي) • جدة (المنطقة الغربية) • الخبر (المنطقة الشرقية)",
-    form_heading: "طلب عرض سعر واستفسار",
-    f_name: "الاسم الكريم / اسم الجهة",
-    f_name_ph: "مثال: شركة / هيئة...",
-    f_phone: "رقم الجوال للتواصل",
-    f_email: "البريد الإلكتروني المؤسسي",
-    f_sector: "قطاع الخدمة المطلوب",
-    f_sector_placeholder: "اختر قطاع الخدمة...",
-    f_guests: "العدد المتوقع للمستفيدين / الضيوف",
-    f_date: "التاريخ المتوقع للفعالية / بدء التشغيل",
-    f_details: "تفاصيل المتطلبات والموقع",
-    f_details_ph: "يرجى توضيح طبيعة الفعالية، المدينة، وأي اشتراطات خاصة بالضيافة أو التموين...",
-    f_submit_btn: "إرسال طلب التسعير",
-    form_success_msg: "شكراً لتواصلكم مع شركة أنوفا المتحدة. تم استلام طلبكم بنجاح وسيتواصل معكم مسؤول الحسابات خلال وقت وجيز.",
-    job_success_msg: "تم استلام طلب التوظيف بنجاح. سيتولى فريق الموارد البشرية في شركة أنوفا المتحدة مراجعة بياناتكم والتواصل معكم عند مطابقة الشواغر.",
-    form_error_msg: "تعذر إرسال الطلب حالياً. يرجى التأكد من البيانات والمحاولة مرة أخرى أو التواصل المباشر عبر الواتساب.",
-
-    // Footer
-    footer_about: "شركة أنوفا المتحدة للضيافة والإعاشة وتنظيم المعارض والمؤتمرات. تأسست عام 2017 في الرياض لترسيخ معايير الخدمة، الجودة، والرقابة في تلبية تطلعات كبرى الهيئات والمؤسسات الوطنية بالمملكة.",
-    footer_cr: "شركة رسمية مرخصة بسجل تجاري معتمد في المملكة العربية السعودية",
-    footer_quick_links: "روابط سريعة",
-    footer_services: "قطاعات الأعمال",
-    footer_branches: "مراكز الخدمة",
-    footer_branch_riyadh: "الرياض - المقر الرئيسي",
-    footer_branch_jeddah: "جدة - المنطقة الغربية",
-    footer_branch_khobar: "الخبر - المنطقة الشرقية",
-    footer_rights: "© 2026 شركة أنوفا المتحدة للضيافة والإعاشة. جميع الحقوق محفوظة.",
-
-    // Modal
-    modal_title: "طلب عرض سعر مخصص",
-    modal_close: "إغلاق"
-  },
-
-  en: {
-    // Top Bar
-    top_locations: "Kingdom of Saudi Arabia | Riyadh • Jeddah • Khobar",
-    top_contact_direct: "Direct Phone:",
-    lang_toggle_text: "العربية",
-
-    // Navigation
-    nav_home: "Home",
-    nav_about: "About ANOVA",
-    nav_services: "Business Sectors",
-    nav_partners: "Partners & Clients",
-    nav_careers: "Careers",
-    nav_contact: "Contact Us",
-    cta_quote: "Request a Quotation",
-
-    // Cinematic Hero Section
-    hero_kicker: "ANOVA UNITED FOR CONFERENCES & HOSPITALITY",
-    hero_headline: "Crafting Experiences That Remain in Memory",
-    hero_headline_line1: "Crafting Experiences",
-    hero_headline_line2: "That Remain in Memory",
-    hero_subtext: "Integrated solutions for conferences, fine corporate catering, and executive hospitality, delivered with distinction and precision.",
-    hero_scroll: "Scroll to Explore",
-    hero_badge: "Founded 2017 in Riyadh | Nationwide Operational Reach",
-    hero_title_1: "Setting the Standard in Hospitality & Catering",
-    hero_title_2: "For Major Conferences, Events & Enterprise Facilities",
-    hero_desc: "Anoova United Company for Hospitality & Catering: A leading Saudi enterprise dedicated to the foundational pillars of Service, Quality, and Control—delivering culinary excellence, turnkey conference hospitality, executive coffee breaks, and bulk food supply with utmost distinction.",
-    hero_cta_primary: "Request Consultation & Quote",
-    hero_cta_secondary: "Explore Our Services",
-    stat_founded_num: "2017",
-    stat_founded_lbl: "Year Established in Riyadh",
-    stat_branches_num: "3+",
-    stat_branches_lbl: "Major Regional Hubs Across KSA",
-    stat_quality_num: "100%",
-    stat_quality_lbl: "Adherence to Health & Safety Norms",
-    hero_img_tag: "Operational Preparedness",
-    hero_img_caption: "Full-scale protocol hospitality for premier summits and corporate forums",
-    hero_floating_title: "Certified Supply Logistics",
-    hero_floating_desc: "Dedicated refrigerated transit and certified operations for leading national universities and commissions.",
-
-    // About Section
-    about_tag: "About Anoova United",
-    about_cities: "Riyadh • Jeddah • Khobar",
-    about_showcase_tag: "Premier Hospitality Standards",
-    about_showcase_desc: "Refined staging and meticulous service reflecting the stature of national forums",
-    about_title: "Institutional Leadership Rooted in Crafting Exceptional Experiences",
-    about_p1: "Since our establishment in Riyadh in 2017, Anoova United Company (ANOVA) has been committed to redefining corporate hospitality and fine catering across the Kingdom of Saudi Arabia. We have built enduring institutional trust through strict punctuality, artisanal culinary skill, and uncompromising VIP protocol standards.",
-    about_p2: "We maintain extensive operational hubs across Riyadh, Jeddah, and Khobar, with active expansion plans targeting Makkah and Al Kharj. Serving as a trusted partner to governmental commissions, esteemed universities, and prestigious hospitality venues, our solutions directly align with the Kingdom's visionary future.",
-    about_learn_more: "Discover Our Heritage & Values",
-
-    // The Three Pillars
-    pillars_tag: "Operational Philosophy",
-    pillars_title: "Three Core Pillars Guiding Every Nuance of Our Operations",
-    pillars_subtitle: "A rigorous operating model ensuring end-to-end service integration and flawless field execution from initial planning to final delivery.",
-    pillar_1_stage: "Stage 01 • Protocol Efficiency",
-    pillar_1_title: "Service",
-    pillar_1_desc: "Highly qualified hospitality specialists and diplomatic protocol teams trained in refined etiquette, ensuring every guest and VIP receives attentive, seamless care.",
-    pillar_2_stage: "Stage 02 • Culinary Craft",
-    pillar_2_title: "Quality",
-    pillar_2_desc: "Meticulous selection of fresh ingredients and adherence to international culinary craft, overseen by master chefs to guarantee exquisite flavors and artful presentation.",
-    pillar_3_stage: "Stage 03 • Food Safety & Control",
-    pillar_3_title: "Control",
-    pillar_3_desc: "Stringent operational oversight spanning warehousing, cold-chain logistics, and on-site hygiene compliance to uphold absolute food safety standards without compromise.",
-
-    // Balanced 4 Business Sectors
-    services_tag: "Verified Business Sectors",
-    services_title: "Four Balanced Sectors Executed with Equal Distinction",
-    services_subtitle: "ANOVA provides comprehensive institutional coverage where each sector operates with dedicated infrastructure and specialist personnel.",
-    
-    // Sector 1
-    sec1_title: "Conferences & Events Management",
-    sec1_en: "Events Organization",
-    sec1_desc: "Turnkey planning and execution for official summits, symposia, and exhibitions, encompassing venue staging, guest reception, and diplomatic VIP protocol.",
-    sec1_sub1: "Conference & Auditorium Staging Management",
-    sec1_sub2: "Official VIP & Diplomatic Protocol Services",
-    sec1_sub3: "Reception Zones & Ancillary Hospitality Logistics",
-
-    // Sector 2
-    sec2_title: "Catering & Fine Dining Services",
-    sec2_en: "Catering Services",
-    sec2_desc: "Artisanal Oriental and international banqueting for corporate galas and private celebrations, presented with elegance that embodies authentic generosity.",
-    sec2_sub1: "Tailored Menus Curated per Engagement",
-    sec2_sub2: "Large-Scale Banquet Preparation & Delivery",
-    sec2_sub3: "Master Chefs Specializing in Haute Cuisine",
-
-    // Sector 3
-    sec3_title: "Coffee Break & Corporate Serving",
-    sec3_en: "Executive Coffee Breaks",
-    sec3_desc: "Turnkey specialty coffee stations and artisanal baristas, accompanied by freshly baked pastries and savory hors d'oeuvres for boardrooms and symposia.",
-    sec3_sub1: "Mobile & Permanent Barista Stations",
-    sec3_sub2: "Deluxe Canapés, Patisserie & Savory Snacks",
-    sec3_sub3: "Recurring Corporate Hospitality Contracts",
-
-    // Sector 4 (Food Supply & Buffets)
-    sec5_title: "Food Supply & Large-Scale Buffets",
-    sec5_en: "Bulk Logistics & Major Banquets",
-    sec5_desc: "Resilient cold-chain logistics, certified bulk food provisions, and lavish buffet staging engineered to preserve immaculate temperature and presentation.",
-    sec5_sub1: "SFDA-Compliant Temperature-Controlled Fleet",
-    sec5_sub2: "Scalable Deluxe Buffets for Thousands of Attendees",
-    sec5_sub3: "Rapid-Response Supply Chains for High-Priority Events",
-
-    // Partners & Clients
-    partners_tag: "Trusted Partnerships",
-    partners_title: "Endorsed by Leading National Institutions & Universities",
-    partners_desc: "We take immense pride in our established track record serving Saudi Arabia's premier governmental commissions, academic institutions, and financial entities:",
-    partners_gov_title: "Government Authorities & National Entities",
-    partners_edu_title: "Premier Academic Institutions & Universities",
-    p_rcrc_ar: "Royal Commission for Riyadh City",
-    p_rcrc_en: "الهيئة الملكية لمدينة الرياض",
-    p_nwc_ar: "National Water Company",
-    p_nwc_en: "شركة المياه الوطنية",
-    p_tatweer_ar: "Tatweer Education Holding",
-    p_tatweer_en: "شركة تطوير التعليم القابضة",
-    p_banks_ar: "Saudi Banks Committee",
-    p_banks_en: "البنوك السعودية",
-    p_pnu_ar: "Princess Nourah Bint Abdulrahman University",
-    p_pnu_en: "جامعة الأميرة نورة بنت عبدالرحمن",
-    p_psu_ar: "Prince Sultan University",
-    p_psu_en: "جامعة الأمير سلطان",
-    p_tabuk_ar: "University of Tabuk",
-    p_tabuk_en: "جامعة تبوك",
-    p_yamamah_ar: "Al Yamamah University",
-    p_yamamah_en: "جامعة اليمامة",
-
-    // Careers Section
-    careers_tag: "Join ANOVA's Team",
-    careers_title: "Career Opportunities for Hospitality & Project Leaders",
-    careers_desc: "We continually welcome skilled national talent and experienced hospitality professionals who share our relentless pursuit of excellence.",
-    job1_title: "Project Manager",
-    job1_dept: "Conference & Event Division | Riyadh",
-    job1_desc: "Oversee operational delivery, on-site personnel, and client coordination across major symposium and banqueting contracts.",
-    job3_title: "Head Chef",
-    job3_dept: "Culinary Production & Banqueting | Riyadh",
-    job3_desc: "Craft and execute tailored menus, directing kitchen brigades and orchestrating deluxe banqueting presentations.",
-    job4_title: "Distribution & Cold-Chain Specialist",
-    job4_dept: "Supply Chain & Logistics | Riyadh",
-    job4_desc: "Coordinate temperature-controlled delivery fleets to ensure punctuality and strict adherence to cold-chain preservation.",
-    careers_apply_btn: "Apply for this Position",
-
-    // Contact & Quotation Form
-    contact_tag: "Inquiries & Quotations",
-    contact_title: "Coordinate Your Next Engagement with ANOVA's Specialists",
-    contact_desc: "Whether orchestrating a state conference, executive gala, recurring coffee breaks, or certified bulk catering, our team is at your disposal.",
-    contact_phone_lbl: "Direct Inquiries & Phone",
-    contact_email_lbl: "Official Correspondence",
-    contact_branches_lbl: "Operational Hubs",
-    contact_branches_val: "Riyadh (Headquarters) • Jeddah (Western Hub) • Khobar (Eastern Hub)",
-    form_heading: "Request Quotation & Inquiries",
-    f_name: "Full Name / Organization",
-    f_name_ph: "e.g., Enterprise / Government Authority...",
-    f_phone: "Contact Mobile Number",
-    f_email: "Corporate Email Address",
-    f_sector: "Required Business Sector",
-    f_sector_placeholder: "Select Business Sector...",
-    f_guests: "Estimated Guests / Beneficiaries",
-    f_date: "Projected Event Date / Start",
-    f_details: "Scope Details & Venue Location",
-    f_details_ph: "Please outline the event format, venue location, and specific hospitality requirements...",
-    f_submit_btn: "Submit Quotation Request",
-    form_success_msg: "Thank you for contacting Anoova United Company. Your request has been received cleanly, and our account executive will reach out promptly.",
-    job_success_msg: "Your career application has been received successfully. Our HR team at Anoova United will review your profile and contact you if shortlisted.",
-    form_error_msg: "Unable to submit your request right now. Please verify your details and try again, or reach us directly via WhatsApp.",
-
-    // Footer
-    footer_about: "Anoova United Company for Hospitality, Catering, and Event Services. Established in 2017 in Riyadh to uphold the pillars of Service, Quality, and Control for premier Saudi institutions.",
-    footer_cr: "Officially Licensed Commercial Enterprise in the Kingdom of Saudi Arabia",
-    footer_quick_links: "Quick Navigation",
-    footer_services: "Business Sectors",
-    footer_branches: "Regional Hubs",
-    footer_branch_riyadh: "Riyadh - Headquarters",
-    footer_branch_jeddah: "Jeddah - Western Hub",
-    footer_branch_khobar: "Khobar - Eastern Hub",
-    footer_rights: "© 2026 Anoova United Company. All Rights Reserved.",
-
-    // Modal
-    modal_title: "Custom Quotation Request",
-    modal_close: "Close"
-  }
-};
+const ANOVA_TRANSLATIONS = (() => {
+  const defaults = window.ANOVA_DEFAULT_TRANSLATIONS || { ar: {}, en: {} };
+  return {
+    ar: { ...(defaults.ar || {}) },
+    en: { ...(defaults.en || {}) }
+  };
+})();
 
 class AnovaApp {
   constructor() {
     this.currentLang = localStorage.getItem('anova_lang') || 'ar';
+    this.cmsJobs = null;
+    this.cmsPartners = null;
+    this.cmsSectors = null;
+    this.cmsContact = null;
     this.init();
   }
 
@@ -377,6 +31,23 @@ class AnovaApp {
     this.setupHeroVideo();
     this.setupParallaxEffects();
     this.setupFormSubmissions();
+    this.hydrateCmsFromSupabase();
+  }
+
+  escapeHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  safeMediaUrl(url, fallback = '') {
+    const raw = String(url || '').trim();
+    if (!raw) return fallback;
+    if (/^(https?:\/\/|\/|public\/|assets\/)/i.test(raw)) return raw;
+    return fallback;
   }
 
   applyLanguage(lang) {
@@ -416,6 +87,10 @@ class AnovaApp {
     if (pageTitleKey && strings[pageTitleKey]) {
       document.title = strings[pageTitleKey] + " | ANOVA United";
     }
+
+    if (this.cmsJobs) this.renderCmsJobs();
+    if (this.cmsSectors) this.renderCmsSectors();
+    if (this.cmsPartners) this.renderCmsPartners();
   }
 
   setupLanguageToggle() {
@@ -494,12 +169,13 @@ class AnovaApp {
       document.body.style.overflow = '';
     };
 
-    document.querySelectorAll('.open-quote-modal').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.open-quote-modal');
+      if (trigger) {
         e.preventDefault();
-        const sector = btn.getAttribute('data-sector') || '';
+        const sector = trigger.getAttribute('data-sector') || '';
         openModal(sector);
-      });
+      }
     });
 
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -804,6 +480,465 @@ class AnovaApp {
           }
         }
       });
+    });
+  }
+
+  /**
+   * Fetches live CMS settings, job openings, partners, and business sectors from Supabase
+   * and applies updates seamlessly across all public pages.
+   */
+  async hydrateCmsFromSupabase() {
+    if (!window.AnovaSupabase || typeof window.AnovaSupabase.fetchPublicTable !== 'function') return;
+
+    const needsJobs = Boolean(document.getElementById('cmsJobsList') || document.querySelector('select[name="position"]'));
+    const needsPartners = Boolean(document.querySelector('.partners-marquee-group') || document.getElementById('cmsPartnersGovGrid'));
+    const needsSectors = Boolean(
+      document.querySelector('#sectors .sectors-matrix-wrapper') ||
+      document.querySelector('.sector-experience-wrapper') ||
+      document.querySelector('select[name="sector"]')
+    );
+
+    const tasks = [
+      window.AnovaSupabase.fetchPublicTable('site_settings', 'select=setting_key,setting_value'),
+      needsSectors ? window.AnovaSupabase.fetchPublicTable('business_sectors', 'is_active=eq.true&order=sort_order.asc,id.asc') : Promise.resolve(null),
+      needsPartners ? window.AnovaSupabase.fetchPublicTable('partners', 'is_active=eq.true&order=sort_order.asc,id.asc') : Promise.resolve(null),
+      needsJobs ? window.AnovaSupabase.fetchPublicTable('job_openings', 'is_active=eq.true&order=sort_order.asc,id.asc') : Promise.resolve(null)
+    ];
+
+    const [settingsRows, sectorsRows, partnersRows, jobsRows] = await Promise.all(tasks);
+
+    if (Array.isArray(settingsRows)) {
+      this.applyCmsSettings(settingsRows);
+    }
+    if (Array.isArray(sectorsRows)) {
+      this.cmsSectors = sectorsRows;
+      this.renderCmsSectors();
+    }
+    if (Array.isArray(partnersRows)) {
+      this.cmsPartners = partnersRows;
+      this.renderCmsPartners();
+    }
+    if (Array.isArray(jobsRows)) {
+      this.cmsJobs = jobsRows;
+      this.renderCmsJobs();
+    }
+  }
+
+  applyCmsSettings(rows) {
+    const map = {};
+    rows.forEach(r => {
+      if (r && r.setting_key) map[r.setting_key] = r.setting_value || {};
+    });
+
+    if (map.i18n_overrides_ar && typeof map.i18n_overrides_ar === 'object') {
+      Object.assign(ANOVA_TRANSLATIONS.ar, map.i18n_overrides_ar);
+    }
+    if (map.i18n_overrides_en && typeof map.i18n_overrides_en === 'object') {
+      Object.assign(ANOVA_TRANSLATIONS.en, map.i18n_overrides_en);
+    }
+
+    this.applyLanguage(this.currentLang);
+
+    if (map.contact_info) {
+      this.cmsContact = map.contact_info;
+      this.applyCmsContactInfo(map.contact_info);
+    }
+    if (map.media_assets) {
+      this.applyCmsMediaAssets(map.media_assets);
+    }
+  }
+
+  applyCmsContactInfo(contact) {
+    const phoneDisplay = String(contact.phone_display || '').trim();
+    const phoneSecondary = String(contact.phone_secondary || '').trim();
+    const phoneTel = String(contact.phone_tel || phoneDisplay.replace(/[^\d+]/g, '')).trim();
+    const waDigits = String(contact.whatsapp_number || '').replace(/\D/g, '');
+    const email = String(contact.email || '').trim();
+
+    if (phoneTel) {
+      document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+        a.setAttribute('href', `tel:${phoneTel}`);
+        if (phoneDisplay) {
+          const span = a.querySelector('span');
+          if (span) span.textContent = phoneDisplay;
+          else a.textContent = phoneDisplay;
+        }
+      });
+    }
+
+    if (phoneDisplay) {
+      document.querySelectorAll('[data-cms-contact="phone_display"]').forEach(el => {
+        el.textContent = phoneDisplay;
+      });
+    }
+    if (phoneSecondary !== undefined) {
+      document.querySelectorAll('[data-cms-contact="phone_secondary"]').forEach(el => {
+        el.textContent = phoneSecondary;
+      });
+    }
+    if (email) {
+      document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+        a.setAttribute('href', `mailto:${email}`);
+        a.textContent = email;
+      });
+      document.querySelectorAll('[data-cms-contact="email"]').forEach(el => {
+        el.textContent = email;
+      });
+    }
+    if (waDigits) {
+      document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+        a.setAttribute('href', `https://wa.me/${waDigits}`);
+      });
+    }
+  }
+
+  applyCmsMediaAssets(media) {
+    const logoUrl = this.safeMediaUrl(media.logo_url);
+    if (logoUrl) {
+      document.querySelectorAll('.brand-logo-img, .footer-logo-badge img').forEach(img => {
+        if (img.getAttribute('src') !== logoUrl) img.setAttribute('src', logoUrl);
+      });
+    }
+
+    const aboutImgUrl = this.safeMediaUrl(media.about_image_url);
+    if (aboutImgUrl) {
+      document.querySelectorAll('.about-corp-img, .about-hospitality-frame img').forEach(img => {
+        if (img.getAttribute('src') !== aboutImgUrl) img.setAttribute('src', aboutImgUrl);
+      });
+    }
+
+    const aboutHeroUrl = this.safeMediaUrl(media.about_page_hero_url);
+    if (aboutHeroUrl) {
+      document.querySelectorAll('.about-hero-arch-img').forEach(img => {
+        if (img.getAttribute('src') !== aboutHeroUrl) img.setAttribute('src', aboutHeroUrl);
+      });
+    }
+
+    const posterUrl = this.safeMediaUrl(media.hero_poster_url);
+    if (posterUrl) {
+      document.querySelectorAll('.hero-bg-fallback').forEach(img => {
+        if (img.getAttribute('src') !== posterUrl) img.setAttribute('src', posterUrl);
+      });
+      document.querySelectorAll('.hero-bg-video').forEach(vid => {
+        if (vid.getAttribute('poster') !== posterUrl) vid.setAttribute('poster', posterUrl);
+      });
+    }
+
+    const videoUrl = this.safeMediaUrl(media.hero_video_url);
+    if (videoUrl) {
+      const video = document.querySelector('.hero-bg-video');
+      const source = video ? video.querySelector('source') : null;
+      if (video && source && source.getAttribute('src') !== videoUrl) {
+        source.setAttribute('src', videoUrl);
+        video.load();
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          const playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(() => {});
+        }
+      }
+    }
+  }
+
+  renderCmsJobs() {
+    if (!Array.isArray(this.cmsJobs)) return;
+    const isAr = this.currentLang === 'ar';
+    const listEl = document.getElementById('cmsJobsList');
+    const applyLabel = ANOVA_TRANSLATIONS[this.currentLang]?.careers_apply_btn || (isAr ? 'التقديم على هذه الوظيفة' : 'Apply for this Position');
+
+    if (listEl) {
+      if (!this.cmsJobs.length) {
+        listEl.innerHTML = `<div style="border: 1px solid var(--brand-grey-light); border-radius: 14px; padding: 2rem; text-align: center; color: var(--brand-grey);">${this.escapeHtml(isAr ? 'لا توجد شواغر متاحة حالياً، يمكنكم إرسال سيرتكم الذاتية عبر النموذج الجانبي.' : 'No open positions right now. Submit your profile in the general application form.')}</div>`;
+      } else {
+        listEl.innerHTML = this.cmsJobs.map((job) => {
+          const title = isAr ? job.title_ar : (job.title_en || job.title_ar);
+          const empType = isAr ? job.employment_type_ar : (job.employment_type_en || job.employment_type_ar);
+          const dept = isAr ? job.department_ar : (job.department_en || job.department_ar);
+          const desc = isAr ? job.description_ar : (job.description_en || job.description_ar);
+          return `
+            <div style="border: 1px solid var(--brand-grey-light); border-radius: 14px; padding: 2rem; background-color: var(--pure-white); box-shadow: var(--shadow-sm); transition: all 0.3s ease;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h3 style="font-size: 1.35rem;">${this.escapeHtml(title)}</h3>
+                <span style="display: inline-block; padding: 0.25rem 0.75rem; background-color: rgba(26,58,93,0.08); color: var(--primary-navy); border-radius: 9999px; font-size: 0.8rem; font-weight: 600;">${this.escapeHtml(empType)}</span>
+              </div>
+              <div style="font-size: 0.85rem; color: var(--warm-gold); font-weight: 700; margin-bottom: 1rem;">${this.escapeHtml(dept)}</div>
+              <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">${this.escapeHtml(desc)}</p>
+              <a href="#apply-box" class="btn btn-outline cms-job-apply-btn" data-job-slug="${this.escapeHtml(job.slug)}" style="font-size: 0.85rem; padding: 0.5rem 1.25rem;">${this.escapeHtml(applyLabel)}</a>
+            </div>
+          `;
+        }).join('');
+      }
+
+      if (!document._cmsJobApplyBound) {
+        document._cmsJobApplyBound = true;
+        document.addEventListener('click', (e) => {
+          const btn = e.target.closest('.cms-job-apply-btn');
+          if (!btn) return;
+          const slug = btn.getAttribute('data-job-slug');
+          const sel = document.querySelector('form[data-form-type="job_application"] select[name="position"]');
+          if (sel && slug) {
+            sel.value = slug;
+          }
+        });
+      }
+    }
+
+    const posSelect = document.querySelector('form[data-form-type="job_application"] select[name="position"]');
+    if (posSelect) {
+      const currentVal = posSelect.value;
+      const ph = isAr ? 'اختر المسمى الوظيفي...' : 'Select Position...';
+      const otherLbl = isAr ? 'مسمى وظيفي آخر في قطاع الضيافة' : 'Other Hospitality Position';
+      posSelect.innerHTML = `<option value="" disabled ${!currentVal ? 'selected' : ''}>${this.escapeHtml(ph)}</option>`
+        + this.cmsJobs.map((job) => {
+          const title = isAr ? job.title_ar : (job.title_en || job.title_ar);
+          return `<option value="${this.escapeHtml(job.slug)}">${this.escapeHtml(title)}</option>`;
+        }).join('')
+        + `<option value="Other">${this.escapeHtml(otherLbl)}</option>`;
+      if (currentVal && [...posSelect.options].some(o => o.value === currentVal)) {
+        posSelect.value = currentVal;
+      }
+    }
+  }
+
+  renderCmsPartners() {
+    if (!Array.isArray(this.cmsPartners)) return;
+    const isAr = this.currentLang === 'ar';
+
+    const marqueeTrack = document.querySelector('.partners-marquee-track');
+    const marqueeGroup = marqueeTrack ? marqueeTrack.querySelector('.partners-marquee-group') : null;
+    if (marqueeTrack && marqueeGroup && this.cmsPartners.length) {
+      const oldClone = marqueeTrack.querySelector('.partners-marquee-clone');
+      if (oldClone) oldClone.remove();
+
+      marqueeGroup.innerHTML = this.cmsPartners.map((p) => {
+        const logo = this.safeMediaUrl(p.logo_url, 'public/brand/anova-logo.png');
+        const primaryName = isAr ? p.name_ar : (p.name_en || p.name_ar);
+        const secondaryName = isAr ? (p.name_en || p.name_ar) : p.name_ar;
+        return `
+          <div class="partner-card-corp partner-marquee-card">
+            <div class="partner-logo-box">
+              <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(primaryName)}" class="partner-logo-img" decoding="async">
+            </div>
+            <div class="partner-name-ar">${this.escapeHtml(primaryName)}</div>
+            <div class="partner-name-en">${this.escapeHtml(secondaryName)}</div>
+          </div>
+        `;
+      }).join('');
+
+      this.setupPartnersMarquee();
+    }
+
+    const govGrid = document.getElementById('cmsPartnersGovGrid');
+    const eduGrid = document.getElementById('cmsPartnersEduGrid');
+    const corpSec = document.getElementById('cmsPartnersCorpSection');
+    const corpGrid = document.getElementById('cmsPartnersCorpGrid');
+
+    const renderPedestalCards = (items) => items.map((p) => {
+      const logo = this.safeMediaUrl(p.logo_url, 'public/brand/anova-logo.png');
+      const primaryName = isAr ? p.name_ar : (p.name_en || p.name_ar);
+      const secondaryName = isAr ? (p.name_en || p.name_ar) : p.name_ar;
+      return `
+        <div class="partner-pedestal-card">
+          <div class="partner-pedestal-logo-wrap">
+            <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(primaryName)}">
+          </div>
+          <div class="partner-pedestal-name-ar">${this.escapeHtml(primaryName)}</div>
+          <div class="partner-pedestal-name-en">${this.escapeHtml(secondaryName)}</div>
+        </div>
+      `;
+    }).join('');
+
+    if (govGrid) {
+      govGrid.innerHTML = renderPedestalCards(this.cmsPartners.filter(p => p.category === 'government'));
+    }
+    if (eduGrid) {
+      eduGrid.innerHTML = renderPedestalCards(this.cmsPartners.filter(p => p.category === 'education'));
+    }
+    if (corpSec && corpGrid) {
+      const corpList = this.cmsPartners.filter(p => p.category === 'corporate');
+      corpSec.style.display = corpList.length ? 'block' : 'none';
+      corpGrid.innerHTML = renderPedestalCards(corpList);
+    }
+  }
+
+  renderCmsSectors() {
+    if (!Array.isArray(this.cmsSectors)) return;
+    const isAr = this.currentLang === 'ar';
+    const ctaText = ANOVA_TRANSLATIONS[this.currentLang]?.cta_quote || (isAr ? 'اطلب عرض سعر' : 'Request a Quotation');
+
+    // 1. Update all sector dropdown selects in quote forms
+    document.querySelectorAll('select[name="sector"]').forEach((select) => {
+      const prev = select.value;
+      const placeholder = ANOVA_TRANSLATIONS[this.currentLang]?.f_sector_placeholder || (isAr ? 'اختر قطاع الخدمة...' : 'Select Business Sector...');
+      select.innerHTML = `<option value="" disabled ${!prev ? 'selected' : ''}>${this.escapeHtml(placeholder)}</option>`
+        + this.cmsSectors.map((sec) => {
+          const title = isAr ? sec.title_ar : (sec.title_en || sec.title_ar);
+          return `<option value="${this.escapeHtml(sec.sector_key)}">${this.escapeHtml(title)}</option>`;
+        }).join('');
+      if (prev && [...select.options].some(o => o.value === prev)) select.value = prev;
+    });
+
+    const activeByAnchor = new Map(this.cmsSectors.map((s) => [s.anchor_id, s]));
+
+    // 2. Sync index.html sectors matrix
+    const homeMatrix = document.querySelector('#sectors .sectors-matrix-wrapper');
+    if (homeMatrix) {
+      const defaultAnchors = ['sec-events', 'sec-catering', 'sec-coffee', 'sec-supply'];
+      defaultAnchors.forEach((aid) => {
+        const el = document.getElementById(aid);
+        if (el) el.style.display = activeByAnchor.has(aid) ? '' : 'none';
+      });
+
+      homeMatrix.querySelectorAll('.cms-dynamic-sector-home').forEach(el => el.remove());
+
+      this.cmsSectors.forEach((sec, idx) => {
+        const numLabel = String(idx + 1).padStart(2, '0');
+        const title = isAr ? sec.title_ar : (sec.title_en || sec.title_ar);
+        const subEn = isAr ? (sec.subtitle_en || sec.title_en || '') : (sec.title_en || sec.subtitle_en || '');
+        const desc = isAr ? sec.description_ar : (sec.description_en || sec.description_ar);
+        const feats = Array.isArray(isAr ? sec.features_ar : sec.features_en)
+          ? (isAr ? sec.features_ar : sec.features_en)
+          : (Array.isArray(sec.features_ar) ? sec.features_ar : []);
+        const imgUrl = this.safeMediaUrl(sec.image_url, 'public/sec-events.jpg');
+
+        const existing = document.getElementById(sec.anchor_id);
+        if (existing) {
+          const wm = existing.querySelector('.sector-number-watermark');
+          if (wm) wm.textContent = numLabel;
+          const h3 = existing.querySelector('.sector-title-ar');
+          if (h3) h3.textContent = title;
+          const enDiv = existing.querySelector('.sector-title-en');
+          if (enDiv) enDiv.textContent = subEn;
+          const pDesc = existing.querySelector('.sector-desc-text');
+          if (pDesc) pDesc.textContent = desc;
+          const ul = existing.querySelector('.sector-feature-list');
+          if (ul && feats.length) {
+            ul.innerHTML = feats.map(f => `<li><span class="diamond-bullet"></span><span>${this.escapeHtml(f)}</span></li>`).join('');
+          }
+          const img = existing.querySelector('img');
+          if (img && img.getAttribute('src') !== imgUrl) {
+            img.setAttribute('src', imgUrl);
+            img.setAttribute('alt', title);
+          }
+          const btn = existing.querySelector('.open-quote-modal');
+          if (btn) btn.setAttribute('data-sector', sec.sector_key);
+          homeMatrix.appendChild(existing);
+        } else {
+          const article = document.createElement('article');
+          article.className = 'sector-editorial-split cms-dynamic-sector-home';
+          article.id = sec.anchor_id;
+          article.innerHTML = `
+            <div class="sector-content-body">
+              <div>
+                <div class="sector-number-watermark">${this.escapeHtml(numLabel)}</div>
+                <h3 class="sector-title-ar">${this.escapeHtml(title)}</h3>
+                <div class="sector-title-en">${this.escapeHtml(subEn)}</div>
+                <p class="sector-desc-text">${this.escapeHtml(desc)}</p>
+                <ul class="sector-feature-list">
+                  ${feats.map(f => `<li><span class="diamond-bullet"></span><span>${this.escapeHtml(f)}</span></li>`).join('')}
+                </ul>
+              </div>
+              <button class="btn btn-outline open-quote-modal" data-sector="${this.escapeHtml(sec.sector_key)}" style="align-self: flex-start; margin-top: 1.5rem;">
+                <span>${this.escapeHtml(ctaText)}</span>
+                <svg class="icon-svg" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+            <div class="sector-media-container">
+              <img src="${this.escapeHtml(imgUrl)}" alt="${this.escapeHtml(title)}">
+            </div>
+          `;
+          homeMatrix.appendChild(article);
+        }
+      });
+    }
+
+    // 3. Sync services.html blocks + quick pill strip
+    const servicesWrapper = document.querySelector('.sector-experience-wrapper');
+    if (servicesWrapper) {
+      ['sec-events', 'sec-catering', 'sec-coffee', 'sec-supply'].forEach((aid) => {
+        const el = document.getElementById(aid);
+        if (el) el.style.display = activeByAnchor.has(aid) ? '' : 'none';
+      });
+      servicesWrapper.querySelectorAll('.cms-dynamic-sector-page').forEach(el => el.remove());
+
+      const pillStrip = document.querySelector('.sector-navigator-strip');
+      if (pillStrip) {
+        pillStrip.innerHTML = this.cmsSectors.map((sec, idx) => {
+          const title = isAr ? sec.title_ar : (sec.title_en || sec.title_ar);
+          return `<a href="#${this.escapeHtml(sec.anchor_id)}" class="sector-nav-pill"><span class="sector-nav-pill-num">${String(idx + 1).padStart(2, '0')}.</span><span>${this.escapeHtml(title)}</span></a>`;
+        }).join('');
+      }
+
+      this.cmsSectors.forEach((sec) => {
+        const title = isAr ? sec.title_ar : (sec.title_en || sec.title_ar);
+        const subEn = isAr ? (sec.subtitle_en || sec.title_en || '') : (sec.title_en || sec.subtitle_en || '');
+        const badge = isAr ? (sec.badge_ar || '') : (sec.badge_en || sec.badge_ar || '');
+        const desc = isAr ? sec.description_ar : (sec.description_en || sec.description_ar);
+        const feats = Array.isArray(isAr ? sec.features_ar : sec.features_en)
+          ? (isAr ? sec.features_ar : sec.features_en)
+          : (Array.isArray(sec.features_ar) ? sec.features_ar : []);
+        const imgUrl = this.safeMediaUrl(sec.image_url, 'public/sec-events.jpg');
+
+        const existing = document.getElementById(sec.anchor_id);
+        if (existing) {
+          const b = existing.querySelector('.sector-index-badge');
+          if (b && badge) b.textContent = badge;
+          const h2 = existing.querySelector('.sector-heading-xl');
+          if (h2) h2.textContent = title;
+          const enEl = existing.querySelector('.sector-heading-en');
+          if (enEl) enEl.textContent = subEn;
+          const pEl = existing.querySelector('.sector-narrative-p');
+          if (pEl) pEl.textContent = desc;
+          const ul = existing.querySelector('.sector-feature-list');
+          if (ul && feats.length) {
+            const isLightBlock = existing.classList.contains('sector-block-luxury');
+            const colorStyle = isLightBlock ? 'color: var(--midnight-dark);' : 'color: rgba(255,255,255,0.95) !important;';
+            ul.innerHTML = feats.map(f => `<li class="sector-feature-item" style="${colorStyle}"><span class="sector-feature-dot"></span><span>${this.escapeHtml(f)}</span></li>`).join('');
+          }
+          const img = existing.querySelector('img');
+          if (img && img.getAttribute('src') !== imgUrl) {
+            img.setAttribute('src', imgUrl);
+            img.setAttribute('alt', title);
+          }
+          const btn = existing.querySelector('.open-quote-modal');
+          if (btn) btn.setAttribute('data-sector', sec.sector_key);
+          servicesWrapper.appendChild(existing);
+        } else {
+          const secEl = document.createElement('section');
+          secEl.id = sec.anchor_id;
+          secEl.className = 'sector-block-luxury cms-dynamic-sector-page';
+          secEl.innerHTML = `
+            <div class="container">
+              <div class="sector-luxury-grid">
+                <div class="sector-luxury-visual"><img src="${this.escapeHtml(imgUrl)}" alt="${this.escapeHtml(title)}"></div>
+                <div>
+                  ${badge ? `<div class="sector-index-badge sector-badge-light">${this.escapeHtml(badge)}</div>` : ''}
+                  <h2 class="sector-heading-xl" style="color: var(--primary-navy);">${this.escapeHtml(title)}</h2>
+                  <div class="sector-heading-en">${this.escapeHtml(subEn)}</div>
+                  <p class="sector-narrative-p" style="color: #475569;">${this.escapeHtml(desc)}</p>
+                  <ul class="sector-feature-list">
+                    ${feats.map(f => `<li class="sector-feature-item" style="color: var(--midnight-dark);"><span class="sector-feature-dot"></span><span>${this.escapeHtml(f)}</span></li>`).join('')}
+                  </ul>
+                  <button class="btn btn-primary open-quote-modal" data-sector="${this.escapeHtml(sec.sector_key)}">
+                    <span>${this.escapeHtml(ctaText)}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+          servicesWrapper.appendChild(secEl);
+        }
+      });
+    }
+
+    // 4. Sync footer sector quick links cleanly
+    document.querySelectorAll('.footer-grid ul.footer-links').forEach((ul) => {
+      const firstLink = ul.querySelector('a');
+      if (firstLink && (firstLink.getAttribute('href') || '').startsWith('services.html#')) {
+        ul.innerHTML = this.cmsSectors.map((sec) => {
+          const title = isAr ? sec.title_ar : (sec.title_en || sec.title_ar);
+          return `<li><a href="services.html#${this.escapeHtml(sec.anchor_id)}">${this.escapeHtml(title)}</a></li>`;
+        }).join('');
+      }
     });
   }
 }
