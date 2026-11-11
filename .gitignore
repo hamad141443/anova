@@ -1,0 +1,21 @@
+# Dependencies & environment files
+node_modules/
+.env
+.env*.local
+.vercel
+
+# Unrelated project & temporary/backup folders
+_backups_*/
+
+# Stale root duplicates & local verification artifacts (site loads assets/ and public/)
+/main.js
+/styles.css
+/out.txt
+/hero_*.png
+/test_*.png
+/*.mp4
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+*.log

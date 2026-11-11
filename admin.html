@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>لوحة التحكم الإدارية | أنوفا المتحدة — ANOVA United Admin Portal</title>
+  <link rel="icon" type="image/png" href="public/brand/anova-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&family=Markazi+Text:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Booting / Checking Session -->
+  <div id="authBootView" class="admin-boot-screen">
+    <div class="admin-spinner" aria-hidden="true"></div>
+    <div data-admin-i18n="boot_loading" style="font-size: 0.95rem; font-weight: 600; opacity: 0.9;">جارٍ التحقق من جلسة الإدارة...</div>
+  </div>
+
+  <!-- Admin Authentication View -->
+  <section id="loginView" class="admin-login-screen is-hidden" aria-label="Admin Sign In">
+    <div class="admin-login-card">
+      <div class="admin-login-header">
+        <img src="public/brand/anova-logo.png" alt="ANOVA United Logo" class="admin-login-logo">
+        <div class="admin-login-badge" data-admin-i18n="portal_badge">البوابة الإدارية المعتمدة</div>
+        <h1 class="admin-login-title" data-admin-i18n="login_title">لوحة تحكم أنوفا المتحدة</h1>
+        <p class="admin-login-subtitle" data-admin-i18n="login_subtitle">إدارة طلبات عروض الأسعار وطلبات التوظيف عبر Supabase</p>
+      </div>
+
+      <form id="adminLoginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail" data-admin-i18n="label_email">البريد الإلكتروني الإداري</label>
+          <input type="email" id="loginEmail" name="email" class="form-control dir-ltr" required autocomplete="email" placeholder="admin@anovaksa.com">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="loginPassword" data-admin-i18n="label_password">كلمة المرور</label>
+          <div class="password-input-wrap">
+            <input type="password" id="loginPassword" name="password" class="form-control dir-ltr" required autocomplete="current-password" placeholder="••••••••••••" style="padding-inline-end: 2.75rem;">
+            <button type="button" id="togglePasswordVisBtn" class="password-toggle-btn" aria-label="Show or hide password">
+              <svg class="icon-svg" style="width: 1.1rem; height: 1.1rem;" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" id="loginSubmitBtn" class="btn btn-gold" style="width: 100%; padding: 0.9rem; margin-top: 0.25rem;" data-admin-i18n="btn_login">دخول إلى لوحة التحكم</button>
+
+        <div id="loginFeedback" class="admin-alert" role="alert" aria-live="polite"></div>
+      </form>
+
+      <div class="admin-login-footer">
+        <a href="index.html" class="admin-text-link">
+          <svg class="icon-svg" style="width: 0.95rem; height: 0.95rem;" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span data-admin-i18n="back_to_site">العودة للموقع الرئيسي</span>
+        </a>
+        <button type="button" id="loginLangToggle" class="admin-text-link" data-admin-i18n="lang_switch">English</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Executive Dashboard Shell -->
+  <div id="dashboardView" class="admin-shell is-hidden">
+    <div id="sidebarBackdrop" class="admin-sidebar-backdrop"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside id="adminSidebar" class="admin-sidebar" aria-label="Dashboard Navigation">
+      <div class="admin-sidebar-brand">
+        <a href="index.html" style="display: flex; align-items: center;">
+          <img src="public/brand/anova-logo.png" alt="ANOVA United Logo">
+        </a>
+        <button type="button" id="closeSidebarBtn" class="admin-sidebar-close" aria-label="Close Sidebar">✕</button>
+      </div>
+
+      <div class="admin-nav-section-label" data-admin-i18n="nav_section_main">الإدارة والعمليات</div>
+      <ul class="admin-nav-list">
+        <li>
+          <button type="button" class="admin-nav-btn is-active" data-tab="overview">
+            <span class="admin-nav-btn-inner">
+              <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span data-admin-i18n="tab_overview">نظرة عامة والتحليلات</span>
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="admin-nav-btn" data-tab="quotes">
+            <span class="admin-nav-btn-inner">
+              <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <span data-admin-i18n="tab_quotes">طلبات عروض الأسعار</span>
+            </span>
+            <span id="navBadgeQuotes" class="admin-nav-count">0</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="admin-nav-btn" data-tab="jobs">
+            <span class="admin-nav-btn-inner">
+              <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span data-admin-i18n="tab_jobs">طلبات التوظيف</span>
+            </span>
+            <span id="navBadgeJobs" class="admin-nav-count">0</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="admin-nav-btn" data-tab="activity">
+            <span class="admin-nav-btn-inner">
+              <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span data-admin-i18n="tab_activity">سجل النشاط</span>
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="admin-nav-btn" data-tab="settings">
+            <span class="admin-nav-btn-inner">
+              <svg class="icon-svg" style="width: 1.05rem; height: 1.05rem;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              <span data-admin-i18n="tab_settings">الإعدادات والأمان</span>
+            </span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-user-pill">
+          <div id="adminUserAvatar" class="admin-user-avatar">A</div>
+          <div class="admin-user-meta">
+            <div id="adminUserEmail" class="admin-user-email dir-ltr">admin@anovaksa.com</div>
+            <div class="admin-user-role" data-admin-i18n="role_admin">مدير النظام</div>
+          </div>
+        </div>
+        <button type="button" id="logoutBtn" class="admin-logout-btn">
+          <svg class="icon-svg" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <span data-admin-i18n="btn_logout">تسجيل الخروج</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Workspace -->
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-start">
+          <button type="button" id="openSidebarBtn" class="admin-menu-trigger" aria-label="Open Navigation Menu">
+            <svg class="icon-svg" style="width: 1.25rem; height: 1.25rem;" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div>
+            <h1 id="topbarTitle" class="admin-page-title" data-admin-i18n="tab_overview">نظرة عامة والتحليلات</h1>
+            <div id="lastSyncLabel" class="admin-sync-meta">--</div>
+          </div>
+        </div>
+
+        <div class="admin-topbar-actions">
+          <button type="button" id="refreshDataBtn" class="admin-btn-sm">
+            <svg class="icon-svg" style="width: 0.95rem; height: 0.95rem;" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            <span data-admin-i18n="btn_refresh">تحديث البيانات</span>
+          </button>
+          <button type="button" id="adminLangToggle" class="admin-btn-sm">
+            <svg class="icon-svg" style="width: 0.95rem; height: 0.95rem;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span data-admin-i18n="lang_switch">English</span>
+          </button>
+          <a href="index.html" target="_blank" rel="noopener noreferrer" class="admin-btn-sm admin-btn-sm--navy">
+            <span data-admin-i18n="view_website">عرض الموقع</span>
+          </a>
+        </div>
+      </header>
+
+      <main class="admin-content">
+        <!-- TAB 1: Overview & Analytics -->
+        <section id="tab-overview" class="admin-tab-panel">
+          <div id="overviewKpiGrid" class="kpi-grid"></div>
+
+          <div class="overview-grid">
+            <div class="panel-card">
+              <div class="panel-card-header">
+                <h2 class="panel-card-title" data-admin-i18n="chart_sectors_title">توزيع الطلبات حسب قطاع الأعمال</h2>
+              </div>
+              <div id="sectorDistributionList" class="sector-bars-list"></div>
+            </div>
+
+            <div class="panel-card">
+              <div class="panel-card-header">
+                <h2 class="panel-card-title" data-admin-i18n="recent_quotes_title">أحدث طلبات عروض الأسعار</h2>
+                <button type="button" id="goToAllQuotesBtn" class="admin-text-link" data-admin-i18n="view_all">عرض الكل</button>
+              </div>
+              <div id="recentQuotesList" class="recent-mini-list"></div>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h2 class="panel-card-title" data-admin-i18n="recent_activity_title">آخر إجراءات الإدارة</h2>
+            </div>
+            <div id="recentActivityList" class="recent-mini-list"></div>
+          </div>
+        </section>
+
+        <!-- TAB 2: Quote Requests CRM -->
+        <section id="tab-quotes" class="admin-tab-panel is-hidden">
+          <div class="admin-toolbar">
+            <div class="toolbar-filters">
+              <div class="toolbar-search">
+                <input type="search" id="quoteSearchInput" class="admin-input-sm" data-admin-ph="ph_search_quotes" placeholder="بحث بالاسم، الجوال، البريد، أو التفاصيل...">
+              </div>
+              <div class="toolbar-select">
+                <select id="quoteStatusFilter" class="admin-input-sm">
+                  <option value="all" data-admin-i18n="filter_all_statuses">جميع الحالات</option>
+                  <option value="new" data-admin-i18n="status_new">جديد</option>
+                  <option value="reviewing" data-admin-i18n="status_reviewing">قيد الدراسة</option>
+                  <option value="quoted" data-admin-i18n="status_quoted">تم التسعير</option>
+                  <option value="accepted" data-admin-i18n="status_accepted">معتمد</option>
+                  <option value="closed" data-admin-i18n="status_closed">مغلق</option>
+                </select>
+              </div>
+              <div class="toolbar-select">
+                <select id="quoteSectorFilter" class="admin-input-sm">
+                  <option value="all" data-admin-i18n="filter_all_sectors">جميع القطاعات</option>
+                  <option value="Events Organization" data-admin-i18n="sec_events">تنظيم المعارض والمؤتمرات</option>
+                  <option value="Catering Services" data-admin-i18n="sec_catering">خدمات الإعاشة والتموين الراقي</option>
+                  <option value="Coffee Break" data-admin-i18n="sec_coffee">استراحات القهوة وضيافة الشركات</option>
+                  <option value="Food Supply & Buffets" data-admin-i18n="sec_supply">التوريد الغذائي والبوفيهات المفتوحة</option>
+                </select>
+              </div>
+              <div class="toolbar-select">
+                <select id="quotePriorityFilter" class="admin-input-sm">
+                  <option value="all" data-admin-i18n="filter_all_priorities">جميع الأولويات</option>
+                  <option value="urgent" data-admin-i18n="prio_urgent">عاجلة</option>
+                  <option value="high" data-admin-i18n="prio_high">عالية</option>
+                  <option value="normal" data-admin-i18n="prio_normal">عادية</option>
+                  <option value="low" data-admin-i18n="prio_low">منخفضة</option>
+                </select>
+              </div>
+              <button type="button" id="resetQuoteFiltersBtn" class="admin-btn-sm" data-admin-i18n="btn_reset">إعادة ضبط</button>
+            </div>
+
+            <div class="toolbar-actions">
+              <button type="button" id="exportQuotesCsvBtn" class="admin-btn-sm">
+                <svg class="icon-svg" style="width: 0.95rem; height: 0.95rem;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-admin-i18n="btn_export_csv">تصدير CSV</span>
+              </button>
+              <button type="button" id="openManualQuoteBtn" class="admin-btn-sm admin-btn-sm--gold">
+                <span data-admin-i18n="btn_add_quote">+ إضافة طلب يدوي</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-card">
+            <div class="table-scroll">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th data-admin-i18n="col_id">#</th>
+                    <th data-admin-i18n="col_client">الجهة / العميل</th>
+                    <th data-admin-i18n="col_sector">القطاع</th>
+                    <th data-admin-i18n="col_event">الضيوف والتاريخ</th>
+                    <th data-admin-i18n="col_priority">الأولوية</th>
+                    <th data-admin-i18n="col_status">الحالة</th>
+                    <th data-admin-i18n="col_created">تاريخ الوصول</th>
+                    <th data-admin-i18n="col_actions">الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody id="quotesTableBody"></tbody>
+              </table>
+            </div>
+            <div id="quotesEmptyState" class="empty-state-box is-hidden">
+              <div class="empty-state-title" data-admin-i18n="empty_quotes_title">لا توجد طلبات عروض أسعار مطابقة</div>
+              <div data-admin-i18n="empty_quotes_sub">جرّب تعديل معايير البحث أو انتظار وصول طلبات جديدة من الموقع.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 3: Job Applications HR Pipeline -->
+        <section id="tab-jobs" class="admin-tab-panel is-hidden">
+          <div class="admin-toolbar">
+            <div class="toolbar-filters">
+              <div class="toolbar-search">
+                <input type="search" id="jobSearchInput" class="admin-input-sm" data-admin-ph="ph_search_jobs" placeholder="بحث باسم المتقدم، الجوال، البريد، أو الخبرة...">
+              </div>
+              <div class="toolbar-select">
+                <select id="jobStatusFilter" class="admin-input-sm">
+                  <option value="all" data-admin-i18n="filter_all_statuses">جميع الحالات</option>
+                  <option value="new" data-admin-i18n="status_new">جديد</option>
+                  <option value="shortlisted" data-admin-i18n="status_shortlisted">مرشح مبدئياً</option>
+                  <option value="interview" data-admin-i18n="status_interview">مقابلة</option>
+                  <option value="hired" data-admin-i18n="status_hired">تم التعيين</option>
+                  <option value="rejected" data-admin-i18n="status_rejected">مرفوض</option>
+                </select>
+              </div>
+              <div class="toolbar-select">
+                <select id="jobPositionFilter" class="admin-input-sm">
+                  <option value="all" data-admin-i18n="filter_all_positions">جميع الوظائف</option>
+                  <option value="Project Manager">Project Manager</option>
+                  <option value="Head Chef">Head Chef</option>
+                  <option value="Distribution Specialist">Distribution Specialist</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <button type="button" id="resetJobFiltersBtn" class="admin-btn-sm" data-admin-i18n="btn_reset">إعادة ضبط</button>
+            </div>
+
+            <div class="toolbar-actions">
+              <button type="button" id="exportJobsCsvBtn" class="admin-btn-sm">
+                <svg class="icon-svg" style="width: 0.95rem; height: 0.95rem;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-admin-i18n="btn_export_csv">تصدير CSV</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-card">
+            <div class="table-scroll">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th data-admin-i18n="col_id">#</th>
+                    <th data-admin-i18n="col_applicant">المتقدم</th>
+                    <th data-admin-i18n="col_position">الوظيفة</th>
+                    <th data-admin-i18n="col_experience">ملخص الخبرة</th>
+                    <th data-admin-i18n="col_status">الحالة</th>
+                    <th data-admin-i18n="col_created">تاريخ التقديم</th>
+                    <th data-admin-i18n="col_actions">الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody id="jobsTableBody"></tbody>
+              </table>
+            </div>
+            <div id="jobsEmptyState" class="empty-state-box is-hidden">
+              <div class="empty-state-title" data-admin-i18n="empty_jobs_title">لا توجد طلبات توظيف مطابقة</div>
+              <div data-admin-i18n="empty_jobs_sub">ستظهر طلبات التوظيف المرسلة من صفحة التوظيف هنا فور وصولها.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 4: Activity Audit Logs -->
+        <section id="tab-activity" class="admin-tab-panel is-hidden">
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h2 class="panel-card-title" data-admin-i18n="activity_heading">سجل نشاط لوحة التحكم</h2>
+              <span id="activityCountBadge" class="admin-nav-count">0</span>
+            </div>
+            <div class="table-scroll">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th data-admin-i18n="col_time">الوقت</th>
+                    <th data-admin-i18n="col_actor">المستخدم</th>
+                    <th data-admin-i18n="col_action">الإجراء</th>
+                    <th data-admin-i18n="col_summary">التفاصيل</th>
+                  </tr>
+                </thead>
+                <tbody id="activityTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 5: Settings & Security -->
+        <section id="tab-settings" class="admin-tab-panel is-hidden">
+          <div class="settings-grid">
+            <div class="panel-card">
+              <div class="panel-card-header">
+                <h2 class="panel-card-title" data-admin-i18n="settings_account_title">بيانات الحساب والربط</h2>
+              </div>
+              <div class="detail-kv-list">
+                <div class="detail-full-row">
+                  <div class="detail-kv-label" data-admin-i18n="label_email">البريد الإلكتروني الإداري</div>
+                  <div id="settingsEmail" class="detail-kv-value dir-ltr">--</div>
+                </div>
+                <div>
+                  <div class="detail-kv-label" data-admin-i18n="settings_role_label">الصلاحية</div>
+                  <div class="detail-kv-value" data-admin-i18n="role_admin">مدير النظام (Admin)</div>
+                </div>
+                <div>
+                  <div class="detail-kv-label" data-admin-i18n="settings_db_status">حالة ربط Supabase</div>
+                  <div class="detail-kv-value" style="color: #047857;" data-admin-i18n="settings_db_connected">متصل بنجاح</div>
+                </div>
+                <div class="detail-full-row">
+                  <div class="detail-kv-label" data-admin-i18n="settings_project_url">رابط مشروع Supabase</div>
+                  <div id="settingsSupabaseUrl" class="detail-kv-value dir-ltr">--</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-card">
+              <div class="panel-card-header">
+                <h2 class="panel-card-title" data-admin-i18n="settings_pw_title">تغيير كلمة مرور المدير</h2>
+              </div>
+              <form id="changePasswordForm">
+                <div class="form-group">
+                  <label class="form-label" for="newPasswordInput" data-admin-i18n="settings_new_pw">كلمة المرور الجديدة (8 أحرف على الأقل)</label>
+                  <input type="password" id="newPasswordInput" class="form-control dir-ltr" required minlength="8" autocomplete="new-password">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="confirmPasswordInput" data-admin-i18n="settings_confirm_pw">تأكيد كلمة المرور الجديدة</label>
+                  <input type="password" id="confirmPasswordInput" class="form-control dir-ltr" required minlength="8" autocomplete="new-password">
+                </div>
+                <button type="submit" id="updatePasswordBtn" class="btn btn-primary" data-admin-i18n="settings_save_pw">تحديث كلمة المرور</button>
+                <div id="passwordUpdateFeedback" class="admin-alert" role="status" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Record Detail & Workflow Modal -->
+  <div id="detailModal" class="admin-modal-overlay" aria-hidden="true">
+    <div class="admin-modal-card" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
+      <div class="admin-modal-header">
+        <h3 id="detailModalTitle" class="admin-modal-title">--</h3>
+        <button type="button" class="admin-modal-close" data-close-modal="detailModal" aria-label="Close">✕</button>
+      </div>
+      <div class="admin-modal-body">
+        <div class="detail-grid">
+          <div class="detail-info-box">
+            <div id="detailFieldsGrid" class="detail-kv-list"></div>
+            <div id="detailQuickContacts" class="quick-contact-row"></div>
+          </div>
+
+          <div>
+            <form id="updateRecordForm" class="detail-info-box">
+              <div class="form-group">
+                <label class="form-label" for="detailStatusSelect" data-admin-i18n="col_status">الحالة</label>
+                <select id="detailStatusSelect" class="form-control"></select>
+              </div>
+              <div id="detailPriorityGroup" class="form-group">
+                <label class="form-label" for="detailPrioritySelect" data-admin-i18n="col_priority">الأولوية</label>
+                <select id="detailPrioritySelect" class="form-control">
+                  <option value="low" data-admin-i18n="prio_low">منخفضة</option>
+                  <option value="normal" data-admin-i18n="prio_normal">عادية</option>
+                  <option value="high" data-admin-i18n="prio_high">عالية</option>
+                  <option value="urgent" data-admin-i18n="prio_urgent">عاجلة</option>
+                </select>
+              </div>
+              <div id="detailAssignedGroup" class="form-group">
+                <label class="form-label" for="detailAssignedInput" data-admin-i18n="label_assigned">المسؤول عن المتابعة</label>
+                <input type="text" id="detailAssignedInput" class="form-control" data-admin-ph="ph_assigned" placeholder="اسم الموظف / القسم المسؤول...">
+              </div>
+              <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+                <button type="submit" id="saveRecordBtn" class="btn btn-gold" style="flex: 1;" data-admin-i18n="btn_save_changes">حفظ التعديلات</button>
+                <button type="button" id="openDeleteFromDetailBtn" class="admin-btn-sm admin-btn-sm--danger" data-admin-i18n="btn_delete">حذف السجل</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="notes-section">
+          <h4 class="panel-card-title" data-admin-i18n="notes_title">سجل الملاحظات الداخلية والمتابعة</h4>
+          <div id="notesTimeline" class="notes-timeline"></div>
+          <form id="addNoteForm">
+            <div class="form-group" style="margin-bottom: 0.75rem;">
+              <textarea id="newNoteText" rows="2" class="form-control" required data-admin-ph="ph_new_note" placeholder="أضف ملاحظة داخلية حول التواصل أو العرض المالي..."></textarea>
+            </div>
+            <button type="submit" id="addNoteBtn" class="admin-btn-sm admin-btn-sm--navy" data-admin-i18n="btn_add_note">إضافة ملاحظة</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manual Quote Creation Modal -->
+  <div id="manualQuoteModal" class="admin-modal-overlay" aria-hidden="true">
+    <div class="admin-modal-card admin-modal-card--md" role="dialog" aria-modal="true" aria-labelledby="manualQuoteTitle">
+      <div class="admin-modal-header">
+        <h3 id="manualQuoteTitle" class="admin-modal-title" data-admin-i18n="manual_quote_title">إضافة طلب عرض سعر يدوياً</h3>
+        <button type="button" class="admin-modal-close" data-close-modal="manualQuoteModal" aria-label="Close">✕</button>
+      </div>
+      <div class="admin-modal-body">
+        <form id="manualQuoteForm">
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="col_client">الجهة / العميل</label>
+              <input type="text" name="full_name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="label_phone">رقم الجوال</label>
+              <input type="tel" name="phone" class="form-control dir-ltr" required placeholder="05xxxxxxxx">
+            </div>
+          </div>
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="label_email_opt">البريد الإلكتروني</label>
+              <input type="email" name="email" class="form-control dir-ltr" required placeholder="client@domain.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="col_sector">القطاع</label>
+              <select name="sector" class="form-control" required>
+                <option value="Events Organization" data-admin-i18n="sec_events">تنظيم المعارض والمؤتمرات</option>
+                <option value="Catering Services" data-admin-i18n="sec_catering">خدمات الإعاشة والتموين الراقي</option>
+                <option value="Coffee Break" data-admin-i18n="sec_coffee">استراحات القهوة وضيافة الشركات</option>
+                <option value="Food Supply & Buffets" data-admin-i18n="sec_supply">التوريد الغذائي والبوفيهات المفتوحة</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="label_guests">العدد المتوقع للضيوف</label>
+              <input type="text" name="guests_count" class="form-control" placeholder="e.g. 200">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="label_date">تاريخ الفعالية</label>
+              <input type="date" name="event_date" class="form-control">
+            </div>
+          </div>
+          <div class="form-two-col">
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="col_priority">الأولوية</label>
+              <select name="priority" class="form-control">
+                <option value="normal" selected data-admin-i18n="prio_normal">عادية</option>
+                <option value="high" data-admin-i18n="prio_high">عالية</option>
+                <option value="urgent" data-admin-i18n="prio_urgent">عاجلة</option>
+                <option value="low" data-admin-i18n="prio_low">منخفضة</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-admin-i18n="label_source">المصدر</label>
+              <select name="source_form" class="form-control">
+                <option value="whatsapp_inbound" data-admin-i18n="src_whatsapp">واتساب مباشر</option>
+                <option value="phone_inbound" data-admin-i18n="src_phone">اتصال هاتفي</option>
+                <option value="admin_manual" selected data-admin-i18n="src_manual">إدخال إداري</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-admin-i18n="label_details">تفاصيل المتطلبات</label>
+            <textarea name="details" rows="3" class="form-control"></textarea>
+          </div>
+          <button type="submit" id="saveManualQuoteBtn" class="btn btn-gold" style="width: 100%;" data-admin-i18n="btn_create_quote">حفظ وإضافة الطلب</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Safe Confirmation Modal -->
+  <div id="confirmDeleteModal" class="admin-modal-overlay" aria-hidden="true">
+    <div class="admin-modal-card admin-modal-card--sm" role="dialog" aria-modal="true" aria-labelledby="confirmDeleteTitle">
+      <div class="admin-modal-header">
+        <h3 id="confirmDeleteTitle" class="admin-modal-title" data-admin-i18n="confirm_delete_title">تأكيد الحذف</h3>
+        <button type="button" class="admin-modal-close" data-close-modal="confirmDeleteModal" aria-label="Close">✕</button>
+      </div>
+      <div class="admin-modal-body">
+        <p id="confirmDeleteMessage" style="margin: 0 0 1.25rem; color: var(--brand-grey-dark); line-height: 1.65;"></p>
+        <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+          <button type="button" id="cancelDeleteBtn" class="admin-btn-sm" data-close-modal="confirmDeleteModal" data-admin-i18n="btn_cancel">إلغاء</button>
+          <button type="button" id="confirmDeleteBtn" class="admin-btn-sm admin-btn-sm--danger" data-admin-i18n="btn_confirm_delete">نعم، احذف السجل</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="adminToastContainer" class="admin-toast-container" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.min.js"></script>
+  <script src="assets/js/supabase-config.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

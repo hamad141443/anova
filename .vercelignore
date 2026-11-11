@@ -1,0 +1,17 @@
+# Git & environment internals
+.git
+.gitignore
+node_modules/
+.env
+.env*.local
+
+# Non-production folders
+_backups_*/
+
+# Stale root duplicates & local verification artifacts
+/main.js
+/styles.css
+/out.txt
+/hero_*.png
+/test_*.png
+/*.mp4
