@@ -9,8 +9,8 @@
   <!-- Preconnect to Google Fonts for Ultra-Fast Typography Rendering -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&family=Markazi+Text:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=3">
 </head>
 <body data-page-title-key="nav_home">
 
@@ -615,7 +615,7 @@
           <h3 style="font-size: 1.45rem; margin-bottom: 1.5rem; color: var(--midnight-dark);" data-i18n="form_heading">طلب عرض سعر واستفسار</h3>
           
           <form class="ajax-inquiry-form" data-form-type="quote_request" data-source-form="contact_section">
-            <div style="display: grid; grid-template-columns: 1fr; sm:grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-row-2">
               <div class="form-group">
                 <label class="form-label" data-i18n="f_name">الاسم الكريم / اسم الجهة</label>
                 <input type="text" name="full_name" class="form-control" required data-i18n-ph="f_name_ph" placeholder="مثال: شركة / هيئة...">
@@ -626,7 +626,7 @@
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr; sm:grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-row-2">
               <div class="form-group">
                 <label class="form-label" data-i18n="f_email">البريد الإلكتروني المؤسسي</label>
                 <input type="email" name="email" class="form-control" required placeholder="name@domain.com">
@@ -643,7 +643,7 @@
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr; sm:grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-row-2">
               <div class="form-group">
                 <label class="form-label" data-i18n="f_guests">العدد المتوقع للمستفيدين / الضيوف</label>
                 <input type="text" name="guests_count" class="form-control" placeholder="مثال: 150 - 500">
@@ -756,7 +756,7 @@
       </div>
 
       <form class="ajax-inquiry-form" data-form-type="quote_request" data-source-form="quote_modal">
-        <div style="display: grid; grid-template-columns: 1fr; sm:grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="form-row-2">
           <div class="form-group">
             <label class="form-label" data-i18n="f_name">الاسم الكريم / الجهة</label>
             <input type="text" name="full_name" class="form-control" required placeholder="مثال: شركة / هيئة...">
@@ -795,6 +795,6 @@
   </div>
 
   <script src="assets/js/supabase-config.js"></script>
-  <script src="assets/js/main.js?v=2"></script>
+  <script src="assets/js/main.js?v=3"></script>
 </body>
 </html>
