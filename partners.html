@@ -120,131 +120,414 @@
         <!-- Kicker Badge -->
         <div class="internal-hero-kicker">
           <span class="kicker-dot"></span>
-          <span data-i18n="partners_tag">شركاء النجاح والمسيرة • علاقات وطنية راسخة</span>
+          <span>سجل الشراكات والتعاون المؤسسي</span>
         </div>
 
         <!-- Title & Subtitle -->
-        <h1 class="internal-hero-title" data-i18n="partners_title">ثقة متجددة من كبرى الهيئات والجامعات والصروح الوطنية</h1>
-        <p class="internal-hero-desc" data-i18n="partners_desc">
-          نفخر بسجل شراكاتنا الممتد مع نخبة الجهات الحكومية، الصروح الأكاديمية العريقة، والكيانات المالية الرائدة في المملكة العربية السعودية:
+        <h1 class="internal-hero-title">شركاء النجاح</h1>
+        <p class="internal-hero-desc">
+          نعتز بسجل شراكاتنا الممتد وثقة نخبة الوزارات السيادية، الهيئات الملكية والحكومية، الصروح الأكاديمية العريقة، والفعاليات الوطنية الكبرى في المملكة العربية السعودية:
         </p>
+
+        <!-- Facts bar -->
+        <div class="internal-hero-facts">
+          <div class="hero-fact-chip">
+            <span class="fact-num">32</span>
+            <span class="fact-lbl">شريك وكيان مؤسسي معتمد</span>
+          </div>
+          <div class="hero-fact-chip">
+            <span class="fact-num">22</span>
+            <span class="fact-lbl">وزارة وهيئة حكومية</span>
+          </div>
+          <div class="hero-fact-chip">
+            <span class="fact-num">100%</span>
+            <span class="fact-lbl">معايير تشغيلية قياسية</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       2. INSTITUTIONAL PARTNERS CHAMBERS
+       2. UNIFIED INSTITUTIONAL PARTNERS CATALOG & GRID
        ========================================================================== -->
   <section class="internal-section bg-corporate-white">
     <div class="container">
 
-      <!-- Chamber 01: Governmental & Financial Institutions -->
-      <div class="chamber-corporate-block">
-        <div class="chamber-header-row">
-          <h2 class="chamber-title-text" data-i18n="partners_gov_title">الهيئات والمؤسسات الحكومية وشبه الحكومية</h2>
-          <span class="chamber-badge-tag">Chamber 01 • القطاع الحكومي والمالي</span>
-        </div>
-
-        <div id="cmsPartnersGovGrid" class="partners-chamber-grid">
-          
-          <!-- RCRC -->
-          <div class="partner-chamber-card">
-            <div class="partner-chamber-logo-box">
-              <img src="public/partners/Logos-27-2048x2048.png" alt="الهيئة الملكية لمدينة الرياض" loading="lazy">
-            </div>
-            <div class="partner-chamber-name-ar" data-i18n="p_rcrc_ar">الهيئة الملكية لمدينة الرياض</div>
-            <div class="partner-chamber-name-en" data-i18n="p_rcrc_en">Royal Commission for Riyadh City</div>
-          </div>
-
-          <!-- National Water Company -->
-          <div class="partner-chamber-card">
-            <div class="partner-chamber-logo-box">
-              <img src="public/partners/Logos-19-2048x2048.png" alt="شركة المياه الوطنية" loading="lazy">
-            </div>
-            <div class="partner-chamber-name-ar" data-i18n="p_nwc_ar">شركة المياه الوطنية</div>
-            <div class="partner-chamber-name-en" data-i18n="p_nwc_en">National Water Company</div>
-          </div>
-
-          <!-- Tatweer Education Holding -->
-          <div class="partner-chamber-card">
-            <div class="partner-chamber-logo-box">
-              <img src="public/partners/Logos-14-2048x2048.png" alt="شركة تطوير التعليم القابضة" loading="lazy">
-            </div>
-            <div class="partner-chamber-name-ar" data-i18n="p_tatweer_ar">شركة تطوير التعليم القابضة</div>
-            <div class="partner-chamber-name-en" data-i18n="p_tatweer_en">Tatweer Education Holding</div>
-          </div>
-
-          <!-- Saudi Banks Committee -->
-          <div class="partner-chamber-card">
-            <div class="partner-chamber-logo-box">
-              <img src="public/partners/Logos-33-2048x2048.png" alt="لجنة الإعلام والتوعية المصرفية بالبنوك السعودية" loading="lazy">
-            </div>
-            <div class="partner-chamber-name-ar" data-i18n="p_banks_ar">البنوك السعودية</div>
-            <div class="partner-chamber-name-en" data-i18n="p_banks_en">Saudi Banks Committee</div>
-          </div>
-
-        </div>
+      <!-- Interactive Filter Bar -->
+      <div class="partners-filter-wrapper" role="tablist" aria-label="تصنيفات الشركاء">
+        <button class="partners-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+          <span>جميع الشركاء</span>
+          <span class="filter-count">32</span>
+        </button>
+        <button class="partners-filter-btn" data-filter="government" role="tab" aria-selected="false">
+          <span>الوزارات والجهات الحكومية</span>
+          <span class="filter-count">22</span>
+        </button>
+        <button class="partners-filter-btn" data-filter="education" role="tab" aria-selected="false">
+          <span>التعليم والجامعات</span>
+          <span class="filter-count">5</span>
+        </button>
+        <button class="partners-filter-btn" data-filter="corporate" role="tab" aria-selected="false">
+          <span>الفعاليات الكبرى والشركات</span>
+          <span class="filter-count">5</span>
+        </button>
       </div>
 
-      <!-- Chamber 02: Higher Education & Universities -->
-      <div class="chamber-corporate-block">
-        <div class="chamber-header-row">
-          <h2 class="chamber-title-text" data-i18n="partners_edu_title">قطاع التعليم العالي والجامعات الكبرى</h2>
-          <span class="chamber-badge-tag">Chamber 02 • الصروح الأكاديمية</span>
-        </div>
+      <!-- Master Grid of 32 Partners -->
+      <div id="cmsPartnersMasterGrid" class="partners-master-grid">
 
-        <div id="cmsPartnersEduGrid" class="partners-chamber-grid">
-          
-          <!-- Princess Nourah University -->
-          <div class="partner-chamber-card">
-            <div class="partner-chamber-logo-box">
-              <img src="public/partners/Logos-31-2048x2048.png" alt="جامعة الأميرة نورة بنت عبدالرحمن" loading="lazy">
-            </div>
-            <div class="partner-chamber-name-ar" data-i18n="p_pnu_ar">جامعة الأميرة نورة بنت عبدالرحمن</div>
-            <div class="partner-chamber-name-en" data-i18n="p_pnu_en">Princess Nourah University</div>
+        <article class="partner-master-card" data-category="government" data-partner-id="rcrc">
+          <div class="partner-master-media">
+            <img src="public/partners/Logos-27-2048x2048.png" alt="شعار الهيئة الملكية لمدينة الرياض" class="partner-master-img" loading="lazy" decoding="async">
           </div>
-
-          <!-- Prince Sultan University -->
-          <div class="partner-chamber-card">
-            <div class="partner-chamber-logo-box">
-              <img src="public/partners/Logos-35-2048x2048.png" alt="جامعة الأمير سلطان" loading="lazy">
-            </div>
-            <div class="partner-chamber-name-ar" data-i18n="p_psu_ar">جامعة الأمير سلطان</div>
-            <div class="partner-chamber-name-en" data-i18n="p_psu_en">Prince Sultan University</div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">الهيئة الملكية لمدينة الرياض</h3>
+            <p class="partner-master-name-en">Royal Commission for Riyadh City</p>
           </div>
+        </article>
 
-          <!-- University of Tabuk -->
-          <div class="partner-chamber-card">
-            <div class="partner-chamber-logo-box">
-              <img src="public/partners/Logos-22-2048x2048.png" alt="جامعة تبوك" loading="lazy">
-            </div>
-            <div class="partner-chamber-name-ar" data-i18n="p_tabuk_ar">جامعة تبوك</div>
-            <div class="partner-chamber-name-en" data-i18n="p_tabuk_en">University of Tabuk</div>
+        <article class="partner-master-card" data-category="government" data-partner-id="mod">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_mod.svg" alt="شعار وزارة الدفاع" class="partner-master-img" loading="lazy" decoding="async">
           </div>
-
-          <!-- Al Yamamah University -->
-          <div class="partner-chamber-card">
-            <div class="partner-chamber-logo-box">
-              <img src="public/partners/Logos-26-2048x2048.png" alt="جامعة اليمامة" loading="lazy">
-            </div>
-            <div class="partner-chamber-name-ar" data-i18n="p_yamamah_ar">جامعة اليمامة</div>
-            <div class="partner-chamber-name-en" data-i18n="p_yamamah_en">Al Yamamah University</div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة الدفاع</h3>
+            <p class="partner-master-name-en">Ministry of Defense</p>
           </div>
+        </article>
 
-        </div>
-      </div>
+        <article class="partner-master-card" data-category="government" data-partner-id="moi">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_moi.svg" alt="شعار وزارة الداخلية" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة الداخلية</h3>
+            <p class="partner-master-name-en">Ministry of Interior</p>
+          </div>
+        </article>
 
-      <!-- Chamber 03: Corporate Partners (Populated dynamically via CMS if present) -->
-      <div id="cmsPartnersCorpSection" class="chamber-corporate-block" style="display: none;">
-        <div class="chamber-header-row">
-          <h2 class="chamber-title-text" data-i18n="partners_corp_title">الشركات والكيانات الوطنية والخاصة</h2>
-          <span class="chamber-badge-tag">Chamber 03 • القطاع الخاص</span>
-        </div>
-        <div id="cmsPartnersCorpGrid" class="partners-chamber-grid"></div>
+        <article class="partner-master-card" data-category="government" data-partner-id="pss">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_pss.png" alt="شعار رئاسة أمن الدولة" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">رئاسة أمن الدولة</h3>
+            <p class="partner-master-name-en">Presidency of State Security</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="sang">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_sang.svg" alt="شعار وزارة الحرس الوطني" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة الحرس الوطني</h3>
+            <p class="partner-master-name-en">Ministry of National Guard</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="mofa">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_mofa.svg" alt="شعار وزارة الخارجية" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة الخارجية</h3>
+            <p class="partner-master-name-en">Ministry of Foreign Affairs</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="mof">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_mof.svg" alt="شعار وزارة المالية" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة المالية</h3>
+            <p class="partner-master-name-en">Ministry of Finance</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="mep">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_mep.svg" alt="شعار وزارة الاقتصاد والتخطيط" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة الاقتصاد والتخطيط</h3>
+            <p class="partner-master-name-en">Ministry of Economy and Planning</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="moenergy">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_moenergy.png" alt="شعار وزارة الطاقة" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة الطاقة</h3>
+            <p class="partner-master-name-en">Ministry of Energy</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="misa">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_misa.svg" alt="شعار وزارة الاستثمار" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة الاستثمار</h3>
+            <p class="partner-master-name-en">Ministry of Investment</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="moh">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_moh.svg" alt="شعار وزارة الصحة" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة الصحة</h3>
+            <p class="partner-master-name-en">Ministry of Health</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="moe">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_moe.svg" alt="شعار وزارة التعليم" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة التعليم</h3>
+            <p class="partner-master-name-en">Ministry of Education</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="momrah">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_momrah.svg" alt="شعار وزارة البلديات والإسكان" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة البلديات والإسكان</h3>
+            <p class="partner-master-name-en">Ministry of Municipalities and Housing</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="motls">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_motls.svg" alt="شعار وزارة النقل والخدمات اللوجستية" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة النقل والخدمات اللوجستية</h3>
+            <p class="partner-master-name-en">Ministry of Transport and Logistic Services</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="mim">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_mim.svg" alt="شعار وزارة الصناعة والثروة المعدنية" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة الصناعة والثروة المعدنية</h3>
+            <p class="partner-master-name-en">Ministry of Industry and Mineral Resources</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="hrsd">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_hrsd.svg" alt="شعار وزارة الموارد البشرية والتنمية الاجتماعية" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة الموارد البشرية والتنمية الاجتماعية</h3>
+            <p class="partner-master-name-en">Ministry of Human Resources and Social Development</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="mc">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_mc.svg" alt="شعار وزارة التجارة" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة التجارة</h3>
+            <p class="partner-master-name-en">Ministry of Commerce</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="moj">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_moj.svg" alt="شعار وزارة العدل" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة العدل</h3>
+            <p class="partner-master-name-en">Ministry of Justice</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="spga">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_spga.jpg" alt="شعار الهيئة العامة لعقارات الدولة" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">الهيئة العامة لعقارات الدولة</h3>
+            <p class="partner-master-name-en">State Properties General Authority</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="cma">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_cma.svg" alt="شعار هيئة السوق المالية" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">هيئة السوق المالية</h3>
+            <p class="partner-master-name-en">Capital Market Authority</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="mewa">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_mewa.svg" alt="شعار وزارة البيئة والمياه والزراعة" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">وزارة البيئة والمياه والزراعة</h3>
+            <p class="partner-master-name-en">Ministry of Environment, Water and Agriculture</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="ncnp">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_ncnp.jpg" alt="شعار المركز الوطني لتنمية القطاع غير الربحي" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">المركز الوطني لتنمية القطاع غير الربحي</h3>
+            <p class="partner-master-name-en">National Center for Non-Profit Sector</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="nwc">
+          <div class="partner-master-media">
+            <img src="public/partners/Logos-19-2048x2048.png" alt="شعار شركة المياه الوطنية" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">شركة المياه الوطنية</h3>
+            <p class="partner-master-name-en">National Water Company</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="tatweer">
+          <div class="partner-master-media">
+            <img src="public/partners/Logos-14-2048x2048.png" alt="شعار شركة تطوير التعليم القابضة" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">شركة تطوير التعليم القابضة</h3>
+            <p class="partner-master-name-en">Tatweer Education Holding</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="government" data-partner-id="saudi_banks">
+          <div class="partner-master-media">
+            <img src="public/partners/Logos-33-2048x2048.png" alt="شعار البنوك السعودية" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">البنوك السعودية</h3>
+            <p class="partner-master-name-en">Saudi Banks Committee</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="education" data-partner-id="pnu">
+          <div class="partner-master-media">
+            <img src="public/partners/Logos-31-2048x2048.png" alt="شعار جامعة الأميرة نورة بنت عبدالرحمن" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">جامعة الأميرة نورة بنت عبدالرحمن</h3>
+            <p class="partner-master-name-en">Princess Nourah Bint Abdulrahman University</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="education" data-partner-id="psu">
+          <div class="partner-master-media">
+            <img src="public/partners/Logos-35-2048x2048.png" alt="شعار جامعة الأمير سلطان" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">جامعة الأمير سلطان</h3>
+            <p class="partner-master-name-en">Prince Sultan University</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="education" data-partner-id="ut">
+          <div class="partner-master-media">
+            <img src="public/partners/Logos-22-2048x2048.png" alt="شعار جامعة تبوك" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">جامعة تبوك</h3>
+            <p class="partner-master-name-en">University of Tabuk</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="education" data-partner-id="yu">
+          <div class="partner-master-media">
+            <img src="public/partners/Logos-26-2048x2048.png" alt="شعار جامعة اليمامة" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">جامعة اليمامة</h3>
+            <p class="partner-master-name-en">Al Yamamah University</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="corporate" data-partner-id="mdlbeast">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_mdlbeast.png" alt="شعار ميدل بيست" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">ميدل بيست</h3>
+            <p class="partner-master-name-en">MDLBEAST</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="corporate" data-partner-id="riyadh_season_2021">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_riyadh_season_2021.png" alt="شعار موسم الرياض 2021" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">موسم الرياض 2021</h3>
+            <p class="partner-master-name-en">Riyadh Season 2021</p>
+          </div>
+        </article>
+
+        <article class="partner-master-card" data-category="corporate" data-partner-id="riyadh_season_2019">
+          <div class="partner-master-media">
+            <img src="public/partners/partner_riyadh_season_2019.png" alt="شعار موسم الرياض 2019" class="partner-master-img" loading="lazy" decoding="async">
+          </div>
+          <div class="partner-master-info">
+            <h3 class="partner-master-name-ar">موسم الرياض 2019</h3>
+            <p class="partner-master-name-en">Riyadh Season 2019</p>
+          </div>
+        </article>
       </div>
 
     </div>
   </section>
+
+  <script>
+    // Pure, Lightweight Client-Side Filter Logic
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterBtns = document.querySelectorAll('.partners-filter-btn');
+      const partnerCards = document.querySelectorAll('.partner-master-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
+
+          const filter = this.getAttribute('data-filter');
+          partnerCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.classList.remove('is-hidden');
+            } else {
+              card.classList.add('is-hidden');
+            }
+          });
+        });
+      });
+    });
+  </script>
 
   <!-- ==========================================================================
        3. SECTION: INSTITUTIONAL TRUST & PARTNERSHIP VALUE

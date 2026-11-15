@@ -756,6 +756,26 @@ class AnovaApp {
       this.setupPartnersMarquee();
     }
 
+    const masterGrid = document.getElementById('cmsPartnersMasterGrid');
+    if (masterGrid && this.cmsPartners.length) {
+      masterGrid.innerHTML = this.cmsPartners.map((p) => {
+        const logo = this.safeMediaUrl(p.logo_url, 'public/brand/anova-logo.png');
+        const primaryName = isAr ? p.name_ar : (p.name_en || p.name_ar);
+        const secondaryName = isAr ? (p.name_en || '') : (p.name_ar || '');
+        return `
+          <article class="partner-master-card" data-category="${this.escapeHtml(p.category || 'government')}" data-partner-id="${p.id || ''}">
+            <div class="partner-master-media">
+              <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(primaryName)}" class="partner-master-img" loading="lazy" decoding="async">
+            </div>
+            <div class="partner-master-info">
+              <h3 class="partner-master-name-ar">${this.escapeHtml(primaryName)}</h3>
+              <p class="partner-master-name-en">${this.escapeHtml(secondaryName)}</p>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
     const govGrid = document.getElementById('cmsPartnersGovGrid');
     const eduGrid = document.getElementById('cmsPartnersEduGrid');
     const corpSec = document.getElementById('cmsPartnersCorpSection');
