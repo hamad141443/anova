@@ -211,8 +211,8 @@ class AnovaApp {
 
     let lastScrollY = Math.max(0, window.scrollY || window.pageYOffset || 0);
     let ticking = false;
-    const TOP_THRESHOLD = 45;    // Top boundary where top-bar is visible (2.75rem = 44px)
-    const SCROLL_THRESHOLD = 60; // Activate smart sticky hide/reveal
+    const TOP_THRESHOLD = 36;    // Top boundary where top-bar is visible (2.15rem = ~34px)
+    const SCROLL_THRESHOLD = 50; // Activate smart sticky hide/reveal
     const DELTA_MIN = 8;         // Minimum delta to avoid jitter when stopping scroll
 
     const updateHeader = () => {
