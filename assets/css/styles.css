@@ -13,35 +13,35 @@
    ========================================================================== */
 
 :root {
-  /* Approved Modern Corporate Color Tokens */
-  --primary-navy: #1D3147;
-  --primary-navy-dark: #132232;
-  --primary-navy-light: #2A4360;
-  --brand-accent: #5A5684;
-  --brand-accent-hover: #48446D;
-  --brand-accent-light: rgba(90, 86, 132, 0.10);
+  /* Approved Matte Corporate Color System */
+  --primary-navy: #142231;
+  --primary-navy-dark: #0F1A26;
+  --primary-navy-light: #22364C;
+  --brand-accent: #4B5E74;
+  --brand-accent-hover: #37475A;
+  --brand-accent-light: rgba(75, 94, 116, 0.10);
   --text-primary: #0F172A;
-  --text-secondary: #64748B;
-  --secondary-text: #64748B;
-  --light-bg: #F5F7FA;
+  --text-secondary: #475569;
+  --secondary-text: #475569;
+  --light-bg: #F8FAFC;
   --pure-white: #FFFFFF;
   --border-subtle: #E2E8F0;
-  --border-focus: #1D3147;
+  --border-focus: #142231;
   --brand-grey: #64748B;
   --brand-grey-light: #E2E8F0;
   --brand-grey-dark: #334155;
-  --midnight-dark: #1D3147;
-  --deep-indigo: #1D3147;
-  --warm-gold: #5A5684; /* Refined Brand Accent replacing excessive gold */
-  --warm-gold-hover: #48446D;
-  --warm-gold-light: rgba(90, 86, 132, 0.10);
-  --hero-overlay-opacity: 0.65;
+  --midnight-dark: #142231;
+  --deep-indigo: #142231;
+  --warm-gold: #4B5E74; /* Matte Corporate Slate */
+  --warm-gold-hover: #37475A;
+  --warm-gold-light: rgba(75, 94, 116, 0.10);
+  --hero-overlay-opacity: 0.78;
 
-  /* Typographic Design Tokens */
-  --font-heading-ar: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body-ar: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading-en: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body-en: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Typographic Design Tokens: Alexandria (Headings & Brand) + Readex Pro (Interface & Reading) */
+  --font-heading-ar: 'Alexandria', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-ar: 'Readex Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading-en: 'Alexandria', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-en: 'Readex Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   
   --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
   --shadow-md: 0 4px 10px -2px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
@@ -3540,22 +3540,9 @@ html[lang="en"] .pillar-sequence-num {
 
 
 /* ==========================================================================
-   BESPOKE CORPORATE EDITORIAL PROTOTYPE — REFINED VISUAL SYSTEM
-   Crafted for ANOVA United — True Swiss Grid, Proportional Hierarchy & Prominent Brand Identity
+   BESPOKE CORPORATE EDITORIAL PROTOTYPE — MATTE FULL-SCREEN HERO & SERVICE STRIPS
+   Designed for ANOVA United — Sovereign Saudi Enterprise Aesthetic
    ========================================================================== */
-
-/* Spacing & Visual Tokens */
-:root {
-  --corporate-navy: #1D3147;
-  --corporate-navy-dark: #122131;
-  --corporate-purple: #2B2564;
-  --corporate-purple-soft: #5A5684;
-  --corporate-slate: #475569;
-  --corporate-light-slate: #64748B;
-  --corporate-bg: #F8FAFC;
-  --corporate-border: #E2E8F0;
-  --corporate-border-subtle: #EDF2F7;
-}
 
 /* 1. Master Site Header (Pristine Corporate Architecture) */
 .site-header-wrapper {
@@ -3565,8 +3552,8 @@ html[lang="en"] .pillar-sequence-num {
   height: 5.75rem;
   z-index: 1000;
   background-color: #FFFFFF;
-  border-bottom: 1px solid var(--corporate-border);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 3px rgba(15, 26, 38, 0.03);
 }
 
 .main-nav {
@@ -3590,7 +3577,7 @@ html[lang="en"] .pillar-sequence-num {
   padding: 0.25rem 0;
 }
 
-/* Logo optical calibration: 500x500 PNG displayed with pride and high clarity */
+/* Prominent, uncompromised official brand logo */
 .brand-logo-img {
   height: 5.25rem;
   width: auto;
@@ -3611,7 +3598,8 @@ html[lang="en"] .pillar-sequence-num {
 }
 
 .nav-link {
-  font-size: 0.95rem;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.92rem;
   font-weight: 500;
   color: #334155;
   text-decoration: none;
@@ -3621,11 +3609,11 @@ html[lang="en"] .pillar-sequence-num {
 }
 
 .nav-link:hover {
-  color: var(--corporate-navy);
+  color: var(--primary-navy);
 }
 
 .nav-link.active {
-  color: var(--corporate-navy);
+  color: var(--primary-navy);
   font-weight: 600;
 }
 
@@ -3636,7 +3624,7 @@ html[lang="en"] .pillar-sequence-num {
   right: 0;
   left: 0;
   height: 2px;
-  background-color: var(--corporate-purple);
+  background-color: var(--primary-navy);
   border-radius: 1px;
 }
 
@@ -3646,165 +3634,200 @@ html[lang="en"] .pillar-sequence-num {
   gap: 1.25rem;
 }
 
-/* 2. Hero Section: Asymmetric Swiss Grid (43% Narrative / 57% Video) */
-.hero-editorial-section {
+/* 2. Hero Section: Full-Width / Full-Screen Video Cover with Muted Matte Overlay */
+.hero-fullscreen {
   position: relative;
-  background-color: var(--corporate-bg);
-  border-bottom: 1px solid var(--corporate-border);
-  padding: 5rem 0 5.5rem 0;
-}
-
-.hero-editorial-grid {
-  display: grid;
-  grid-template-columns: 43% 57%;
-  gap: 3.5rem;
-  align-items: center;
-}
-
-.hero-narrative-col {
+  min-height: calc(100vh - 5.75rem);
+  min-height: calc(100dvh - 5.75rem);
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #0F1A26;
 }
 
-.hero-taxonomy-tag {
+.hero-video-viewport {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-full-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Muted Matte Navy Gradient Overlay (No Flashy / Electric Colors) */
+.hero-matte-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 26, 38, 0.88) 0%,
+    rgba(20, 34, 49, 0.82) 55%,
+    rgba(25, 42, 60, 0.75) 100%
+  );
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+}
+
+.hero-content-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.hero-content-stack {
+  max-width: 820px;
+}
+
+.hero-kicker-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.4rem 0.95rem;
-  background: #FFFFFF;
-  border: 1px solid var(--corporate-border);
+  padding: 0.35rem 0.95rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 6px;
   font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--corporate-slate);
-  margin-bottom: 1.35rem;
-  align-self: flex-start;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  font-weight: 500;
+  color: #E2E8F0;
+  margin-bottom: 1.5rem;
 }
 
-.hero-taxonomy-tag .tag-bullet {
-  width: 7px;
-  height: 7px;
+.hero-kicker-badge .badge-dot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background-color: var(--corporate-purple);
+  background-color: #94A3B8;
 }
 
-.hero-editorial-h1 {
-  font-size: clamp(1.95rem, 2.5vw, 2.45rem);
-  line-height: 1.36;
+.hero-institutional-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(2.15rem, 3.2vw, 2.95rem);
+  line-height: 1.32;
   font-weight: 700;
-  color: var(--corporate-navy);
-  margin-bottom: 1.15rem;
-  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  margin-bottom: 1.35rem;
+  letter-spacing: -0.015em;
 }
 
-.hero-editorial-lead {
+.title-sub-clause {
+  display: block;
+  font-weight: 500;
+  color: #CBD5E1;
+  font-size: 0.86em;
+  margin-top: 0.35rem;
+}
+
+.hero-institutional-desc {
+  font-family: 'Readex Pro', sans-serif;
   font-size: 1.05rem;
-  line-height: 1.82;
-  color: var(--corporate-slate);
-  margin-bottom: 2rem;
-  max-width: 480px;
+  line-height: 1.85;
+  color: #CBD5E1;
+  margin-bottom: 2.25rem;
+  max-width: 640px;
 }
 
-.hero-cta-cluster {
+.hero-action-row {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.25rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.75rem;
 }
 
-.btn-editorial-link {
+.btn-corporate-primary {
+  background-color: #FFFFFF;
+  color: #142231;
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 600;
+  padding: 0.85rem 1.85rem;
+  border-radius: 6px;
+  border: 1px solid #FFFFFF;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
   font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--corporate-navy);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-corporate-primary:hover {
+  background-color: #F1F5F9;
+  border-color: #F1F5F9;
+  transform: translateY(-1px);
+}
+
+.btn-corporate-outline {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 500;
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.95rem;
   text-decoration: none;
-  border-bottom: 1.5px solid #CBD5E1;
-  padding-bottom: 3px;
   transition: all 0.2s ease;
 }
 
-.btn-editorial-link:hover {
-  color: var(--corporate-purple);
-  border-color: var(--corporate-purple);
-  gap: 0.75rem;
+.btn-corporate-outline:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 
-/* Micro-Data Factual Ledger */
-.hero-data-ledger {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 2.5rem;
+.hero-provenance-ledger {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   padding-top: 1.75rem;
-  border-top: 1px solid var(--corporate-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   width: fit-content;
 }
 
-.data-ledger-item {
+.provenance-item {
   display: flex;
   flex-direction: column;
 }
 
-.data-ledger-val {
-  font-family: var(--font-heading-en);
-  font-size: 1.45rem;
+.provenance-value {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--corporate-navy);
-  line-height: 1;
-  margin-bottom: 0.35rem;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
 }
 
-.data-ledger-lbl {
-  font-size: 0.8rem;
-  color: var(--corporate-light-slate);
+.provenance-label {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.78rem;
+  color: #94A3B8;
   line-height: 1.4;
 }
 
-/* Architectural Video Showcase Frame */
-.hero-media-col {
-  display: flex;
-  flex-direction: column;
+.provenance-sep {
+  width: 1px;
+  height: 2.25rem;
+  background-color: rgba(255, 255, 255, 0.14);
 }
 
-.hero-architectural-frame {
-  background: #FFFFFF;
-  border: 1px solid var(--corporate-border);
-  border-radius: 12px;
-  padding: 0.75rem;
-  box-shadow: 0 16px 36px -12px rgba(27, 37, 89, 0.08);
-}
-
-.hero-video-box {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
-  background-color: #0F172A;
-}
-
-.hero-editorial-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-media-caption {
-  padding: 0.75rem 0.5rem 0.25rem 0.5rem;
-  font-size: 0.8rem;
-  color: var(--corporate-light-slate);
-  text-align: right;
-  line-height: 1.4;
-}
-
-/* 3. Section: Company Introduction (Asymmetric Editorial Grid 38% / 62%) */
+/* 3. Section: Company Introduction (Asymmetric Editorial Grid 35% / 65%) */
 .section-editorial-about {
   background-color: #FFFFFF;
-  border-bottom: 1px solid var(--corporate-border);
+  border-bottom: 1px solid var(--border-subtle);
   padding: 5.5rem 0;
 }
 
@@ -3813,7 +3836,7 @@ html[lang="en"] .pillar-sequence-num {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--corporate-border);
+  border-bottom: 1px solid var(--border-subtle);
   margin-bottom: 3.5rem;
 }
 
@@ -3821,21 +3844,23 @@ html[lang="en"] .pillar-sequence-num {
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  font-family: 'Alexandria', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--corporate-purple);
+  color: var(--brand-accent);
 }
 
 .editorial-meta-cities,
 .editorial-meta-count {
+  font-family: 'Readex Pro', sans-serif;
   font-size: 0.82rem;
-  color: var(--corporate-light-slate);
+  color: var(--secondary-text);
   font-weight: 500;
 }
 
 .editorial-about-composition {
   display: grid;
-  grid-template-columns: 38% 62%;
+  grid-template-columns: 35% 65%;
   gap: 4rem;
   align-items: flex-start;
 }
@@ -3849,20 +3874,22 @@ html[lang="en"] .pillar-sequence-num {
 }
 
 .about-main-title {
+  font-family: 'Alexandria', sans-serif;
   font-size: clamp(1.65rem, 2.2vw, 2.15rem);
   line-height: 1.38;
   font-weight: 700;
-  color: var(--corporate-navy);
+  color: var(--primary-navy);
 }
 
 .about-highlight-box {
   padding: 1.25rem 1.5rem;
-  background-color: var(--corporate-bg);
-  border-right: 3px solid var(--corporate-purple);
+  background-color: var(--light-bg);
+  border-right: 3px solid var(--primary-navy);
   border-radius: 0 8px 8px 0;
+  font-family: 'Readex Pro', sans-serif;
   font-size: 0.92rem;
-  line-height: 1.7;
-  color: var(--corporate-slate);
+  line-height: 1.75;
+  color: #334155;
 }
 
 .about-narrative-column {
@@ -3873,177 +3900,193 @@ html[lang="en"] .pillar-sequence-num {
 
 .about-narrative-card {
   padding: 2rem;
-  background-color: var(--corporate-bg);
-  border: 1px solid var(--corporate-border);
+  background-color: var(--light-bg);
+  border: 1px solid var(--border-subtle);
   border-radius: 10px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .about-narrative-card:hover {
   border-color: #CBD5E1;
-  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 24px -8px rgba(15, 26, 38, 0.04);
 }
 
 .about-card-heading {
-  font-size: 1.2rem;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.15rem;
   font-weight: 600;
-  color: var(--corporate-navy);
+  color: var(--primary-navy);
   margin-bottom: 0.75rem;
 }
 
 .about-card-text {
+  font-family: 'Readex Pro', sans-serif;
   font-size: 0.95rem;
   line-height: 1.85;
-  color: var(--corporate-slate);
-  max-width: 540px;
+  color: #475569;
+  max-width: 580px;
 }
 
-/* 4. Section: Business Sectors (2x2 Architectural Grid) */
-.section-editorial-sectors {
-  background-color: var(--corporate-bg);
-  border-bottom: 1px solid var(--corporate-border);
+/* 4. Section: Business Sectors (Horizontal Architectural Service Bands — NO BOX CARDS) */
+.section-service-bands {
+  background-color: #F8FAFC;
+  border-bottom: 1px solid var(--border-subtle);
   padding: 5.5rem 0;
 }
 
-.sectors-headline-split {
+.bands-intro-split {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 3.5rem;
   align-items: flex-end;
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
 }
 
-.sectors-main-title {
+.bands-main-title {
+  font-family: 'Alexandria', sans-serif;
   font-size: clamp(1.65rem, 2.2vw, 2.15rem);
   line-height: 1.38;
   font-weight: 700;
-  color: var(--corporate-navy);
+  color: var(--primary-navy);
 }
 
-.sectors-sub-lead {
+.bands-sub-lead {
+  font-family: 'Readex Pro', sans-serif;
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--corporate-slate);
+  color: #475569;
   max-width: 520px;
 }
 
-.sectors-architectural-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+.service-bands-stack {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px -4px rgba(15, 26, 38, 0.03);
   margin-bottom: 3.5rem;
 }
 
-.sector-arch-card {
-  background: #FFFFFF;
-  border: 1px solid var(--corporate-border);
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+.service-band-row {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 3rem;
+  padding: 2.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  align-items: center;
+  transition: background-color 0.2s ease;
 }
 
-.sector-arch-card:hover {
-  border-color: #CBD5E1;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.06);
+.service-band-row:last-child {
+  border-bottom: none;
 }
 
-.sector-arch-visual {
+.service-band-row:hover {
+  background-color: #FAFCFE;
+}
+
+.service-band-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
   overflow: hidden;
-  background-color: #0F172A;
+  background-color: #0F1A26;
+  border: 1px solid var(--border-subtle);
 }
 
-.sector-arch-visual img {
+.service-band-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
 
-.sector-arch-card:hover .sector-arch-visual img {
+.service-band-row:hover .service-band-media img {
   transform: scale(1.03);
 }
 
-.sector-arch-category-badge {
-  position: absolute;
-  bottom: 0.75rem;
-  right: 0.75rem;
-  padding: 0.35rem 0.75rem;
-  background: rgba(29, 49, 71, 0.9);
-  backdrop-filter: blur(4px);
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #FFFFFF;
-}
-
-.sector-arch-body {
-  padding: 1.75rem;
+.service-band-content {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 }
 
-.sector-arch-title {
-  font-size: 1.25rem;
+.service-band-index-tag {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: var(--corporate-navy);
-  margin-bottom: 0.75rem;
+  color: var(--brand-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
 }
 
-.sector-arch-desc {
-  font-size: 0.92rem;
-  line-height: 1.75;
-  color: var(--corporate-slate);
-  margin-bottom: 1.25rem;
-  flex-grow: 1;
+.service-band-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 0.85rem;
 }
 
-.sector-arch-capabilities {
+.service-band-scope {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.82;
+  color: #475569;
+  margin-bottom: 1.35rem;
+  max-width: 680px;
+}
+
+.service-band-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
-.sector-arch-capabilities span {
+.service-band-chip {
+  font-family: 'Readex Pro', sans-serif;
   font-size: 0.78rem;
-  color: #475569;
-  background: var(--corporate-bg);
-  border: 1px solid var(--corporate-border);
-  padding: 0.25rem 0.65rem;
+  color: #334155;
+  background-color: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  padding: 0.3rem 0.75rem;
   border-radius: 4px;
 }
 
-.sector-arch-link {
+.service-band-action {
+  align-self: flex-start;
+}
+
+.service-band-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: 'Alexandria', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--corporate-navy);
+  color: var(--primary-navy);
   text-decoration: none;
-  transition: color 0.2s ease, gap 0.2s ease;
+  border-bottom: 1.5px solid #CBD5E1;
+  padding-bottom: 2px;
+  transition: all 0.2s ease;
 }
 
-.sector-arch-link:hover {
-  color: var(--corporate-purple);
+.service-band-link:hover {
+  border-color: var(--primary-navy);
   gap: 0.75rem;
 }
 
-.sectors-leadout-bar {
+.bands-leadout-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
   padding: 1.5rem 2rem;
   background-color: #FFFFFF;
-  border: 1px solid var(--corporate-border);
+  border: 1px solid var(--border-subtle);
   border-radius: 10px;
 }
 
@@ -4051,9 +4094,10 @@ html[lang="en"] .pillar-sequence-num {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  font-family: 'Readex Pro', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--corporate-slate);
+  color: #475569;
 }
 
 .leadout-bullet {
@@ -4073,29 +4117,20 @@ html[lang="en"] .pillar-sequence-num {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    color: var(--corporate-navy) !important;
+    color: var(--primary-navy) !important;
     padding: 0.5rem;
   }
 
   .hamburger-btn svg {
-    stroke: var(--corporate-navy) !important;
+    stroke: var(--primary-navy) !important;
   }
 
   .nav-actions .btn {
     display: none;
   }
 
-  .hero-editorial-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .hero-narrative-col {
-    order: 1;
-  }
-
-  .hero-media-col {
-    order: 2;
+  .hero-fullscreen {
+    min-height: 80vh;
   }
 
   .editorial-about-composition {
@@ -4107,14 +4142,15 @@ html[lang="en"] .pillar-sequence-num {
     position: static;
   }
 
-  .sectors-headline-split {
+  .bands-intro-split {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
 
-  .sectors-architectural-grid {
+  .service-band-row {
     grid-template-columns: 1fr;
     gap: 1.75rem;
+    padding: 2rem 1.5rem;
   }
 }
 
@@ -4129,37 +4165,48 @@ html[lang="en"] .pillar-sequence-num {
     height: 4.15rem !important;
   }
 
-  .hero-editorial-section {
-    padding: 2.5rem 0 3.25rem 0;
+  .hero-fullscreen {
+    min-height: 85vh;
   }
 
-  .hero-editorial-h1 {
-    font-size: 1.75rem;
+  .hero-content-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-institutional-title {
+    font-size: 1.85rem;
     line-height: 1.32;
   }
 
-  .hero-cta-cluster {
+  .hero-action-row {
     flex-direction: column;
     width: 100%;
     gap: 0.85rem;
   }
 
-  .hero-cta-cluster .btn,
-  .hero-cta-cluster .btn-editorial-link {
+  .hero-action-row .btn-corporate-primary,
+  .hero-action-row .btn-corporate-outline {
     width: 100%;
     justify-content: center;
   }
 
-  .hero-data-ledger {
-    grid-template-columns: 1fr;
+  .hero-provenance-ledger {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
+    width: 100%;
+  }
+
+  .provenance-sep {
+    display: none;
   }
 
   .about-narrative-card {
     padding: 1.5rem;
   }
 
-  .sectors-leadout-bar {
+  .bands-leadout-bar {
     flex-direction: column;
     align-items: flex-start;
   }

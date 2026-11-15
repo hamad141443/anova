@@ -9,7 +9,7 @@
   <!-- Preconnect to Google Fonts for Ultra-Fast Typography Rendering -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css?v=3">
 </head>
 <body data-page-title-key="nav_home">
@@ -106,71 +106,69 @@
   </aside>
 
   <!-- ==========================================================================
-       1. HERO: ASYMMETRIC CORPORATE EDITORIAL CANVAS (43% / 57%)
+       1. HERO: FULL-WIDTH / FULL-SCREEN CORPORATE VIDEO COVER
        ========================================================================== -->
-  <section class="hero-editorial-section" id="hero">
-    <div class="container">
-      <div class="hero-editorial-grid">
-        <!-- Editorial Narrative Column (43%) -->
-        <div class="hero-narrative-col">
-          <div class="hero-taxonomy-tag">
-            <span class="tag-bullet"></span>
-            <span class="tag-label" data-i18n="hero_kicker">شركة أنوفا المتحدة • المملكة العربية السعودية</span>
-          </div>
+  <section class="hero-fullscreen" id="hero">
+    <div class="hero-video-viewport">
+      <video 
+        class="hero-full-video" 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        webkit-playsinline
+        preload="metadata" 
+        poster="public/hero-venue.jpg" 
+        aria-label="تجهيزات قاعات المؤتمرات والضيافة لشركة أنوفا"
+      >
+        <source src="public/anova-hero.mp4" type="video/mp4">
+      </video>
+      <!-- Subdued Muted Matte Navy/Slate Overlay -->
+      <div class="hero-matte-overlay"></div>
+    </div>
 
-          <h1 class="hero-editorial-h1" data-i18n="hero_h1">
-            تنظيم المؤتمرات والمعارض الدولية وإدارة سلاسل الإعاشة والضيافة المؤسسية
-          </h1>
-
-          <p class="hero-editorial-lead" data-i18n="hero_subtext">
-            شريك وطني متخصص في تشغيل الفعاليات الكبرى، وإدارة مرافق الإطعام، وسلاسل الإعاشة الفاخرة للقطاعين الحكومي والخاص وفق أعلى معايير الحوكمة والاحترافية بالمملكة.
-          </p>
-
-          <div class="hero-cta-cluster">
-            <button class="btn btn-primary open-quote-modal">
-              <span data-i18n="cta_quote">اطلب عرض سعر مخصص</span>
-              <svg class="icon-svg" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </button>
-            <a href="#sectors" class="btn-editorial-link">
-              <span data-i18n="hero_cta_secondary">استعراض قطاعات الأعمال</span>
-              <svg class="icon-svg dir-flip" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-
-          <!-- Micro-Data Factual Ledger -->
-          <div class="hero-data-ledger">
-            <div class="data-ledger-item">
-              <span class="data-ledger-val">2017</span>
-              <span class="data-ledger-lbl" data-i18n="stat_founded_lbl">سنة التأسيس بالعاصمة الرياض</span>
-            </div>
-            <div class="data-ledger-item">
-              <span class="data-ledger-val">3+</span>
-              <span class="data-ledger-lbl" data-i18n="stat_branches_lbl">مراكز تشغيل رئيسية بالمملكة</span>
-            </div>
-          </div>
+    <div class="container hero-content-container">
+      <div class="hero-content-stack">
+        <div class="hero-kicker-badge">
+          <span class="badge-dot"></span>
+          <span data-i18n="hero_kicker">شركة أنوفا المتحدة • المملكة العربية السعودية</span>
         </div>
 
-        <!-- Architectural Visual Media Column (57%) -->
-        <div class="hero-media-col">
-          <div class="hero-architectural-frame">
-            <div class="hero-video-box">
-              <video 
-                class="hero-editorial-video" 
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                webkit-playsinline
-                preload="metadata" 
-                poster="public/hero-venue.jpg" 
-                aria-label="تجهيزات قاعات المؤتمرات والضيافة لشركة أنوفا"
-              >
-                <source src="public/anova-hero.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="hero-media-caption">
-              <span>تجهيزات حية لإحدى قاعات المؤتمرات والضيافة لشركة أنوفا المتحدة</span>
-            </div>
+        <h1 class="hero-institutional-title" data-i18n="hero_h1">
+          تنظيم المؤتمرات والمعارض الدولية
+          <span class="title-sub-clause">وإدارة سلاسل الإعاشة والضيافة المؤسسية</span>
+        </h1>
+
+        <p class="hero-institutional-desc" data-i18n="hero_subtext">
+          شريك وطني استراتيجي للقطاعين الحكومي والخاص؛ نقدم حلولاً متكاملة لتشغيل الفعاليات الكبرى، وإدارة مرافق الإطعام، وسلاسل الإعاشة الراقية وفق أعلى معايير الحوكمة والامتثال بالمملكة.
+        </p>
+
+        <div class="hero-action-row">
+          <button class="btn-corporate-primary open-quote-modal">
+            <span data-i18n="cta_quote">طلب عرض سعر مخصص</span>
+            <svg class="icon-svg" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </button>
+          <a href="#sectors" class="btn-corporate-outline">
+            <span data-i18n="hero_cta_secondary">استعراض القطاعات التشغيلية</span>
+            <svg class="icon-svg dir-flip" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Factual Corporate Provenance Ledger -->
+        <div class="hero-provenance-ledger">
+          <div class="provenance-item">
+            <span class="provenance-value">2017</span>
+            <span class="provenance-label" data-i18n="stat_founded_lbl">سنة التأسيس بالعاصمة الرياض</span>
+          </div>
+          <div class="provenance-sep"></div>
+          <div class="provenance-item">
+            <span class="provenance-value">3+</span>
+            <span class="provenance-label" data-i18n="stat_branches_lbl">مراكز تشغيل رئيسية بالمملكة</span>
+          </div>
+          <div class="provenance-sep"></div>
+          <div class="provenance-item">
+            <span class="provenance-value" data-i18n="top_locations">الرياض • جدة • الخبر</span>
+            <span class="provenance-label">تغطية تشغيلية لكافة المناطق</span>
           </div>
         </div>
       </div>
@@ -178,20 +176,20 @@
   </section>
 
   <!-- ==========================================================================
-       2. SECTION: COMPANY INTRODUCTION (ASYMMETRIC EDITORIAL GRID 38% / 62%)
+       2. SECTION: COMPANY INTRODUCTION (ASYMMETRIC EDITORIAL GRID 35% / 65%)
        ========================================================================== -->
   <section class="section-editorial-about" id="about">
     <div class="container">
       <div class="editorial-header-rule">
         <div class="editorial-eyebrow">
-          <span class="editorial-eyebrow-dot">•</span>
+          <span>•</span>
           <span class="eyebrow-title" data-i18n="about_tag">عن أنوفا المتحدة • الشريك الاستراتيجي</span>
         </div>
         <div class="editorial-meta-cities" data-i18n="about_cities">الرياض • جدة • الخبر</div>
       </div>
 
       <div class="editorial-about-composition">
-        <!-- Independent Title & Strategic Highlight Column (38%) -->
+        <!-- Independent Title & Strategic Highlight Column (35%) -->
         <div class="about-title-column">
           <h2 class="about-main-title" data-i18n="about_title">
             شريك استراتيجي في تشغيل الفعاليات السيادية وتوفير سلاسل الإعاشة الراقية لأهم المحافل بالمملكة
@@ -206,7 +204,7 @@
           </div>
         </div>
 
-        <!-- Structured Operational Breakdown Column (62%) -->
+        <!-- Structured Operational Breakdown Column (65%) -->
         <div class="about-narrative-column">
           <div class="about-narrative-card">
             <h3 class="about-card-heading">المسيرة والريادة الوطنية</h3>
@@ -225,7 +223,7 @@
           <div class="about-narrative-card">
             <h3 class="about-card-heading">الحوكمة ومعايير سلامة الغذاء</h3>
             <p class="about-card-text">
-              نطبق اشتراطات الهيئة العامة للغذاء والدواء ونظام (HACCP) العالمي لسلامة الأغذية وسلاسل التوريد المبردة، مدعومة بمنظومة تدقيق وفحص دوري مستمر لضمان أعلى مستويات الأمان الصحي والموثوقية لكافة الشركاء.
+              نطبق اشتراطات الهيئة العامة للغذاء والدواء ونظام (HACCP) العالمي لسلامة الأغذية وسلاسل التوريد المبردة، مدعومة بمنظومة تدقيق وفحص دوري مستمر يضمن أعلى مستويات الأمان الصحي والموثوقية لكافة الشركاء.
             </p>
           </div>
         </div>
@@ -234,123 +232,135 @@
   </section>
 
   <!-- ==========================================================================
-       3. SECTION: BUSINESS SECTORS (2x2 ARCHITECTURAL DIRECTORY)
+       3. SECTION: BUSINESS SECTORS (STRUCTURED HORIZONTAL SERVICE BANDS — NO CARDS)
        ========================================================================== -->
-  <section class="section-editorial-sectors" id="sectors">
+  <section class="section-service-bands" id="sectors">
     <div class="container">
       <div class="editorial-header-rule">
         <div class="editorial-eyebrow">
-          <span class="editorial-eyebrow-dot">•</span>
+          <span>•</span>
           <span class="eyebrow-title" data-i18n="services_tag">قطاعات الأعمال المعتمدة</span>
         </div>
         <div class="editorial-meta-count">4 قطاعات تشغيلية متكاملة</div>
       </div>
 
-      <div class="sectors-headline-split">
-        <h2 class="sectors-main-title" data-i18n="services_title">
-          أربعة قطاعات تشغيلية متخصصة تحظى بتجهيزات مستقلة وطواقم عمل محترفة
+      <div class="bands-intro-split">
+        <h2 class="bands-main-title" data-i18n="services_title">
+          أربعة مسارات تشغيلية متخصصة تحظى بتجهيزات مستقلة وطواقم عمل محترفة
         </h2>
-        <p class="sectors-sub-lead" data-i18n="services_subtitle">
+        <p class="bands-sub-lead" data-i18n="services_subtitle">
           تتميز أنوفا بالقدرة على تشغيل مختلف مسارات الفعاليات والضيافة، حيث يعمل كل قطاع بأسطول ومعدات مستقلة تضمن التميز التشغيلي الكامل.
         </p>
       </div>
 
-      <div class="sectors-architectural-grid">
-        <!-- Sector 1: Exhibitions & Conferences -->
-        <article class="sector-arch-card" id="sec-events">
-          <div class="sector-arch-visual">
+      <div class="service-bands-stack">
+        <!-- Sector Band 1: Exhibitions & Conferences -->
+        <article class="service-band-row" id="sec-events">
+          <div class="service-band-media">
             <img src="public/sec-events.jpg" alt="تنظيم المعارض والمؤتمرات" loading="lazy" decoding="async">
-            <div class="sector-arch-category-badge">المعارض والقمم الدولية</div>
           </div>
-          <div class="sector-arch-body">
-            <h3 class="sector-arch-title" data-i18n="sec1_title">تنظيم وإدارة المعارض والمؤتمرات</h3>
-            <p class="sector-arch-desc" data-i18n="sec1_desc">
+          <div class="service-band-content">
+            <div class="service-band-index-tag">المسار 01 • المعارض والقمم الدولية</div>
+            <h3 class="service-band-title" data-i18n="sec1_title">تنظيم وإدارة المعارض والمؤتمرات</h3>
+            <p class="service-band-scope" data-i18n="sec1_desc">
               تخطيط وإدارة الفعاليات الضخمة من الألف إلى الياء؛ إدارة الحشود، التجهيزات الصوتية والمرئية، تصميم وتشييد المنصات، وبروتوكول استقبال الوفود الرسمية.
             </p>
-            <div class="sector-arch-capabilities">
-              <span>تجهيز المنصات</span>
-              <span>الأنظمة الصوتية والمرئية</span>
-              <span>بروتوكول الحشود</span>
+            <div class="service-band-chips">
+              <span class="service-band-chip">تجهيز المنصات</span>
+              <span class="service-band-chip">الأنظمة الصوتية والمرئية</span>
+              <span class="service-band-chip">بروتوكول الحشود</span>
+              <span class="service-band-chip">التسجيل والاعتماد</span>
             </div>
-            <a href="services.html#sec-events" class="sector-arch-link">
-              <span>تفاصيل التجهيزات وإدارة المؤتمرات</span>
-              <svg class="icon-svg dir-flip" style="width: 0.9rem; height: 0.9rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+            <div class="service-band-action">
+              <a href="services.html#sec-events" class="service-band-link">
+                <span>تفاصيل التجهيزات وإدارة المؤتمرات</span>
+                <svg class="icon-svg dir-flip" style="width: 0.9rem; height: 0.9rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
           </div>
         </article>
 
-        <!-- Sector 2: Catering & Hospitality -->
-        <article class="sector-arch-card" id="sec-catering">
-          <div class="sector-arch-visual">
+        <!-- Sector Band 2: Catering & Hospitality -->
+        <article class="service-band-row" id="sec-catering">
+          <div class="service-band-media">
             <img src="public/sec-catering.jpg" alt="خدمات الإعاشة والتموين الراقي" loading="lazy" decoding="async">
-            <div class="sector-arch-category-badge">الضيافة والتموين التنفيذي</div>
           </div>
-          <div class="sector-arch-body">
-            <h3 class="sector-arch-title" data-i18n="sec2_title">خدمات الإعاشة والتموين المؤسسي الراقي</h3>
-            <p class="sector-arch-desc" data-i18n="sec2_desc">
-              بوفيهات ملكية ودبلوماسية مخصصة للوزارات والشركات الكبرى، مع قوائم طعام مبتكرة يقودها طهاة عالميون لتقديم تجربة طهي رفيعة المستوى.
+          <div class="service-band-content">
+            <div class="service-band-index-tag">المسار 02 • الضيافة والتموين التنفيذي</div>
+            <h3 class="service-band-title" data-i18n="sec2_title">خدمات الإعاشة والتموين المؤسسي الراقي</h3>
+            <p class="service-band-scope" data-i18n="sec2_desc">
+              بوفيهات ملكية ودبلوماسية مخصصة للوزارات والشركات الكبرى، مع قوائم طعام مبتكرة يقودها طهاة عالميون لتقديم تجربة طهي رفيعة المستوى تليق بضيوفكم.
             </p>
-            <div class="sector-arch-capabilities">
-              <span>بوفيهات دبلوماسية</span>
-              <span>طهي فندقي مباشر</span>
-              <span>قوائم مخصصة</span>
+            <div class="service-band-chips">
+              <span class="service-band-chip">بوفيهات دبلوماسية</span>
+              <span class="service-band-chip">طهي فندقي مباشر</span>
+              <span class="service-band-chip">قوائم طعام مخصصة</span>
+              <span class="service-band-chip">خدمة تشريفات VIP</span>
             </div>
-            <a href="services.html#sec-catering" class="sector-arch-link">
-              <span>تفاصيل خدمات الإعاشة الفاخرة</span>
-              <svg class="icon-svg dir-flip" style="width: 0.9rem; height: 0.9rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+            <div class="service-band-action">
+              <a href="services.html#sec-catering" class="service-band-link">
+                <span>تفاصيل خدمات الإعاشة الفاخرة</span>
+                <svg class="icon-svg dir-flip" style="width: 0.9rem; height: 0.9rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
           </div>
         </article>
 
-        <!-- Sector 3: Coffee Break & Corporate Serving -->
-        <article class="sector-arch-card" id="sec-coffee">
-          <div class="sector-arch-visual">
+        <!-- Sector Band 3: Coffee Break & Corporate Serving -->
+        <article class="service-band-row" id="sec-coffee">
+          <div class="service-band-media">
             <img src="public/sec-coffee.jpg" alt="استراحات القهوة وضيافة الشركات" loading="lazy" decoding="async">
-            <div class="sector-arch-category-badge">محطات الضيافة المتخصصة</div>
           </div>
-          <div class="sector-arch-body">
-            <h3 class="sector-arch-title" data-i18n="sec3_title">استراحات القهوة وضيافة الشركات</h3>
-            <p class="sector-arch-desc" data-i18n="sec3_desc">
+          <div class="service-band-content">
+            <div class="service-band-index-tag">المسار 03 • محطات الضيافة المتخصصة</div>
+            <h3 class="service-band-title" data-i18n="sec3_title">استراحات القهوة وضيافة الشركات</h3>
+            <p class="service-band-scope" data-i18n="sec3_desc">
               محطات قهوة مختصة متكاملة مع باريستا محترف، مشروبات ساخنة وباردة طازجة، ومقبلات خفيفة مخبوزة يومياً تضفي طابعاً من الحيوية والتميز.
             </p>
-            <div class="sector-arch-capabilities">
-              <span>باريستا مختص</span>
-              <span>مخبوزات طازجة</span>
-              <span>تشغيل أجنحة المعارض</span>
+            <div class="service-band-chips">
+              <span class="service-band-chip">باريستا مختص</span>
+              <span class="service-band-chip">مخبوزات طازجة يومياً</span>
+              <span class="service-band-chip">ضيافة مجالس الإدارة</span>
+              <span class="service-band-chip">تشغيل أجنحة المعارض</span>
             </div>
-            <a href="services.html#sec-coffee" class="sector-arch-link">
-              <span>تفاصيل محطات القهوة والضيافة</span>
-              <svg class="icon-svg dir-flip" style="width: 0.9rem; height: 0.9rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+            <div class="service-band-action">
+              <a href="services.html#sec-coffee" class="service-band-link">
+                <span>تفاصيل محطات القهوة والضيافة</span>
+                <svg class="icon-svg dir-flip" style="width: 0.9rem; height: 0.9rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
           </div>
         </article>
 
-        <!-- Sector 4: Food Supply & Facility Management -->
-        <article class="sector-arch-card" id="sec-supply">
-          <div class="sector-arch-visual">
+        <!-- Sector Band 4: Food Supply & Facility Management -->
+        <article class="service-band-row" id="sec-supply">
+          <div class="service-band-media">
             <img src="public/sec-supply.jpg" alt="التوريد الغذائي وإدارة مرافق الإطعام" loading="lazy" decoding="async">
-            <div class="sector-arch-category-badge">الإعاشة اللوجستية والتعاقدية</div>
           </div>
-          <div class="sector-arch-body">
-            <h3 class="sector-arch-title" data-i18n="sec5_title">التوريد الغذائي وإدارة مرافق الإطعام</h3>
-            <p class="sector-arch-desc" data-i18n="sec5_desc">
+          <div class="service-band-content">
+            <div class="service-band-index-tag">المسار 04 • الإعاشة اللوجستية والتعاقدية</div>
+            <h3 class="service-band-title" data-i18n="sec5_title">التوريد الغذائي وإدارة مرافق الإطعام</h3>
+            <p class="service-band-scope" data-i18n="sec5_desc">
               إعاشة مستمرة وإدارة مقاصف ومطاعم المجمعات الصناعية والجامعات والمستشفيات، مدعومة بمطابخ مركزية عملاقة وأسطول نقل مبرد معتمد.
             </p>
-            <div class="sector-arch-capabilities">
-              <span>عقود تموين مستمرة</span>
-              <span>إدارة المقاصف والمرافق</span>
-              <span>أسطول نقل مبرد</span>
+            <div class="service-band-chips">
+              <span class="service-band-chip">عقود تموين مستمرة</span>
+              <span class="service-band-chip">إدارة المقاصف والمرافق</span>
+              <span class="service-band-chip">أسطول نقل مبرد معتمد</span>
+              <span class="service-band-chip">رقابة صحية مستمرة</span>
             </div>
-            <a href="services.html#sec-supply" class="sector-arch-link">
-              <span>تفاصيل التوريد الغذائي اللوجستي</span>
-              <svg class="icon-svg dir-flip" style="width: 0.9rem; height: 0.9rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+            <div class="service-band-action">
+              <a href="services.html#sec-supply" class="service-band-link">
+                <span>تفاصيل التوريد الغذائي اللوجستي</span>
+                <svg class="icon-svg dir-flip" style="width: 0.9rem; height: 0.9rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
           </div>
         </article>
       </div>
 
-      <!-- Sectors Lead-out Bar -->
-      <div class="sectors-leadout-bar">
+      <!-- Lead-out Bar -->
+      <div class="bands-leadout-bar">
         <div class="leadout-info">
           <span class="leadout-bullet"></span>
           <span>جميع قطاعاتنا التشغيلية تلتزم بنظام إدارة الجودة وحوكمة سلامة الغذاء المعتمدة بالمملكة</span>
