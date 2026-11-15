@@ -270,60 +270,76 @@ class AnovaApp {
   }
 
   /**
-   * Manages Hero cinematic background video playback, reduced-motion compliance,
-   * and seamless static image fallback when playback is unavailable.
+   * Manages Hero cinematic background video playback, IntersectionObserver power saving,
+   * reduced-motion compliance, and seamless static image fallback.
    */
   setupHeroVideo() {
-    const wrapper = document.querySelector('.hero-bg-wrapper');
-    const video = wrapper ? wrapper.querySelector('.hero-bg-video') : null;
-    if (!wrapper || !video) return;
+    const video = document.querySelector('.hero-full-video') || document.querySelector('.hero-bg-video');
+    const heroSection = document.getElementById('hero') || (video ? video.closest('section') : null);
+    if (!video) return;
 
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const source = video.querySelector('source');
 
-    const activateFallback = () => {
-      wrapper.classList.add('is-video-fallback');
-      video.pause();
+    const pauseVideo = () => {
+      if (!video.paused) {
+        try { video.pause(); } catch(e) {}
+      }
     };
 
-    const syncMotionPreference = (prefersReduced) => {
-      if (prefersReduced) {
-        activateFallback();
+    const resumeVideo = () => {
+      if (motionQuery.matches) {
+        pauseVideo();
         return;
       }
-
-      if (wrapper.classList.contains('is-video-failed')) return;
-
-      wrapper.classList.remove('is-video-fallback');
       video.muted = true;
       video.defaultMuted = true;
       video.playsInline = true;
-
-      const playPromise = video.play();
-      if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.catch((err) => {
-          if (err && err.name === 'NotAllowedError') {
-            activateFallback();
-          }
+      const p = video.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => {
+          // Keep poster fallback if autoplay blocked
         });
       }
     };
 
-    const handleMediaError = () => {
-      wrapper.classList.add('is-video-failed');
-      activateFallback();
-    };
-
-    video.addEventListener('error', handleMediaError);
-    if (source) {
-      source.addEventListener('error', handleMediaError);
-    }
-
-    syncMotionPreference(motionQuery.matches);
-
+    // 1. Reduced motion handler
     if (typeof motionQuery.addEventListener === 'function') {
-      motionQuery.addEventListener('change', (e) => syncMotionPreference(e.matches));
+      motionQuery.addEventListener('change', (e) => {
+        if (e.matches) pauseVideo();
+        else resumeVideo();
+      });
     }
+
+    // 2. IntersectionObserver: Pause video when hero scrolls off-screen to save 100% GPU / mobile CPU
+    if ('IntersectionObserver' in window && heroSection) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            resumeVideo();
+          } else {
+            pauseVideo();
+          }
+        });
+      }, {
+        threshold: 0.05
+      });
+      heroObserver.observe(heroSection);
+    } else {
+      resumeVideo();
+    }
+
+    // 3. Page visibility change: Pause when user switches tab or minimizes app
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        pauseVideo();
+      } else if (heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          resumeVideo();
+        }
+      }
+    });
   }
 
   /**
