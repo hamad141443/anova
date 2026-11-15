@@ -1163,9 +1163,9 @@ html[dir="ltr"] .service-num-tag { left: 1rem; }
 .form-card {
   background-color: var(--pure-white);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: 2.25rem;
-  box-shadow: var(--shadow-sm);
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px -4px rgba(15, 26, 38, 0.03);
 }
 
 .form-group {
@@ -1174,28 +1174,74 @@ html[dir="ltr"] .service-num-tag { left: 1rem; }
 
 .form-label {
   display: block;
-  font-size: 0.86rem;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--primary-navy);
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.5rem;
 }
 
 .form-control {
   width: 100%;
   padding: 0.75rem 1rem;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid #CBD5E1;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-primary);
   background-color: var(--pure-white);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-  font-family: inherit;
+  font-family: 'Readex Pro', sans-serif;
 }
 
 .form-control:focus {
   outline: none;
   border-color: var(--primary-navy);
-  box-shadow: 0 0 0 3px rgba(29, 49, 71, 0.12);
+  box-shadow: 0 0 0 3px rgba(20, 34, 49, 0.08);
+}
+
+input[type="date"].form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  background-color: var(--pure-white);
+  color: var(--text-primary);
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.92rem;
+  direction: rtl;
+  text-align: right;
+  min-height: 46px;
+}
+
+input[type="date"].form-control::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  filter: invert(0.2);
+}
+
+input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
+  opacity: 0.95;
+}
+
+input[type="tel"].form-control {
+  direction: ltr;
+  text-align: right;
+  letter-spacing: 0.03em;
+}
+
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 1rem center;
+  padding-left: 2.5rem;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+html[lang="en"] select.form-control {
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  padding-left: 1rem;
 }
 
 textarea.form-control {
@@ -2373,61 +2419,59 @@ html[dir="ltr"] .partners-tier-line {
 
 .partner-card-corp {
   background-color: var(--pure-white);
-  border: 1px solid var(--brand-grey-light);
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 1.25rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: all var(--transition-normal);
-  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+  box-shadow: none;
 }
 
 .partner-card-corp:hover {
-  transform: translateY(-4px);
-  border-color: var(--brand-accent);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: rgba(20, 34, 49, 0.25);
+  box-shadow: 0 4px 12px -2px rgba(15, 26, 38, 0.04);
 }
 
 .partner-logo-box {
-  height: 4.75rem;
+  height: 3.85rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.65rem;
 }
 
 .partner-logo-img {
-  max-height: 3.75rem;
-  max-width: 135px;
+  max-height: 3.25rem;
+  max-width: 140px;
   width: auto;
   height: auto;
   object-fit: contain;
   filter: none;
-  opacity: 1;
-  transition: transform var(--transition-normal);
+  opacity: 0.95;
+  transition: opacity var(--transition-fast);
 }
 
 .partner-card-corp:hover .partner-logo-img {
-  transform: scale(1.04);
+  opacity: 1;
 }
 
 .partner-name-ar {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--midnight-dark);
-  margin-bottom: 0.25rem;
-  line-height: 1.4;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  margin-bottom: 0;
+  line-height: 1.35;
 }
 
 .partner-name-en {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #64748B;
-  line-height: 1.35;
+  display: none;
 }
 
 /* Partners Continuous Seamless Horizontal Marquee (Right to Left) */
@@ -2493,13 +2537,13 @@ html[dir="ltr"] .partners-tier-line {
 }
 
 .partner-marquee-card {
-  flex: 0 0 236px;
-  width: 236px;
-  min-height: 176px;
-  padding: 1.65rem 1.25rem;
-  justify-content: flex-start;
+  flex: 0 0 210px;
+  width: 210px;
+  min-height: 124px;
+  padding: 1.25rem 1rem;
+  justify-content: center;
   direction: rtl;
-  border-color: var(--brand-grey-light);
+  border-color: var(--border-subtle);
 }
 
 html[dir="ltr"] .partner-marquee-card {
@@ -2507,25 +2551,25 @@ html[dir="ltr"] .partner-marquee-card {
 }
 
 .partner-marquee-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--brand-accent);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: rgba(20, 34, 49, 0.25);
+  box-shadow: 0 4px 12px -2px rgba(15, 26, 38, 0.04);
 }
 
 .partner-marquee-card .partner-logo-box {
-  height: 4.85rem;
-  margin-bottom: 1rem;
+  height: 3.85rem;
+  margin-bottom: 0.65rem;
   flex-shrink: 0;
 }
 
 .partner-marquee-card .partner-logo-img {
-  height: 4.5rem;
-  max-height: 4.5rem;
-  max-width: 168px;
+  max-height: 3.25rem;
+  max-width: 140px;
   width: auto;
+  height: auto;
   object-fit: contain;
   filter: none;
-  opacity: 1;
+  opacity: 0.95;
 }
 
 @media (max-width: 1024px) {
@@ -2611,12 +2655,12 @@ html[dir="ltr"] .partner-marquee-card {
 
 /* 5. Contact - Executive VIP Concierge */
 .contact-concierge-card {
-  background: linear-gradient(160deg, #1A3A5D 0%, #0D1427 100%);
+  background: linear-gradient(145deg, #142231 0%, #0F1A26 100%);
   color: var(--pure-white);
-  border-radius: 16px;
-  padding: 3rem 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: var(--shadow-lg);
+  border-radius: 8px;
+  padding: 2.75rem 2.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px -4px rgba(15, 26, 38, 0.06);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2624,43 +2668,54 @@ html[dir="ltr"] .partner-marquee-card {
 
 .contact-concierge-card h3 {
   color: var(--pure-white);
-  font-family: var(--font-heading-ar);
-  font-size: 1.65rem;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.38;
   margin-bottom: 0.75rem;
 }
 
 html[lang="en"] .contact-concierge-card h3 {
   font-family: var(--font-heading-en);
-  font-size: 1.85rem;
+  font-size: 1.75rem;
 }
 
 .contact-concierge-card p {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.82);
   margin-bottom: 2rem;
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.95rem;
   line-height: 1.8;
 }
 
-.concierge-whatsapp-btn {
+.corporate-whatsapp-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  background: #25D366;
-  color: #FFFFFF;
-  padding: 1rem 1.75rem;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1.05rem;
+  background-color: var(--primary-navy);
+  color: var(--pure-white);
+  padding: 0.9rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
   margin-bottom: 2rem;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+  text-decoration: none;
   transition: all var(--transition-fast);
 }
 
-.concierge-whatsapp-btn:hover {
-  background: #20ba5a;
-  color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+.corporate-whatsapp-btn svg {
+  color: #25D366;
+  flex-shrink: 0;
+}
+
+.corporate-whatsapp-btn:hover {
+  background-color: var(--midnight-dark);
+  color: var(--pure-white);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
 }
 
 .concierge-channel {
@@ -3890,49 +3945,77 @@ html[lang="en"] .pillar-sequence-num {
 }
 
 .about-highlight-box {
-  padding: 1.25rem 1.5rem;
-  background-color: var(--light-bg);
-  border-right: 3px solid var(--primary-navy);
-  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.75rem;
+  background-color: #F8FAFC;
+  border-right: 3px solid var(--warm-gold);
+  border-radius: 0 4px 4px 0;
   font-family: 'Readex Pro', sans-serif;
-  font-size: 0.92rem;
-  line-height: 1.75;
+  font-size: 0.95rem;
+  line-height: 1.8;
   color: #334155;
 }
 
-.about-narrative-column {
+html[lang="en"] .about-highlight-box {
+  border-right: none;
+  border-left: 3px solid var(--warm-gold);
+  border-radius: 4px 0 0 4px;
+}
+
+.about-editorial-stream {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
-.about-narrative-card {
-  padding: 2rem;
-  background-color: var(--light-bg);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+.about-editorial-item {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 2rem;
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--border-subtle);
+  align-items: flex-start;
 }
 
-.about-narrative-card:hover {
-  border-color: #CBD5E1;
-  box-shadow: 0 8px 24px -8px rgba(15, 26, 38, 0.04);
+.about-editorial-item:first-child {
+  padding-top: 0;
+  border-top: none;
 }
 
-.about-card-heading {
+.about-editorial-item:last-child {
+  padding-bottom: 0;
+}
+
+.about-item-num {
   font-family: 'Alexandria', sans-serif;
   font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--primary-navy);
-  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: var(--warm-gold);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  padding-top: 0.15rem;
 }
 
-.about-card-text {
+.about-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.about-item-heading {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.about-item-text {
   font-family: 'Readex Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   line-height: 1.85;
   color: #475569;
-  max-width: 580px;
+  margin: 0;
+  max-width: 620px;
 }
 
 /* 4. Section: Business Sectors (Horizontal Architectural Service Bands — NO BOX CARDS) */
@@ -3971,17 +4054,17 @@ html[lang="en"] .pillar-sequence-num {
   flex-direction: column;
   background-color: #FFFFFF;
   border: 1px solid var(--border-subtle);
-  border-radius: 14px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 16px -4px rgba(15, 26, 38, 0.03);
+  box-shadow: 0 4px 16px -4px rgba(15, 26, 38, 0.02);
   margin-bottom: 3.5rem;
 }
 
 .service-band-row {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 3rem;
-  padding: 2.5rem;
+  grid-template-columns: 360px 1fr;
+  gap: 3.5rem;
+  padding: 2.75rem 2.5rem;
   border-bottom: 1px solid var(--border-subtle);
   align-items: center;
   transition: background-color 0.2s ease;
@@ -3999,7 +4082,7 @@ html[lang="en"] .pillar-sequence-num {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   background-color: #0F1A26;
   border: 1px solid var(--border-subtle);
@@ -4013,7 +4096,7 @@ html[lang="en"] .pillar-sequence-num {
 }
 
 .service-band-row:hover .service-band-media img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .service-band-content {
@@ -4021,47 +4104,48 @@ html[lang="en"] .pillar-sequence-num {
   flex-direction: column;
 }
 
-.service-band-index-tag {
-  font-family: 'Alexandria', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--brand-accent);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
-}
-
 .service-band-title {
   font-family: 'Alexandria', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--primary-navy);
   margin-bottom: 0.85rem;
+  line-height: 1.35;
 }
 
 .service-band-scope {
   font-family: 'Readex Pro', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.82;
+  font-size: 0.98rem;
+  line-height: 1.85;
   color: #475569;
-  margin-bottom: 1.35rem;
-  max-width: 680px;
+  margin-bottom: 1.5rem;
+  max-width: 660px;
 }
 
-.service-band-chips {
+.service-band-specs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.65rem 1.25rem;
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.85rem;
+  color: #475569;
   margin-bottom: 1.5rem;
 }
 
-.service-band-chip {
-  font-family: 'Readex Pro', sans-serif;
-  font-size: 0.78rem;
-  color: #334155;
-  background-color: #F1F5F9;
-  border: 1px solid #E2E8F0;
-  padding: 0.3rem 0.75rem;
-  border-radius: 4px;
+.service-band-specs .spec-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.service-band-specs .spec-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--warm-gold);
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .service-band-action {
@@ -4073,18 +4157,19 @@ html[lang="en"] .pillar-sequence-num {
   align-items: center;
   gap: 0.5rem;
   font-family: 'Alexandria', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--primary-navy);
   text-decoration: none;
-  border-bottom: 1.5px solid #CBD5E1;
-  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(20, 34, 49, 0.25);
+  padding-bottom: 3px;
   transition: all 0.2s ease;
 }
 
 .service-band-link:hover {
   border-color: var(--primary-navy);
   gap: 0.75rem;
+  color: var(--midnight-dark);
 }
 
 .bands-leadout-bar {
@@ -4212,8 +4297,10 @@ html[lang="en"] .pillar-sequence-num {
     display: none;
   }
 
-  .about-narrative-card {
-    padding: 1.5rem;
+  .about-editorial-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.75rem 0;
   }
 
   .bands-leadout-bar {
