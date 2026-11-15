@@ -4354,3 +4354,975 @@ html[lang="en"] .about-highlight-box {
     align-items: flex-start;
   }
 }
+
+
+/* ==========================================================================
+   UNIFIED INTERNAL PAGES ARCHITECTURE — BESPOKE CORPORATE SYSTEM
+   Harmonized with Approved ANOVA United Homepage
+   ========================================================================== */
+
+/* 1. Master Internal Page Hero Banner */
+.internal-page-hero {
+  position: relative;
+  background-color: #0F1A26;
+  background-image: 
+    linear-gradient(180deg, rgba(15, 26, 38, 0.75) 0%, rgba(20, 34, 49, 0.95) 100%),
+    radial-gradient(circle at 85% 25%, rgba(34, 54, 76, 0.40) 0%, transparent 65%);
+  color: #FFFFFF;
+  padding: 4.25rem 0 3.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  overflow: hidden;
+}
+
+.internal-page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.internal-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+.internal-breadcrumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  margin-bottom: 1.25rem;
+  font-family: 'Readex Pro', sans-serif;
+}
+
+.internal-breadcrumbs a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.internal-breadcrumbs a:hover {
+  color: #FFFFFF;
+}
+
+.internal-breadcrumbs .crumb-sep {
+  color: #64748B;
+  font-size: 0.75rem;
+}
+
+.internal-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.35rem 0.95rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #E2E8F0;
+  margin-bottom: 1.25rem;
+}
+
+.internal-hero-kicker .kicker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #94A3B8;
+}
+
+.internal-hero-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(2.15rem, 3.2vw, 2.95rem);
+  line-height: 1.32;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.15rem;
+  letter-spacing: -0.015em;
+  text-shadow: 0 2px 14px rgba(10, 18, 28, 0.65);
+}
+
+.internal-hero-desc {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #CBD5E1;
+  max-width: 720px;
+  text-shadow: 0 1px 8px rgba(10, 18, 28, 0.55);
+}
+
+.internal-hero-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.internal-hero-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.internal-hero-stat-val {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.internal-hero-stat-lbl {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.78rem;
+  color: #94A3B8;
+  margin-top: 0.2rem;
+}
+
+.internal-hero-stat-sep {
+  width: 1px;
+  height: 2rem;
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+/* 2. Page Section Spacing & Backgrounds */
+.internal-section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.internal-section-compact {
+  padding: 3.5rem 0;
+}
+
+.bg-corporate-light {
+  background-color: #F8FAFC;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.bg-corporate-white {
+  background-color: #FFFFFF;
+}
+
+.internal-block-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.internal-block-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 1.25rem;
+  height: 2px;
+  background-color: #142231;
+}
+
+.internal-section-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(1.75rem, 2.5vw, 2.35rem);
+  font-weight: 700;
+  color: #142231;
+  line-height: 1.35;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.015em;
+}
+
+.internal-section-lead {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #475569;
+  max-width: 680px;
+}
+
+/* 3. About Page Bespoke Components */
+.about-narrative-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-editorial-prose p {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #334155;
+  margin-bottom: 1.35rem;
+}
+
+.about-features-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.75rem 0;
+}
+
+.about-checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.95rem;
+  color: #1E293B;
+  font-weight: 500;
+}
+
+.about-checklist-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(20, 34, 49, 0.08);
+  color: #142231;
+  flex-shrink: 0;
+}
+
+.about-visual-frame {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px -8px rgba(15, 26, 38, 0.12);
+  border: 1px solid #E2E8F0;
+  aspect-ratio: 4/3;
+  max-height: 480px;
+}
+
+.about-visual-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-visual-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(to top, rgba(15, 26, 38, 0.90) 0%, transparent 100%);
+  color: #FFFFFF;
+}
+
+.about-visual-caption-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #CBD5E1;
+  text-transform: uppercase;
+}
+
+.about-visual-caption-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-top: 0.25rem;
+}
+
+/* Swiss-inspired Vision / Mission 2-part Ledger */
+.about-ledger-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.about-ledger-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px rgba(15, 26, 38, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.about-ledger-card:hover {
+  transform: translateY(-2px);
+  border-color: #CBD5E1;
+}
+
+.about-ledger-num {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #64748B;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.about-ledger-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #142231;
+  margin-bottom: 1rem;
+}
+
+.about-ledger-body {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: #475569;
+}
+
+/* Three Core Pillars Grid */
+.pillars-corporate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pillar-corporate-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 2px 8px rgba(15, 26, 38, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.pillar-card-num {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #142231;
+}
+
+.pillar-card-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: #F1F5F9;
+  color: #142231;
+}
+
+.pillar-card-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #142231;
+  margin-bottom: 0.85rem;
+}
+
+.pillar-card-desc {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #475569;
+}
+
+/* 4. Services Page Bespoke Components */
+.sector-jump-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.sector-jump-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.15rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  color: #E2E8F0;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sector-jump-link:hover {
+  background: #FFFFFF;
+  color: #142231;
+  border-color: #FFFFFF;
+}
+
+.sector-showcase-strip {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 4.5rem 0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.sector-showcase-strip:last-child {
+  border-bottom: none;
+}
+
+.sector-showcase-strip.reverse {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.sector-showcase-strip.reverse .sector-text-side {
+  order: 2;
+}
+
+.sector-showcase-strip.reverse .sector-visual-side {
+  order: 1;
+}
+
+.sector-spec-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748B;
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+}
+
+.sector-title-ar {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(1.65rem, 2.3vw, 2.15rem);
+  font-weight: 700;
+  color: #142231;
+  line-height: 1.35;
+  margin-bottom: 0.35rem;
+}
+
+.sector-title-en {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.95rem;
+  color: #64748B;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.sector-narrative {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #334155;
+  margin-bottom: 1.5rem;
+}
+
+.sector-specs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.sector-spec-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.92rem;
+  color: #1E293B;
+  font-weight: 500;
+}
+
+.sector-spec-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #142231;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+}
+
+.sector-visual-box {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 8px 24px -4px rgba(15, 26, 38, 0.08);
+  aspect-ratio: 16/10;
+  max-height: 420px;
+}
+
+.sector-visual-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 4-Step Methodology Ledger */
+.workflow-corporate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  margin-top: 3rem;
+}
+
+.workflow-step-box {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.workflow-step-num {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #142231;
+  margin-bottom: 0.75rem;
+}
+
+.workflow-step-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #142231;
+  margin-bottom: 0.65rem;
+}
+
+.workflow-step-desc {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* 5. Partners Page Bespoke Components */
+.chamber-corporate-block {
+  margin-bottom: 4.5rem;
+}
+
+.chamber-corporate-block:last-child {
+  margin-bottom: 0;
+}
+
+.chamber-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.chamber-badge-tag {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748B;
+  background-color: #F1F5F9;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+}
+
+.chamber-title-text {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #142231;
+}
+
+.partners-chamber-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.partner-chamber-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.partner-chamber-card:hover {
+  transform: translateY(-2px);
+  border-color: #CBD5E1;
+  box-shadow: 0 8px 20px -4px rgba(15, 26, 38, 0.08);
+}
+
+.partner-chamber-logo-box {
+  height: 72px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.partner-chamber-logo-box img {
+  max-height: 60px;
+  max-width: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.partner-chamber-name-ar {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #142231;
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
+}
+
+.partner-chamber-name-en {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.78rem;
+  color: #64748B;
+  line-height: 1.3;
+}
+
+/* 6. Careers Page Bespoke Components */
+.careers-split-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+.jobs-corporate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.job-corporate-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 2rem 2.25rem;
+  box-shadow: 0 1px 4px rgba(15, 26, 38, 0.03);
+  transition: border-color 0.2s ease;
+}
+
+.job-corporate-card:hover {
+  border-color: #CBD5E1;
+}
+
+.job-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.job-title-text {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #142231;
+}
+
+.job-type-badge {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #142231;
+  background-color: #F1F5F9;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.job-meta-dept {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748B;
+  margin-bottom: 0.85rem;
+}
+
+.job-brief-desc {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #475569;
+  margin-bottom: 1.35rem;
+}
+
+.job-apply-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #142231;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.job-apply-trigger:hover {
+  gap: 0.75rem;
+}
+
+/* 7. Contact Page Bespoke Components */
+.contact-split-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+.contact-channels-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-direct-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+}
+
+.contact-direct-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: #F1F5F9;
+  color: #142231;
+  flex-shrink: 0;
+}
+
+.contact-direct-lbl {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.8rem;
+  color: #64748B;
+  margin-bottom: 0.2rem;
+}
+
+.contact-direct-val {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #142231;
+}
+
+.hubs-corporate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.hub-corporate-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+.hub-card-name {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #142231;
+  margin-bottom: 0.35rem;
+}
+
+.hub-card-scope {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #64748B;
+}
+
+/* 8. Corporate Sticky Form Container */
+.corporate-form-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 16px -2px rgba(15, 26, 38, 0.05);
+}
+
+.corporate-form-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #142231;
+  margin-bottom: 0.5rem;
+}
+
+.corporate-form-subtitle {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #64748B;
+  margin-bottom: 1.75rem;
+}
+
+/* 9. Unified Call to Action Banner */
+.corporate-cta-banner {
+  background-color: #0F1A26;
+  background-image: linear-gradient(135deg, #0F1A26 0%, #142231 100%);
+  border-radius: 8px;
+  padding: 3.5rem 3rem;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.corporate-cta-lead {
+  max-width: 620px;
+}
+
+.corporate-cta-tag {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94A3B8;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.corporate-cta-title {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(1.5rem, 2.2vw, 1.95rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
+.corporate-cta-desc {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #CBD5E1;
+}
+
+.corporate-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* 10. Responsive Breakpoints for Internal Pages */
+@media (max-width: 1024px) {
+  .about-narrative-grid,
+  .sector-showcase-strip,
+  .sector-showcase-strip.reverse,
+  .careers-split-layout,
+  .contact-split-layout {
+    grid-template-columns: 1fr !important;
+    gap: 2.75rem !important;
+  }
+
+  .sector-showcase-strip.reverse .sector-text-side {
+    order: 1 !important;
+  }
+
+  .sector-showcase-strip.reverse .sector-visual-side {
+    order: 2 !important;
+  }
+
+  .partners-chamber-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .workflow-corporate-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .corporate-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-ledger-wrap,
+  .pillars-corporate-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .internal-page-hero {
+    padding: 3rem 0 2.5rem 0;
+  }
+
+  .internal-section {
+    padding: 3.5rem 0;
+  }
+
+  .corporate-form-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-chamber-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .workflow-corporate-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .corporate-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .corporate-cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
