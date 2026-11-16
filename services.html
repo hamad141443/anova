@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css?v=6">
 </head>
-<body data-page-title-key="nav_services">
+<body data-page-key="services" data-page-title-key="nav_services">
 
   <!-- Top Executive Utility Bar (Appears only at top of page, scrolls naturally away) -->
   <aside class="top-bar" aria-label="Executive Information">
@@ -161,7 +161,7 @@
       <!-- Sector 01: Conferences & Events -->
       <div id="sec-events" class="sector-showcase-strip">
         <div class="sector-text-side">
-          <div class="sector-spec-tag">القطاع ٠١ / CONFERENCES & EVENTS</div>
+          <div class="sector-spec-tag" data-i18n="sec1_tag">القطاع ٠١ / CONFERENCES & EVENTS</div>
           <h2 class="sector-title-ar" data-i18n="sec1_title">تنظيم المعارض والمؤتمرات الدولية</h2>
           <div class="sector-title-en" data-i18n="sec1_en">Conferences & Events Management</div>
           <p class="sector-narrative" data-i18n="sec1_desc">
@@ -184,7 +184,7 @@
           </ul>
 
           <button class="btn btn-primary open-quote-modal" data-sector="Events Organization">
-            <span>طلب تسعير لتنظيم مؤتمر</span>
+            <span data-i18n="sec1_quote_btn">طلب تسعير لتنظيم مؤتمر</span>
             <svg class="icon-svg" style="width: 0.95rem; height: 0.95rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </div>
@@ -199,7 +199,7 @@
       <!-- Sector 02: Fine Catering (Reverse Layout) -->
       <div id="sec-catering" class="sector-showcase-strip reverse">
         <div class="sector-text-side">
-          <div class="sector-spec-tag">القطاع ٠٢ / FINE CATERING</div>
+          <div class="sector-spec-tag" data-i18n="sec2_tag">القطاع ٠٢ / FINE CATERING</div>
           <h2 class="sector-title-ar" data-i18n="sec2_title">خدمات الإعاشة والتموين الراقي</h2>
           <div class="sector-title-en" data-i18n="sec2_en">Catering & Fine Dining Services</div>
           <p class="sector-narrative" data-i18n="sec2_desc">
@@ -222,7 +222,7 @@
           </ul>
 
           <button class="btn btn-primary open-quote-modal" data-sector="Catering Services">
-            <span>طلب تسعير خدمات التموين</span>
+            <span data-i18n="sec2_quote_btn">طلب تسعير خدمات التموين</span>
             <svg class="icon-svg" style="width: 0.95rem; height: 0.95rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </div>
@@ -237,7 +237,7 @@
       <!-- Sector 03: Executive Coffee Break -->
       <div id="sec-coffee" class="sector-showcase-strip">
         <div class="sector-text-side">
-          <div class="sector-spec-tag">القطاع ٠٣ / EXECUTIVE COFFEE BREAK</div>
+          <div class="sector-spec-tag" data-i18n="sec3_tag">القطاع ٠٣ / EXECUTIVE COFFEE BREAK</div>
           <h2 class="sector-title-ar" data-i18n="sec3_title">استراحات القهوة وضيافة الشركات</h2>
           <div class="sector-title-en" data-i18n="sec3_en">Coffee Break & Corporate Serving</div>
           <p class="sector-narrative" data-i18n="sec3_desc">
@@ -260,7 +260,7 @@
           </ul>
 
           <button class="btn btn-primary open-quote-modal" data-sector="Coffee Break">
-            <span>طلب تسعير استراحة قهوة</span>
+            <span data-i18n="sec3_quote_btn">طلب تسعير استراحة قهوة</span>
             <svg class="icon-svg" style="width: 0.95rem; height: 0.95rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </div>
@@ -275,7 +275,7 @@
       <!-- Sector 04: Food Supply & Buffets (Reverse Layout) -->
       <div id="sec-supply" class="sector-showcase-strip reverse">
         <div class="sector-text-side">
-          <div class="sector-spec-tag">القطاع ٠٤ / FOOD SUPPLY & BUFFETS</div>
+          <div class="sector-spec-tag" data-i18n="sec4_tag">القطاع ٠٤ / FOOD SUPPLY & BUFFETS</div>
           <h2 class="sector-title-ar" data-i18n="sec5_title">التوريد الغذائي والبوفيهات المفتوحة</h2>
           <div class="sector-title-en" data-i18n="sec5_en">Food Supply & Large-Scale Buffets</div>
           <p class="sector-narrative" data-i18n="sec5_desc">
@@ -298,7 +298,7 @@
           </ul>
 
           <button class="btn btn-primary open-quote-modal" data-sector="Food Supply & Buffets">
-            <span>طلب تسعير توريد وبوفيهات</span>
+            <span data-i18n="sec4_quote_btn">طلب تسعير توريد وبوفيهات</span>
             <svg class="icon-svg" style="width: 0.95rem; height: 0.95rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </div>
@@ -319,49 +319,47 @@
   <section class="internal-section bg-corporate-light">
     <div class="container">
       <div style="text-align: center; max-width: 680px; margin: 0 auto;">
-        <span class="internal-block-kicker">منهجية التنفيذ المتكاملة</span>
-        <h2 class="internal-section-title">خطوات تشغيلية دقيقة تضمن نجاح فعاليتكم</h2>
-        <p class="internal-section-lead">
-          نتبع منظومة عمل واضحة المعالم تبدأ من دراسة الاحتياج وتنتهي بالتنفيذ الميداني الكامل والمتابعة اللحظية.
-        </p>
+        <span class="internal-block-kicker" data-i18n="services_wf_kicker">منهجية التنفيذ المتكاملة</span>
+        <h2 class="internal-section-title" data-i18n="services_wf_title">خطوات تشغيلية دقيقة تضمن نجاح فعاليتكم</h2>
+        <p class="internal-section-lead" data-i18n="services_wf_lead">نتبع منظومة عمل واضحة المعالم تبدأ من دراسة الاحتياج وتنتهي بالتنفيذ الميداني الكامل والمتابعة اللحظية.</p>
       </div>
 
       <div class="workflow-corporate-grid">
         <!-- Step 01 -->
         <div class="workflow-step-box">
           <div class="workflow-step-num">01</div>
-          <h3 class="workflow-step-title">تخطيط الفعالية والاستشارة</h3>
-          <p class="workflow-step-desc">دراسة تفاصيل الحدث، تحديد أعداد الضيوف وتنسيق البروتوكول المطلوب بدقة متناهية.</p>
+          <h3 class="workflow-step-title" data-i18n="services_wf1_title">تخطيط الفعالية والاستشارة</h3>
+          <p class="workflow-step-desc" data-i18n="services_wf1_desc">دراسة تفاصيل الحدث، تحديد أعداد الضيوف وتنسيق البروتوكول المطلوب بدقة متناهية.</p>
         </div>
 
         <!-- Step 02 -->
         <div class="workflow-step-box">
           <div class="workflow-step-num">02</div>
-          <h3 class="workflow-step-title">إعداد الطهي والإنتاج</h3>
-          <p class="workflow-step-desc">تجهيز قوائم الطعام الطازجة واختيار المكونات تحت إشراف طهاة متخصصين وفق أعلى المعايير.</p>
+          <h3 class="workflow-step-title" data-i18n="services_wf2_title">إعداد الطهي والإنتاج</h3>
+          <p class="workflow-step-desc" data-i18n="services_wf2_desc">تجهيز قوائم الطعام الطازجة واختيار المكونات تحت إشراف طهاة متخصصين وفق أعلى المعايير.</p>
         </div>
 
         <!-- Step 03 -->
         <div class="workflow-step-box">
           <div class="workflow-step-num">03</div>
-          <h3 class="workflow-step-title">تجهيز الموقع والبروتوكول</h3>
-          <p class="workflow-step-desc">ترتيب قاعات الضيافة، طاولات البوفيه ومحطات القهوة بأناقة فائقة وضبط تدفق الضيوف.</p>
+          <h3 class="workflow-step-title" data-i18n="services_wf3_title">تجهيز الموقع والبروتوكول</h3>
+          <p class="workflow-step-desc" data-i18n="services_wf3_desc">ترتيب قاعات الضيافة، طاولات البوفيه ومحطات القهوة بأناقة فائقة وضبط تدفق الضيوف.</p>
         </div>
 
         <!-- Step 04 -->
         <div class="workflow-step-box">
           <div class="workflow-step-num">04</div>
-          <h3 class="workflow-step-title">التنفيذ والخدمة الميدانية</h3>
-          <p class="workflow-step-desc">إدارة تشغيلية ميدانية وخدمة ضيوف متميزة ومراقبة جودة صارمة طوال فترة الفعالية.</p>
+          <h3 class="workflow-step-title" data-i18n="services_wf4_title">التنفيذ والخدمة الميدانية</h3>
+          <p class="workflow-step-desc" data-i18n="services_wf4_desc">إدارة تشغيلية ميدانية وخدمة ضيوف متميزة ومراقبة جودة صارمة طوال فترة الفعالية.</p>
         </div>
       </div>
 
       <!-- Unified Corporate Call-to-Action Banner -->
       <div class="corporate-cta-banner">
         <div class="corporate-cta-lead">
-          <span class="corporate-cta-tag">استشارة وتخطيط متكامل</span>
-          <h3 class="corporate-cta-title">هل لديك متطلبات خاصة لفعاليتك أو مناسبتك القادمة؟</h3>
-          <p class="corporate-cta-desc">مستشارو أنوفا جاهزون لتخصيص قوائم الطعام والترتيبات اللوجستية وفق أدق المواصفات.</p>
+          <span class="corporate-cta-tag" data-i18n="services_cta_tag">استشارة وتخطيط متكامل</span>
+          <h3 class="corporate-cta-title" data-i18n="services_cta_title">هل لديك متطلبات خاصة لفعاليتك أو مناسبتك القادمة؟</h3>
+          <p class="corporate-cta-desc" data-i18n="services_cta_desc">مستشارو أنوفا جاهزون لتخصيص قوائم الطعام والترتيبات اللوجستية وفق أدق المواصفات.</p>
         </div>
         <div class="corporate-cta-actions">
           <button class="btn btn-primary open-quote-modal" style="background-color: #FFFFFF; color: #142231; border-color: #FFFFFF;">
@@ -425,7 +423,7 @@
           <div class="footer-branches-stack">
             <div>
               <div style="font-weight: 700; color: var(--pure-white);" data-i18n="footer_branch_riyadh">الرياض - المقر الرئيسي</div>
-              <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">خدمة العاصمة الرياض وكافة مناطق المملكة</div>
+              <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);" data-i18n="footer_branch_riyadh_sub">خدمة العاصمة الرياض وكافة مناطق المملكة</div>
             </div>
           </div>
         </div>

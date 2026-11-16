@@ -58,34 +58,71 @@ class AnovaApp {
     document.documentElement.lang = lang;
     document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
 
-    const strings = ANOVA_TRANSLATIONS[lang];
+    const strings = (window.ANOVA_DEFAULT_TRANSLATIONS && window.ANOVA_DEFAULT_TRANSLATIONS[lang]) || ANOVA_TRANSLATIONS[lang];
     if (!strings) return;
 
-    // Update text content
+    // Update text content and rich HTML
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (strings[key]) {
-        el.textContent = strings[key];
+      if (strings[key] !== undefined) {
+        const val = strings[key];
+        if (typeof val === 'string' && val.includes('<') && val.includes('>')) {
+          el.innerHTML = val;
+        } else {
+          el.textContent = val;
+        }
       }
     });
 
     // Update placeholders
     document.querySelectorAll('[data-i18n-ph]').forEach(el => {
       const key = el.getAttribute('data-i18n-ph');
-      if (strings[key]) {
+      if (strings[key] !== undefined) {
         el.setAttribute('placeholder', strings[key]);
+      }
+    });
+
+    // Update aria-labels
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (strings[key] !== undefined) {
+        el.setAttribute('aria-label', strings[key]);
+      }
+    });
+
+    // Update title attributes
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-title');
+      if (strings[key] !== undefined) {
+        el.setAttribute('title', strings[key]);
+      }
+    });
+
+    // Update select options
+    document.querySelectorAll('select option[data-i18n]').forEach(opt => {
+      const key = opt.getAttribute('data-i18n');
+      if (strings[key] !== undefined) {
+        opt.textContent = strings[key];
       }
     });
 
     // Update language toggle buttons text
     document.querySelectorAll('.lang-toggle-text').forEach(el => {
-      el.textContent = strings.lang_toggle_text;
+      el.textContent = strings.lang_toggle_text || (isArabic ? 'English' : 'العربية');
     });
 
-    // Update page title if element exists
-    const pageTitleKey = document.body.getAttribute('data-page-title-key');
-    if (pageTitleKey && strings[pageTitleKey]) {
-      document.title = strings[pageTitleKey] + " | ANOVA";
+    // Update page title and meta description dynamically
+    const pageKey = document.body.getAttribute('data-page-key') || document.body.getAttribute('data-page-title-key');
+    if (pageKey) {
+      if (strings[`title_${pageKey}`]) {
+        document.title = strings[`title_${pageKey}`];
+      } else if (strings[pageKey]) {
+        document.title = strings[pageKey] + " | ANOVA";
+      }
+      if (strings[`desc_${pageKey}`]) {
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', strings[`desc_${pageKey}`]);
+      }
     }
 
     if (this.cmsJobs) this.renderCmsJobs();
@@ -740,15 +777,15 @@ class AnovaApp {
 
       marqueeGroup.innerHTML = this.cmsPartners.map((p) => {
         const logo = this.safeMediaUrl(p.logo_url, 'public/brand/anova-logo.png');
-        const primaryName = isAr ? p.name_ar : (p.name_en || p.name_ar);
-        const secondaryName = isAr ? (p.name_en || p.name_ar) : p.name_ar;
+        const nameAr = p.name_ar || '';
+        const nameEn = p.name_en || nameAr;
         return `
           <div class="partner-card-corp partner-marquee-card">
             <div class="partner-logo-box">
-              <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(primaryName)}" class="partner-logo-img" loading="lazy" decoding="async">
+              <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(isAr ? nameAr : nameEn)}" class="partner-logo-img" loading="lazy" decoding="async">
             </div>
-            <div class="partner-name-ar">${this.escapeHtml(primaryName)}</div>
-            <div class="partner-name-en">${this.escapeHtml(secondaryName)}</div>
+            <div class="partner-name-ar">${this.escapeHtml(nameAr)}</div>
+            <div class="partner-name-en">${this.escapeHtml(nameEn)}</div>
           </div>
         `;
       }).join('');
@@ -760,16 +797,16 @@ class AnovaApp {
     if (masterGrid && this.cmsPartners.length) {
       masterGrid.innerHTML = this.cmsPartners.map((p) => {
         const logo = this.safeMediaUrl(p.logo_url, 'public/brand/anova-logo.png');
-        const primaryName = isAr ? p.name_ar : (p.name_en || p.name_ar);
-        const secondaryName = isAr ? (p.name_en || '') : (p.name_ar || '');
+        const nameAr = p.name_ar || '';
+        const nameEn = p.name_en || nameAr;
         return `
           <article class="partner-master-card" data-category="${this.escapeHtml(p.category || 'government')}" data-partner-id="${p.id || ''}">
             <div class="partner-master-media">
-              <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(primaryName)}" class="partner-master-img" loading="lazy" decoding="async">
+              <img src="${this.escapeHtml(logo)}" alt="${this.escapeHtml(isAr ? nameAr : nameEn)}" class="partner-master-img" loading="lazy" decoding="async">
             </div>
             <div class="partner-master-info">
-              <h3 class="partner-master-name-ar">${this.escapeHtml(primaryName)}</h3>
-              <p class="partner-master-name-en">${this.escapeHtml(secondaryName)}</p>
+              <h3 class="partner-master-name-ar">${this.escapeHtml(nameAr)}</h3>
+              <p class="partner-master-name-en">${this.escapeHtml(nameEn)}</p>
             </div>
           </article>
         `;

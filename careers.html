@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css?v=6">
 </head>
-<body data-page-title-key="nav_careers">
+<body data-page-key="careers" data-page-title-key="nav_careers">
 
   <!-- Top Executive Utility Bar (Appears only at top of page, scrolls naturally away) -->
   <aside class="top-bar" aria-label="Executive Information">
@@ -143,11 +143,9 @@
         <!-- Positions Column -->
         <div>
           <div style="margin-bottom: 2rem;">
-            <span class="internal-block-kicker">الفرص المتاحة حالياً</span>
-            <h2 class="internal-section-title">شواغر وظيفية نشطة</h2>
-            <p class="internal-section-lead">
-              انضم إلى منظومة تشغيلية رائدة تعمل مع كبرى الهيئات والمؤسسات الوطنية بالمملكة.
-            </p>
+            <span class="internal-block-kicker" data-i18n="careers_vacancies_kicker">الفرص المتاحة حالياً</span>
+            <h2 class="internal-section-title" data-i18n="careers_vacancies_title">شواغر وظيفية نشطة</h2>
+            <p class="internal-section-lead" data-i18n="careers_vacancies_lead">انضم إلى منظومة تشغيلية رائدة تعمل مع كبرى الهيئات والمؤسسات الوطنية بالمملكة.</p>
           </div>
 
           <div id="cmsJobsList" class="jobs-corporate-list">
@@ -222,7 +220,7 @@
         <!-- Application Form Column (Sticky) -->
         <div id="apply-box">
           <div class="corporate-form-card" style="position: sticky; top: 6.5rem;">
-            <span class="internal-block-kicker">بوابة التقديم المباشر</span>
+            <span class="internal-block-kicker" data-i18n="careers_portal_kicker">بوابة التقديم المباشر</span>
             <h3 class="corporate-form-title" data-i18n="careers_form_title">نموذج التقديم للوظائف</h3>
             <p class="corporate-form-subtitle" data-i18n="careers_form_intro">
               يسعدنا استلام بياناتك وتفاصيل خبرتك المهنية لمراجعتها من قِبل إدارة الموارد البشرية في أنوفا.
@@ -230,22 +228,22 @@
 
             <form class="ajax-inquiry-form" data-form-type="job_application" data-source-form="careers_page">
               <div class="form-group">
-                <label class="form-label">الاسم الثلاثي الكريم</label>
+                <label class="form-label" data-i18n="f_job_name">الاسم الثلاثي الكريم</label>
                 <input type="text" name="full_name" class="form-control" required placeholder="أدخل اسمك الثلاثي">
               </div>
 
               <div class="form-group">
-                <label class="form-label">رقم الجوال للتواصل</label>
+                <label class="form-label" data-i18n="f_job_phone">رقم الجوال للتواصل</label>
                 <input type="tel" name="phone" class="form-control dir-ltr" required placeholder="05xxxxxxxx">
               </div>
 
               <div class="form-group">
-                <label class="form-label">البريد الإلكتروني</label>
+                <label class="form-label" data-i18n="f_job_email">البريد الإلكتروني</label>
                 <input type="email" name="email" class="form-control" required placeholder="name@domain.com">
               </div>
 
               <div class="form-group">
-                <label class="form-label">الوظيفة المتقدم إليها</label>
+                <label class="form-label" data-i18n="f_job_role">الوظيفة المتقدم إليها</label>
                 <select name="position" id="jobPositionSelect" class="form-control" required>
                   <option value="" disabled selected>اختر المسمى الوظيفي...</option>
                   <option value="Project Manager">مدير مشروع (Project Manager)</option>
@@ -257,12 +255,12 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label">سنوات الخبرة ونبذة مختصرة</label>
+                <label class="form-label" data-i18n="f_job_exp">سنوات الخبرة ونبذة مختصرة</label>
                 <textarea name="experience_summary" rows="4" class="form-control" placeholder="اذكر ملخصاً عن مؤهلاتك العلمية وخبراتك السابقة في قطاع الضيافة أو تنظيم الفعاليات..."></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem; font-size: 0.95rem;">
-                <span>إرسال طلب التوظيف</span>
+                <span data-i18n="f_job_submit">إرسال طلب التوظيف</span>
                 <svg class="icon-svg" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
             </form>
@@ -280,11 +278,9 @@
   <section class="internal-section bg-corporate-light">
     <div class="container">
       <div style="text-align: center; max-width: 680px; margin: 0 auto 3.5rem auto;">
-        <span class="internal-block-kicker">بيئة العمل والاحترافية</span>
-        <h2 class="internal-section-title">لماذا تختار بناء مسيرتك المهنية في أنوفا؟</h2>
-        <p class="internal-section-lead">
-          نؤمن بأن رأس المال البشري هو المحرك الأساسي لنجاحنا؛ لذا نوفر بيئة عمل محفزة تمكّن الكفاءات وتكافئ الإنجاز.
-        </p>
+        <span class="internal-block-kicker" data-i18n="careers_cult_kicker">بيئة العمل والاحترافية</span>
+        <h2 class="internal-section-title" data-i18n="careers_cult_title">لماذا تختار بناء مسيرتك المهنية في أنوفا؟</h2>
+        <p class="internal-section-lead" data-i18n="careers_cult_lead">نؤمن بأن رأس المال البشري هو المحرك الأساسي لنجاحنا؛ لذا نوفر بيئة عمل محفزة تمكّن الكفاءات وتكافئ الإنجاز.</p>
       </div>
 
       <div class="pillars-corporate-grid">
@@ -295,10 +291,8 @@
               <svg class="icon-svg" style="width: 1.35rem; height: 1.35rem;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
           </div>
-          <h3 class="pillar-card-title">تمكين الكفاءات الوطنية</h3>
-          <p class="pillar-card-desc">
-            برامج تدريب وتأهيل مستمرة لإعداد كوادر سعودية رائدة في مجالات إدارة الفعاليات وفنون الطهي الفندقي الراقي.
-          </p>
+          <h3 class="pillar-card-title" data-i18n="careers_cult1_title">تمكين الكفاءات الوطنية</h3>
+          <p class="pillar-card-desc" data-i18n="careers_cult1_desc">برامج تدريب وتأهيل مستمرة لإعداد كوادر سعودية رائدة في مجالات إدارة الفعاليات وفنون الطهي الفندقي الراقي.</p>
         </div>
 
         <div class="pillar-corporate-card">
@@ -308,10 +302,8 @@
               <svg class="icon-svg" style="width: 1.35rem; height: 1.35rem;" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
           </div>
-          <h3 class="pillar-card-title">ثقافة الجودة والسلامة</h3>
-          <p class="pillar-card-desc">
-            العمل وفق أحدث المعايير العالمية في سلامة الغذاء والصحة المهنية، مما يمنح منسوبينا خبرة ميدانية مرموقة.
-          </p>
+          <h3 class="pillar-card-title" data-i18n="careers_cult2_title">ثقافة الجودة والسلامة</h3>
+          <p class="pillar-card-desc" data-i18n="careers_cult2_desc">العمل وفق أحدث المعايير العالمية في سلامة الغذاء والصحة المهنية، مما يمنح منسوبينا خبرة ميدانية مرموقة.</p>
         </div>
 
         <div class="pillar-corporate-card">
@@ -321,10 +313,8 @@
               <svg class="icon-svg" style="width: 1.35rem; height: 1.35rem;" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             </div>
           </div>
-          <h3 class="pillar-card-title">مسار مهني وتطوير مستمر</h3>
-          <p class="pillar-card-desc">
-            فرص ترقية واضحة ومسارات نمو متعددة تواكب التوسع الجغرافي المستمر لعمليات الشركة في مختلف مناطق المملكة.
-          </p>
+          <h3 class="pillar-card-title" data-i18n="careers_cult3_title">مسار مهني وتطوير مستمر</h3>
+          <p class="pillar-card-desc" data-i18n="careers_cult3_desc">فرص ترقية واضحة ومسارات نمو متعددة تواكب التوسع الجغرافي المستمر لعمليات الشركة في مختلف مناطق المملكة.</p>
         </div>
       </div>
     </div>
@@ -380,7 +370,7 @@
           <div class="footer-branches-stack">
             <div>
               <div style="font-weight: 700; color: var(--pure-white);" data-i18n="footer_branch_riyadh">الرياض - المقر الرئيسي</div>
-              <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">خدمة العاصمة الرياض وكافة مناطق المملكة</div>
+              <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5);" data-i18n="footer_branch_riyadh_sub">خدمة العاصمة الرياض وكافة مناطق المملكة</div>
             </div>
           </div>
         </div>
