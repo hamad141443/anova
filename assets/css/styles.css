@@ -5589,3 +5589,169 @@ html[dir="ltr"] .about-item-num {
   margin-left: 0;
   margin-right: 1.5rem;
 }
+
+
+/* ==========================================================================
+   SECTION: CORPORATE PERFORMANCE STATISTICS (ANOVA IN NUMBERS)
+   Disciplined Geometric Grid / Editorial Ledger Display
+   ========================================================================== */
+.section-corporate-stats {
+  padding: 4.75rem 0;
+  background-color: var(--corporate-cream, #F8FAFC);
+  border-top: 1px solid rgba(20, 34, 49, 0.08);
+  border-bottom: 1px solid rgba(20, 34, 49, 0.08);
+}
+
+.stats-editorial-header {
+  margin-bottom: 2.75rem;
+  max-width: 820px;
+}
+
+.stats-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+  font-weight: 700;
+  color: var(--primary-navy);
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.015em;
+}
+
+.stats-sub-lead {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.stats-corporate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: var(--brand-grey-light, #E2E8F0);
+  border: 1px solid var(--brand-grey-light, #E2E8F0);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+.stat-corporate-cell {
+  background-color: #FFFFFF;
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.stat-corporate-cell:hover {
+  background-color: #FAFCFE;
+}
+
+.stat-cell-accent {
+  width: 22px;
+  height: 2px;
+  background-color: var(--warm-gold, #C5A059);
+  margin-bottom: 1.15rem;
+  border-radius: 1px;
+}
+
+.stat-cell-value {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 2.7vw, 2.45rem);
+  font-weight: 700;
+  color: var(--primary-navy, #142231);
+  line-height: 1.1;
+  margin-bottom: 0.55rem;
+  letter-spacing: -0.02em;
+  direction: ltr !important;
+  display: inline-block;
+  unicode-bidi: isolate;
+  text-align: inherit;
+}
+
+.stat-cell-label {
+  font-family: var(--font-body);
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--midnight-dark, #1E293B);
+  line-height: 1.45;
+}
+
+/* English / LTR adjustments */
+html[lang="en"] .stats-main-title {
+  font-family: var(--font-heading-en, 'Plus Jakarta Sans', sans-serif);
+}
+
+html[lang="en"] .stats-sub-lead {
+  font-family: var(--font-body-en, 'Plus Jakarta Sans', sans-serif);
+}
+
+html[lang="en"] .stat-cell-value {
+  font-family: var(--font-heading-en, 'Plus Jakarta Sans', sans-serif);
+}
+
+html[lang="en"] .stat-cell-label {
+  font-family: var(--font-body-en, 'Plus Jakarta Sans', sans-serif);
+}
+
+/* Responsive Grid Matrix */
+@media (max-width: 1024px) {
+  .section-corporate-stats {
+    padding: 3.75rem 0;
+  }
+  .stats-corporate-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-corporate-cell {
+    padding: 1.75rem 1.35rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-corporate-stats {
+    padding: 3rem 0;
+  }
+  .stats-editorial-header {
+    margin-bottom: 1.75rem;
+  }
+  .stats-corporate-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-corporate-cell {
+    padding: 1.35rem 1rem;
+  }
+  .stat-cell-value {
+    font-size: 1.55rem;
+    margin-bottom: 0.35rem;
+  }
+  .stat-cell-label {
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+  .stat-cell-accent {
+    width: 16px;
+    height: 2px;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .stat-corporate-cell {
+    padding: 1.15rem 0.75rem;
+  }
+  .stat-cell-value {
+    font-size: 1.35rem;
+  }
+  .stat-cell-label {
+    font-size: 0.76rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-corporate-cell {
+    transition: none;
+  }
+}

@@ -368,7 +368,20 @@
     "contact_whatsapp_btn": "تواصل عبر واتساب",
     "contact_branches_lbl": "الفروع ومراكز التغطية",
     "contact_branches_val": "الرياض (المقر الرئيسي)",
-    "contact_sla_badge": "استجابة رسمية لطلبات التسعير والشراكة خلال ٢٤ ساعة"
+    "contact_sla_badge": "استجابة رسمية لطلبات التسعير والشراكة خلال ٢٤ ساعة",
+    "stats_tag": "أنوفا بالأرقام • مؤشرات الأداء والريادة",
+    "stats_meta": "8 مؤشرات أداء موثقة",
+    "stats_title": "أنوفا بالأرقام",
+    "stats_heading_full": "أنوفا بالأرقام — سجل الإنجاز والقدرة التشغيلية",
+    "stats_lead": "مؤشرات أداء موثقة تجسد اتساع نطاق عملياتنا التشغيلية، وموثوقية خدماتنا في تغطية المحافل والفعاليات الاستراتيجية بالمملكة.",
+    "stat_meals_lbl": "وجبة مقدمة",
+    "stat_events_lbl": "فعالية ناجحة",
+    "stat_clients_lbl": "عميل من قطاع الأعمال",
+    "stat_staff_lbl": "كادر مهني",
+    "stat_cities_lbl": "مدينة شملتها خدماتنا",
+    "stat_satisfaction_lbl": "رضا العملاء",
+    "stat_ontime_lbl": "التسليم في الموعد",
+    "stat_support_lbl": "دعم العملاء على مدار الساعة"
   },
   "en": {
     "top_locations": "Kingdom of Saudi Arabia | Riyadh (Headquarters)",
@@ -653,9 +666,34 @@
     "contact_whatsapp_btn": "Connect via WhatsApp",
     "contact_branches_lbl": "Regional Hubs & Coverage",
     "contact_branches_val": "Riyadh (Headquarters)",
-    "contact_sla_badge": "Official Response to Inquiries within 24 Hours"
+    "contact_sla_badge": "Official Response to Inquiries within 24 Hours",
+    "stats_tag": "ANOVA IN NUMBERS • PERFORMANCE INDICATORS",
+    "stats_meta": "8 Verified Performance Metrics",
+    "stats_title": "ANOVA IN NUMBERS",
+    "stats_heading_full": "ANOVA IN NUMBERS — Operational Scale & Proven Reliability",
+    "stats_lead": "Verified operational indicators demonstrating our scalable capacity and proven track record across premier Saudi summits and venues.",
+    "stat_meals_lbl": "Meals Served",
+    "stat_events_lbl": "Successful Events",
+    "stat_clients_lbl": "Corporate Clients",
+    "stat_staff_lbl": "Professional Staff",
+    "stat_cities_lbl": "Cities Covered",
+    "stat_satisfaction_lbl": "Customer Satisfaction",
+    "stat_ontime_lbl": "On-Time Delivery",
+    "stat_support_lbl": "Customer Support"
   }
 };
+
+  
+  const ANOVA_STATISTICS_DATA = [
+    { id: 'meals', value: '3.2M+', label_key: 'stat_meals_lbl' },
+    { id: 'events', value: '9,500+', label_key: 'stat_events_lbl' },
+    { id: 'clients', value: '180+', label_key: 'stat_clients_lbl' },
+    { id: 'staff', value: '250+', label_key: 'stat_staff_lbl' },
+    { id: 'cities', value: '12+', label_key: 'stat_cities_lbl' },
+    { id: 'satisfaction', value: '98.7%', label_key: 'stat_satisfaction_lbl' },
+    { id: 'ontime', value: '99.4%', label_key: 'stat_ontime_lbl' },
+    { id: 'support', value: '24/7', label_key: 'stat_support_lbl' }
+  ];
 
   const ANOVA_CMS_GROUPS = [
     {
@@ -761,6 +799,7 @@
     publishableKey: SUPABASE_PUBLISHABLE_KEY
   });
 
+  global.ANOVA_STATISTICS_DATA = Object.freeze(ANOVA_STATISTICS_DATA);
   global.ANOVA_DEFAULT_TRANSLATIONS = ANOVA_DEFAULT_TRANSLATIONS;
   global.ANOVA_CMS_GROUPS = ANOVA_CMS_GROUPS;
 
