@@ -1,5 +1,5 @@
 /**
- * ANOVA United - Official Canonical Success Partners Catalog
+ * ANOVA - Official Canonical Success Partners Catalog
  * Unified Single Source of Truth for Homepage Marquee and Standalone Partners Page.
  * Total: 32 Official Partners (8 Original + 24 Expanded - 0 Duplicates)
  */

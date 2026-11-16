@@ -1,5 +1,5 @@
 /**
- * ANOVA UNITED COMPANY — EXECUTIVE ADMIN PORTAL CONTROLLER
+ * ANOVA COMPANY — EXECUTIVE ADMIN PORTAL CONTROLLER
  * Live Supabase Integration (Auth, Quotes CRM, Job Pipeline, Notes, Activity Logs, CSV)
  */
 
@@ -7,7 +7,7 @@ const ADMIN_DICT = {
   ar: {
     boot_loading: 'جارٍ التحقق من جلسة الإدارة...',
     portal_badge: 'البوابة الإدارية المعتمدة',
-    login_title: 'لوحة تحكم أنوفا المتحدة',
+    login_title: 'لوحة تحكم أنوفا',
     login_subtitle: 'إدارة طلبات عروض الأسعار وطلبات التوظيف عبر Supabase',
     label_email: 'البريد الإلكتروني الإداري',
     label_password: 'كلمة المرور',
@@ -227,7 +227,7 @@ const ADMIN_DICT = {
   en: {
     boot_loading: 'Verifying Admin Session...',
     portal_badge: 'Authorized Management Portal',
-    login_title: 'ANOVA United Admin Console',
+    login_title: 'ANOVA Admin Console',
     login_subtitle: 'Manage Quote Requests & Career Applications via Supabase',
     label_email: 'Admin Email Address',
     label_password: 'Password',
@@ -572,8 +572,8 @@ class AnovaAdminApp {
     const digits = this.normalizePhoneDigits(phone);
     if (!digits) return null;
     const msg = this.lang === 'ar'
-      ? `مرحباً ${name || ''}، نتواصل معكم من شركة أنوفا المتحدة بخصوص طلبكم الكريم.`
-      : `Hello ${name || ''}, following up from Anoova United Company regarding your inquiry.`;
+      ? `مرحباً ${name || ''}، نتواصل معكم من شركة أنوفا بخصوص طلبكم الكريم.`
+      : `Hello ${name || ''}, following up from ANOVA Company regarding your inquiry.`;
     return `https://wa.me/${digits}?text=${encodeURIComponent(msg)}`;
   }
 

@@ -1,5 +1,5 @@
 /**
- * ANOVA United - Supabase Configuration, Helpers & Canonical Site Content Catalog
+ * ANOVA - Supabase Configuration, Helpers & Canonical Site Content Catalog
  * Uses official publishable key for browser client & Data API operations.
  */
 (function (global) {
@@ -98,7 +98,7 @@
       nav_contact: "تواصل معنا",
       cta_quote: "اطلب عرض سعر",
 
-      hero_kicker: "أنوفا المتحدة للفعاليات والمؤتمرات والضيافة",
+      hero_kicker: "أنوفا للفعاليات والمؤتمرات والضيافة",
       hero_headline: "نصنع تجارب تبقى في الذاكرة",
       hero_headline_line1: "نصنع تجارب",
       hero_headline_line2: "تبقى في الذاكرة",
@@ -106,12 +106,12 @@
       hero_scroll: "اكتشف المزيد",
       hero_cta_secondary: "اكتشف خدماتنا",
 
-      about_tag: "عن أنوفا المتحدة",
+      about_tag: "عن أنوفا",
       about_cities: "الرياض • جدة • الخبر",
       about_showcase_tag: "معايير الضيافة والتموين الرفيع",
       about_showcase_desc: "تجهيزات فاخرة وتنسيق متكامل يعكس هيبة الفعاليات والمؤتمرات الوطنية",
       about_title: "ريادة مبنية على الاحترافية وصناعة التجارب الاستثنائية",
-      about_p1: "منذ تأسيس شركة أنوفا المتحدة في الرياض عام 2017، التزمنا بإعادة صياغة مفاهيم الضيافة المؤسسية والتموين الغذائي في المملكة العربية السعودية. نجحنا في بناء ثقة وطنية راسخة بفضل الالتزام الصارم بالجداول الزمنية، وتوظيف أرقى فنون الطهي، ومراعاة أدق بروتوكولات التشريفات الرسمية.",
+      about_p1: "منذ تأسيس شركة أنوفا في الرياض عام 2017، التزمنا بإعادة صياغة مفاهيم الضيافة المؤسسية والتموين الغذائي في المملكة العربية السعودية. نجحنا في بناء ثقة وطنية راسخة بفضل الالتزام الصارم بالجداول الزمنية، وتوظيف أرقى فنون الطهي، ومراعاة أدق بروتوكولات التشريفات الرسمية.",
       about_p2: "نمتلك حضوراً تشغيلياً واسعاً عبر فروعنا في الرياض، جدة، والخبر، مع خطط توسع مستمرة تشمل مكة المكرمة والخرج. نعمل كشريك استراتيجي للجهات الحكومية والجامعات العريقة والشركات الرائدة والفنادق المصنفة، لتقديم خدمات تليق بتطلعات رؤية المملكة الطموحة.",
       about_learn_more: "تعرف على تاريخنا وقيمنا",
       stat_founded_num: "2017",
@@ -122,7 +122,7 @@
       stat_quality_num: "100%",
       stat_quality_lbl: "التزام بمعايير الجودة والسلامة",
       about_hero_quote: "\"الضيافة فن ينسجه الشغف وتصونه الدقة والالتزام\"",
-      about_hero_sub: "شركة أنوفا المتحدة للضيافة والإعاشة وتنظيم المعارض والمؤتمرات",
+      about_hero_sub: "شركة أنوفا للضيافة والإعاشة وتنظيم المعارض والمؤتمرات",
       about_manifesto_title: "رؤيتنا ورسالتنا المؤسسية",
       about_vision_title: "الرؤية (Our Vision)",
       about_vision_desc: "أن نكون الصرح الرائد والمرجع الأول في قطاع الضيافة والتموين وإدارة الفعاليات في المملكة العربية السعودية، عبر تقديم تجارب طهي استثنائية وحلول تشغيلية مبتكرة وموثوقة تتناغم مع مستهدفات التنمية الوطنية.",
@@ -234,11 +234,11 @@
       f_details: "تفاصيل المتطلبات والموقع",
       f_details_ph: "يرجى توضيح طبيعة الفعالية، المدينة، وأي اشتراطات خاصة بالضيافة أو التموين...",
       f_submit_btn: "إرسال طلب التسعير",
-      form_success_msg: "شكراً لتواصلكم مع شركة أنوفا المتحدة. تم استلام طلبكم بنجاح وسيتواصل معكم مسؤول الحسابات خلال وقت وجيز.",
-      job_success_msg: "تم استلام طلب التوظيف بنجاح. سيتولى فريق الموارد البشرية في شركة أنوفا المتحدة مراجعة بياناتكم والتواصل معكم عند مطابقة الشواغر.",
+      form_success_msg: "شكراً لتواصلكم مع شركة أنوفا. تم استلام طلبكم بنجاح وسيتواصل معكم مسؤول الحسابات خلال وقت وجيز.",
+      job_success_msg: "تم استلام طلب التوظيف بنجاح. سيتولى فريق الموارد البشرية في شركة أنوفا مراجعة بياناتكم والتواصل معكم عند مطابقة الشواغر.",
       form_error_msg: "تعذر إرسال الطلب حالياً. يرجى التأكد من البيانات والمحاولة مرة أخرى أو التواصل المباشر عبر الواتساب.",
 
-      footer_about: "شركة أنوفا المتحدة للضيافة والإعاشة وتنظيم المعارض والمؤتمرات. تأسست عام 2017 في الرياض لترسيخ معايير الخدمة، الجودة، والرقابة في تلبية تطلعات كبرى الهيئات والمؤسسات الوطنية بالمملكة.",
+      footer_about: "شركة أنوفا للضيافة والإعاشة وتنظيم المعارض والمؤتمرات. تأسست عام 2017 في الرياض لترسيخ معايير الخدمة، الجودة، والرقابة في تلبية تطلعات كبرى الهيئات والمؤسسات الوطنية بالمملكة.",
       footer_cr: "شركة رسمية مرخصة بسجل تجاري معتمد في المملكة العربية السعودية",
       footer_quick_links: "روابط سريعة",
       footer_services: "قطاعات الأعمال",
@@ -246,7 +246,7 @@
       footer_branch_riyadh: "الرياض - المقر الرئيسي",
       footer_branch_jeddah: "جدة - المنطقة الغربية",
       footer_branch_khobar: "الخبر - المنطقة الشرقية",
-      footer_rights: "© 2026 شركة أنوفا المتحدة للضيافة والإعاشة. جميع الحقوق محفوظة.",
+      footer_rights: "© 2026 شركة أنوفا للضيافة والإعاشة. جميع الحقوق محفوظة.",
 
       modal_title: "طلب عرض سعر مخصص",
       modal_close: "إغلاق"
@@ -265,7 +265,7 @@
       nav_contact: "Contact Us",
       cta_quote: "Request a Quotation",
 
-      hero_kicker: "ANOVA UNITED FOR CONFERENCES & HOSPITALITY",
+      hero_kicker: "ANOVA FOR CONFERENCES & HOSPITALITY",
       hero_headline: "Crafting Experiences That Remain in Memory",
       hero_headline_line1: "Crafting Experiences",
       hero_headline_line2: "That Remain in Memory",
@@ -273,12 +273,12 @@
       hero_scroll: "Scroll to Explore",
       hero_cta_secondary: "Explore Our Services",
 
-      about_tag: "About Anoova United",
+      about_tag: "About ANOVA",
       about_cities: "Riyadh • Jeddah • Khobar",
       about_showcase_tag: "Premier Hospitality Standards",
       about_showcase_desc: "Refined staging and meticulous service reflecting the stature of national forums",
       about_title: "Institutional Leadership Rooted in Crafting Exceptional Experiences",
-      about_p1: "Since our establishment in Riyadh in 2017, Anoova United Company (ANOVA) has been committed to redefining corporate hospitality and fine catering across the Kingdom of Saudi Arabia. We have built enduring institutional trust through strict punctuality, artisanal culinary skill, and uncompromising VIP protocol standards.",
+      about_p1: "Since our establishment in Riyadh in 2017, ANOVA Company (ANOVA) has been committed to redefining corporate hospitality and fine catering across the Kingdom of Saudi Arabia. We have built enduring institutional trust through strict punctuality, artisanal culinary skill, and uncompromising VIP protocol standards.",
       about_p2: "We maintain extensive operational hubs across Riyadh, Jeddah, and Khobar, with active expansion plans targeting Makkah and Al Kharj. Serving as a trusted partner to governmental commissions, esteemed universities, and prestigious hospitality venues, our solutions directly align with the Kingdom's visionary future.",
       about_learn_more: "Discover Our Heritage & Values",
       stat_founded_num: "2017",
@@ -289,7 +289,7 @@
       stat_quality_num: "100%",
       stat_quality_lbl: "Adherence to Health & Safety Norms",
       about_hero_quote: "\"Hospitality is an art woven with passion and preserved by precision and commitment\"",
-      about_hero_sub: "Anoova United Company for Hospitality, Catering & Exhibition Organization",
+      about_hero_sub: "ANOVA Company for Hospitality, Catering & Exhibition Organization",
       about_manifesto_title: "Our Institutional Vision & Mission",
       about_vision_title: "Our Vision",
       about_vision_desc: "To be the premier benchmark and leading authority in hospitality, catering, and event organization across the Kingdom of Saudi Arabia, delivering exceptional culinary experiences aligned with national development ambitions.",
@@ -401,11 +401,11 @@
       f_details: "Scope Details & Venue Location",
       f_details_ph: "Please outline the event format, venue location, and specific hospitality requirements...",
       f_submit_btn: "Submit Quotation Request",
-      form_success_msg: "Thank you for contacting Anoova United Company. Your request has been received cleanly, and our account executive will reach out promptly.",
-      job_success_msg: "Your career application has been received successfully. Our HR team at Anoova United will review your profile and contact you if shortlisted.",
+      form_success_msg: "Thank you for contacting ANOVA Company. Your request has been received cleanly, and our account executive will reach out promptly.",
+      job_success_msg: "Your career application has been received successfully. Our HR team at ANOVA will review your profile and contact you if shortlisted.",
       form_error_msg: "Unable to submit your request right now. Please verify your details and try again, or reach us directly via WhatsApp.",
 
-      footer_about: "Anoova United Company for Hospitality, Catering, and Event Services. Established in 2017 in Riyadh to uphold the pillars of Service, Quality, and Control for premier Saudi institutions.",
+      footer_about: "ANOVA Company for Hospitality, Catering, and Event Services. Established in 2017 in Riyadh to uphold the pillars of Service, Quality, and Control for premier Saudi institutions.",
       footer_cr: "Officially Licensed Commercial Enterprise in the Kingdom of Saudi Arabia",
       footer_quick_links: "Quick Navigation",
       footer_services: "Business Sectors",
@@ -413,7 +413,7 @@
       footer_branch_riyadh: "Riyadh - Headquarters",
       footer_branch_jeddah: "Jeddah - Western Hub",
       footer_branch_khobar: "Khobar - Eastern Hub",
-      footer_rights: "© 2026 Anoova United Company. All Rights Reserved.",
+      footer_rights: "© 2026 ANOVA Company. All Rights Reserved.",
 
       modal_title: "Custom Quotation Request",
       modal_close: "Close"

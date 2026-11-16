@@ -1,5 +1,5 @@
 /**
- * ANOVA UNITED COMPANY (أنوفا المتحدة للضيافة والإعاشة)
+ * ANOVA COMPANY (شركة أنوفا للضيافة والإعاشة)
  * Master Client-Side Controller & Bilingual Engine (Arabic / English)
  */
 
@@ -85,7 +85,7 @@ class AnovaApp {
     // Update page title if element exists
     const pageTitleKey = document.body.getAttribute('data-page-title-key');
     if (pageTitleKey && strings[pageTitleKey]) {
-      document.title = strings[pageTitleKey] + " | ANOVA United";
+      document.title = strings[pageTitleKey] + " | ANOVA";
     }
 
     if (this.cmsJobs) this.renderCmsJobs();
