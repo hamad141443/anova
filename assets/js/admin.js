@@ -877,7 +877,7 @@ class AnovaAdminApp {
       if (sector !== 'all' && q.sector !== sector) return false;
       if (priority !== 'all' && q.priority !== priority) return false;
       if (search) {
-        const hay = `${q.id} ${q.full_name} ${q.phone} ${q.email} ${q.details} ${q.assigned_to}`.toLowerCase();
+        const hay = `${q.id} ${q.full_name || ''} ${q.phone || ''} ${q.email || ''} ${q.details || ''} ${q.assigned_to || ''}`.toLowerCase();
         if (!hay.includes(search)) return false;
       }
       return true;
@@ -908,7 +908,7 @@ class AnovaAdminApp {
           <td class="tabular-nums">#${q.id}</td>
           <td>
             <div class="table-primary-text">${this.escapeHtml(q.full_name)}</div>
-            <div class="table-sub-text dir-ltr">${this.escapeHtml(q.phone)} • ${this.escapeHtml(q.email)}</div>
+            <div class="table-sub-text dir-ltr">${this.escapeHtml(q.phone || '')}${q.email ? ` • ${this.escapeHtml(q.email)}` : ''}</div>
           </td>
           <td>
             <div class="table-primary-text">${this.escapeHtml(this.sectorLabel(q.sector))}</div>
@@ -1400,7 +1400,7 @@ class AnovaAdminApp {
         const payload = {
           full_name: getVal('full_name'),
           phone: getVal('phone'),
-          email: getVal('email'),
+          email: getVal('email') || null,
           sector: getVal('sector'),
           guests_count: getVal('guests_count'),
           event_date: getVal('event_date') || null,

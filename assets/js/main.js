@@ -435,7 +435,7 @@ class AnovaApp {
       payload: {
         full_name: getVal('full_name'),
         phone: getVal('phone'),
-        email: getVal('email'),
+        email: getVal('email') || null,
         sector: getVal('sector'),
         guests_count: getVal('guests_count'),
         event_date: eventDateVal || null,
@@ -460,7 +460,7 @@ class AnovaApp {
         const { tableName, successKey, payload } = this.buildSubmissionPayload(form);
         const requiredKeys = tableName === 'job_applications'
           ? ['full_name', 'phone', 'email', 'position']
-          : ['full_name', 'phone', 'email', 'sector'];
+          : ['full_name', 'phone', 'sector'];
 
         const missingKey = requiredKeys.find(k => !payload[k]);
         if (missingKey) {
