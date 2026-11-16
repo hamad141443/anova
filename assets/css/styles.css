@@ -818,14 +818,6 @@ html[lang="en"] .hero-subtext {
   0% { opacity: 1; transform: translate(-50%, 0); }
   100% { opacity: 0; transform: translate(-50%, 12px); }
 }
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color var(--transition-fast);
-  cursor: pointer;
-}
 
 .hero-scroll-cue:hover {
   color: var(--warm-gold);
@@ -5667,7 +5659,7 @@ html[dir="ltr"] .about-item-num {
   margin-bottom: 0.55rem;
   letter-spacing: -0.02em;
   direction: ltr !important;
-  display: inline-block;
+  display: block;
   unicode-bidi: isolate;
   text-align: inherit;
 }
@@ -5678,6 +5670,7 @@ html[dir="ltr"] .about-item-num {
   font-weight: 600;
   color: var(--midnight-dark, #1E293B);
   line-height: 1.45;
+  display: block;
 }
 
 /* English / LTR adjustments */

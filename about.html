@@ -10,7 +10,123 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=6">
+  <link rel="stylesheet" href="assets/css/styles.css?v=12">
+
+  <!-- Critical Stats Styles (Cache-Proof Guarantee) -->
+  <style id="anova-stats-critical-css">
+    .section-corporate-stats {
+      padding: 4.75rem 0;
+      background-color: #F8FAFC;
+      border-top: 1px solid rgba(20, 34, 49, 0.08);
+      border-bottom: 1px solid rgba(20, 34, 49, 0.08);
+    }
+    .stats-editorial-header {
+      margin-bottom: 2.75rem;
+      max-width: 820px;
+    }
+    .stats-main-title {
+      font-family: 'Alexandria', sans-serif;
+      font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+      font-weight: 700;
+      color: #142231;
+      line-height: 1.25;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.015em;
+    }
+    .stats-sub-lead {
+      font-family: 'Readex Pro', sans-serif;
+      font-size: 1.05rem;
+      color: #64748B;
+      line-height: 1.75;
+      margin: 0;
+    }
+    .stats-corporate-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 1px !important;
+      background-color: #E2E8F0 !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .stat-corporate-cell {
+      background-color: #FFFFFF !important;
+      padding: 2.25rem 1.75rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      position: relative;
+      box-sizing: border-box;
+      transition: background-color 0.2s ease;
+    }
+    .stat-corporate-cell:hover {
+      background-color: #FAFCFE !important;
+    }
+    .stat-cell-accent {
+      width: 22px;
+      height: 2px;
+      background-color: #C5A059;
+      margin-bottom: 1.15rem;
+      border-radius: 1px;
+    }
+    .stat-cell-value {
+      font-family: 'Alexandria', sans-serif;
+      font-size: clamp(1.85rem, 2.7vw, 2.45rem);
+      font-weight: 700;
+      color: #142231;
+      line-height: 1.1;
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.02em;
+      direction: ltr !important;
+      display: block !important;
+      unicode-bidi: isolate !important;
+      text-align: start;
+    }
+    .stat-cell-label {
+      font-family: 'Readex Pro', sans-serif;
+      font-size: 0.925rem;
+      font-weight: 600;
+      color: #1E293B;
+      line-height: 1.45;
+      display: block !important;
+    }
+    html[lang="en"] .stats-main-title {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    html[lang="en"] .stats-sub-lead {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    html[lang="en"] .stat-cell-value {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    html[lang="en"] .stat-cell-label {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    @media (max-width: 1024px) {
+      .section-corporate-stats { padding: 3.75rem 0; }
+      .stats-corporate-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .stat-corporate-cell { padding: 1.75rem 1.35rem !important; }
+    }
+    @media (max-width: 640px) {
+      .section-corporate-stats { padding: 3rem 0; }
+      .stats-editorial-header { margin-bottom: 1.75rem; }
+      .stats-corporate-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .stat-corporate-cell { padding: 1.35rem 1rem !important; }
+      .stat-cell-value { font-size: 1.55rem; margin-bottom: 0.35rem; }
+      .stat-cell-label { font-size: 0.82rem; line-height: 1.35; }
+      .stat-cell-accent { width: 16px; height: 2px; margin-bottom: 0.75rem; }
+    }
+    @media (max-width: 360px) {
+      .stat-corporate-cell { padding: 1.15rem 0.75rem !important; }
+      .stat-cell-value { font-size: 1.35rem; }
+      .stat-cell-label { font-size: 0.76rem; }
+    }
+  </style>
+
 </head>
 <body data-page-key="about" data-page-title-key="nav_about">
 
@@ -320,57 +436,57 @@
           <!-- 1. Meals Served -->
           <div class="stat-corporate-cell">
             <div class="stat-cell-accent" aria-hidden="true"></div>
-            <span class="stat-cell-value" dir="ltr">3.2M+</span>
-            <span class="stat-cell-label" data-i18n="stat_meals_lbl">وجبة مقدمة</span>
+            <div class="stat-cell-value" dir="ltr">3.2M+</div>
+            <div class="stat-cell-label" data-i18n="stat_meals_lbl">وجبة مقدمة</div>
           </div>
 
           <!-- 2. Successful Events -->
           <div class="stat-corporate-cell">
             <div class="stat-cell-accent" aria-hidden="true"></div>
-            <span class="stat-cell-value" dir="ltr">9,500+</span>
-            <span class="stat-cell-label" data-i18n="stat_events_lbl">فعالية ناجحة</span>
+            <div class="stat-cell-value" dir="ltr">9,500+</div>
+            <div class="stat-cell-label" data-i18n="stat_events_lbl">فعالية ناجحة</div>
           </div>
 
           <!-- 3. Corporate Clients -->
           <div class="stat-corporate-cell">
             <div class="stat-cell-accent" aria-hidden="true"></div>
-            <span class="stat-cell-value" dir="ltr">180+</span>
-            <span class="stat-cell-label" data-i18n="stat_clients_lbl">عميل من قطاع الأعمال</span>
+            <div class="stat-cell-value" dir="ltr">180+</div>
+            <div class="stat-cell-label" data-i18n="stat_clients_lbl">عميل من قطاع الأعمال</div>
           </div>
 
           <!-- 4. Professional Staff -->
           <div class="stat-corporate-cell">
             <div class="stat-cell-accent" aria-hidden="true"></div>
-            <span class="stat-cell-value" dir="ltr">250+</span>
-            <span class="stat-cell-label" data-i18n="stat_staff_lbl">كادر مهني</span>
+            <div class="stat-cell-value" dir="ltr">250+</div>
+            <div class="stat-cell-label" data-i18n="stat_staff_lbl">كادر مهني</div>
           </div>
 
           <!-- 5. Cities Covered -->
           <div class="stat-corporate-cell">
             <div class="stat-cell-accent" aria-hidden="true"></div>
-            <span class="stat-cell-value" dir="ltr">12+</span>
-            <span class="stat-cell-label" data-i18n="stat_cities_lbl">مدينة شملتها خدماتنا</span>
+            <div class="stat-cell-value" dir="ltr">12+</div>
+            <div class="stat-cell-label" data-i18n="stat_cities_lbl">مدينة شملتها خدماتنا</div>
           </div>
 
           <!-- 6. Customer Satisfaction -->
           <div class="stat-corporate-cell">
             <div class="stat-cell-accent" aria-hidden="true"></div>
-            <span class="stat-cell-value" dir="ltr">98.7%</span>
-            <span class="stat-cell-label" data-i18n="stat_satisfaction_lbl">رضا العملاء</span>
+            <div class="stat-cell-value" dir="ltr">98.7%</div>
+            <div class="stat-cell-label" data-i18n="stat_satisfaction_lbl">رضا العملاء</div>
           </div>
 
           <!-- 7. On-Time Delivery -->
           <div class="stat-corporate-cell">
             <div class="stat-cell-accent" aria-hidden="true"></div>
-            <span class="stat-cell-value" dir="ltr">99.4%</span>
-            <span class="stat-cell-label" data-i18n="stat_ontime_lbl">التسليم في الموعد</span>
+            <div class="stat-cell-value" dir="ltr">99.4%</div>
+            <div class="stat-cell-label" data-i18n="stat_ontime_lbl">التسليم في الموعد</div>
           </div>
 
           <!-- 8. Customer Support -->
           <div class="stat-corporate-cell">
             <div class="stat-cell-accent" aria-hidden="true"></div>
-            <span class="stat-cell-value" dir="ltr">24/7</span>
-            <span class="stat-cell-label" data-i18n="stat_support_lbl">دعم العملاء على مدار الساعة</span>
+            <div class="stat-cell-value" dir="ltr">24/7</div>
+            <div class="stat-cell-label" data-i18n="stat_support_lbl">دعم العملاء على مدار الساعة</div>
           </div>
         </div>
       </div>
