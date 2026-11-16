@@ -86,7 +86,7 @@
 
   const ANOVA_DEFAULT_TRANSLATIONS = {
     ar: {
-      top_locations: "المملكة العربية السعودية | الرياض • جدة • الخبر",
+      top_locations: "المملكة العربية السعودية | الرياض (المقر الرئيسي)",
       top_contact_direct: "الاتصال المباشر:",
       lang_toggle_text: "English",
 
@@ -107,12 +107,12 @@
       hero_cta_secondary: "اكتشف خدماتنا",
 
       about_tag: "عن أنوفا",
-      about_cities: "الرياض • جدة • الخبر",
+      about_cities: "الرياض (المقر الرئيسي)",
       about_showcase_tag: "معايير الضيافة والتموين الرفيع",
       about_showcase_desc: "تجهيزات فاخرة وتنسيق متكامل يعكس هيبة الفعاليات والمؤتمرات الوطنية",
       about_title: "ريادة مبنية على الاحترافية وصناعة التجارب الاستثنائية",
       about_p1: "منذ تأسيس شركة أنوفا في الرياض عام 2017، التزمنا بإعادة صياغة مفاهيم الضيافة المؤسسية والتموين الغذائي في المملكة العربية السعودية. نجحنا في بناء ثقة وطنية راسخة بفضل الالتزام الصارم بالجداول الزمنية، وتوظيف أرقى فنون الطهي، ومراعاة أدق بروتوكولات التشريفات الرسمية.",
-      about_p2: "نمتلك حضوراً تشغيلياً واسعاً عبر فروعنا في الرياض، جدة، والخبر، مع خطط توسع مستمرة تشمل مكة المكرمة والخرج. نعمل كشريك استراتيجي للجهات الحكومية والجامعات العريقة والشركات الرائدة والفنادق المصنفة، لتقديم خدمات تليق بتطلعات رؤية المملكة الطموحة.",
+      about_p2: "نمتلك حضوراً تشغيلياً راسخاً عبر مقرنا ومطابخنا المركزية في العاصمة الرياض، ونعمل كشريك استراتيجي للجهات الحكومية والجامعات العريقة والشركات الرائدة والفنادق المصنفة، لتقديم خدمات تليق بتطلعات رؤية المملكة الطموحة.",
       about_learn_more: "تعرف على تاريخنا وقيمنا",
       stat_founded_num: "2017",
       stat_founded_lbl: "سنة التأسيس بالعاصمة الرياض",
@@ -221,7 +221,7 @@
       contact_phone_lbl: "الاتصال الهاتفي والمباشر",
       contact_email_lbl: "المراسلات الرسمية",
       contact_branches_lbl: "الفروع ومراكز التغطية",
-      contact_branches_val: "الرياض (المقر الرئيسي) • جدة (المنطقة الغربية) • الخبر (المنطقة الشرقية)",
+      contact_branches_val: "الرياض (المقر الرئيسي)",
       form_heading: "طلب عرض سعر واستفسار",
       f_name: "الاسم الكريم / اسم الجهة",
       f_name_ph: "مثال: شركة / هيئة...",
@@ -242,10 +242,10 @@
       footer_cr: "شركة رسمية مرخصة بسجل تجاري معتمد في المملكة العربية السعودية",
       footer_quick_links: "روابط سريعة",
       footer_services: "قطاعات الأعمال",
-      footer_branches: "مراكز الخدمة",
+      footer_branches: "مراكز الخدمة والمقر الرئيسي",
       footer_branch_riyadh: "الرياض - المقر الرئيسي",
-      footer_branch_jeddah: "جدة - المنطقة الغربية",
-      footer_branch_khobar: "الخبر - المنطقة الشرقية",
+      // footer_branch_jeddah removed
+      // footer_branch_khobar removed
       footer_rights: "© 2026 شركة أنوفا للضيافة والإعاشة. جميع الحقوق محفوظة.",
 
       modal_title: "طلب عرض سعر مخصص",
@@ -253,7 +253,7 @@
     },
 
     en: {
-      top_locations: "Kingdom of Saudi Arabia | Riyadh • Jeddah • Khobar",
+      top_locations: "Kingdom of Saudi Arabia | Riyadh (HQ)",
       top_contact_direct: "Direct Phone:",
       lang_toggle_text: "العربية",
 
@@ -274,12 +274,12 @@
       hero_cta_secondary: "Explore Our Services",
 
       about_tag: "About ANOVA",
-      about_cities: "Riyadh • Jeddah • Khobar",
+      about_cities: "Riyadh (Headquarters)",
       about_showcase_tag: "Premier Hospitality Standards",
       about_showcase_desc: "Refined staging and meticulous service reflecting the stature of national forums",
       about_title: "Institutional Leadership Rooted in Crafting Exceptional Experiences",
       about_p1: "Since our establishment in Riyadh in 2017, ANOVA Company (ANOVA) has been committed to redefining corporate hospitality and fine catering across the Kingdom of Saudi Arabia. We have built enduring institutional trust through strict punctuality, artisanal culinary skill, and uncompromising VIP protocol standards.",
-      about_p2: "We maintain extensive operational hubs across Riyadh, Jeddah, and Khobar, with active expansion plans targeting Makkah and Al Kharj. Serving as a trusted partner to governmental commissions, esteemed universities, and prestigious hospitality venues, our solutions directly align with the Kingdom's visionary future.",
+      about_p2: "We maintain extensive operational capabilities from our headquarters in Riyadh, serving as a trusted partner to governmental commissions, esteemed universities, and prestigious institutions across the Kingdom.",
       about_learn_more: "Discover Our Heritage & Values",
       stat_founded_num: "2017",
       stat_founded_lbl: "Year Established in Riyadh",
@@ -388,7 +388,7 @@
       contact_phone_lbl: "Direct Inquiries & Phone",
       contact_email_lbl: "Official Correspondence",
       contact_branches_lbl: "Operational Hubs",
-      contact_branches_val: "Riyadh (Headquarters) • Jeddah (Western Hub) • Khobar (Eastern Hub)",
+      contact_branches_val: "Riyadh (Headquarters)",
       form_heading: "Request Quotation & Inquiries",
       f_name: "Full Name / Organization",
       f_name_ph: "e.g., Enterprise / Government Authority...",
@@ -409,10 +409,8 @@
       footer_cr: "Officially Licensed Commercial Enterprise in the Kingdom of Saudi Arabia",
       footer_quick_links: "Quick Navigation",
       footer_services: "Business Sectors",
-      footer_branches: "Regional Hubs",
+      footer_branches: "Headquarters & Service Centers",
       footer_branch_riyadh: "Riyadh - Headquarters",
-      footer_branch_jeddah: "Jeddah - Western Hub",
-      footer_branch_khobar: "Khobar - Eastern Hub",
       footer_rights: "© 2026 ANOVA Company. All Rights Reserved.",
 
       modal_title: "Custom Quotation Request",
